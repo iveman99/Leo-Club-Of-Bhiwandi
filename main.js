@@ -295,6 +295,20 @@ document.addEventListener('DOMContentLoaded', () => {
         signatureObserver.observe(signatureContainer);
     }
 
+    // === MODULE 7: RESOLUTION PARCHMENT UNROLL ===
+    const parchmentScroll = document.querySelector('.parchment-scroll');
+    if (parchmentScroll) {
+        const parchmentObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    parchmentScroll.classList.add('active');
+                    parchmentObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        parchmentObserver.observe(parchmentScroll);
+    }
+
     // === HERO CINEMATIC SEQUENCE ===
     const globeViz = document.getElementById('globeViz');
     if (globeViz && typeof Globe !== 'undefined') {

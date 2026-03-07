@@ -192,7 +192,8 @@ h3,
 .hud-menu {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 15px;
+  /* Reduced from 30px to prevent wrapping of 'Service & Projects' */
 }
 
 .hud-menu a {
@@ -567,6 +568,26 @@ h3,
   pointer-events: none;
 }
 
+.hero-final-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease, visibility 2s;
+  z-index: 20;
+  /* Push to take remaining space below nav */
+  flex-grow: 1;
+  padding-top: 40px;
+  pointer-events: auto;
+  /* Required because parent .hero-overlays has pointer-events: none */
+}
+
 .philosophy-subtitle {
   position: absolute;
   bottom: 20px;
@@ -708,6 +729,8 @@ h3,
   flex-wrap: wrap;
   max-width: 90vw;
   justify-content: center;
+  gap: 30px;
+  /* Added 30px gap to create spacing between wrapped cards */
 }
 
 /* Base Card Design */
@@ -1128,6 +1151,39 @@ h3,
 
 /* ====== MOBILE RESPONSIVE ====== */
 @media (max-width: 900px) {
+
+  /* Fix Hero Overlap and Layout on Mobile */
+  .hero-final-state {
+    width: 95%;
+    padding-top: 20px;
+  }
+
+  .hero-logos {
+    gap: 10px;
+    margin-bottom: 20px;
+    /* Allow wrapping if screen is really small */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-logo-slice {
+    width: 45px;
+    height: 45px;
+  }
+
+  .elegant-title {
+    font-size: 2rem;
+  }
+
+  .elegant-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .elegant-panel {
+    padding: 20px 15px;
+    margin-top: 20px;
+  }
 
   /* About the Club & Philosophy */
   .info-card-container {
@@ -1565,7 +1621,8 @@ h3,
 /* ====== MODULE 5: OUR IMPACT ====== */
 .impact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Reduced from 220px to prevent the 4th card from wrapping alone */
   gap: 30px;
   width: 100%;
   max-width: 1100px;
@@ -1769,6 +1826,7 @@ h3,
 
 .cyber-input {
   width: 100%;
+  max-width: 400px;
   padding: 12px 15px 12px 40px;
   background: rgba(10, 16, 32, 0.9);
   border: 1px solid rgba(42, 195, 255, 0.4);
@@ -2162,6 +2220,38 @@ h3,
 
 .signature-footer .signature-name {
   margin-bottom: 2px;
+}
+
+/* ====== MODULE 8: GALLERY ====== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(42, 195, 255, 0.3);
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(42, 195, 255, 0.5);
 }
 
 @media (max-width: 768px) {
