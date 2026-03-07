@@ -202,6 +202,7 @@ h3,
   font-family: var(--font-heading);
   font-size: 0.85rem;
   letter-spacing: 1px;
+  white-space: nowrap;
   transition: color 0.3s, text-shadow 0.3s;
   position: relative;
   padding-bottom: 5px;
@@ -586,6 +587,11 @@ h3,
   padding-top: 40px;
   pointer-events: auto;
   /* Required because parent .hero-overlays has pointer-events: none */
+}
+
+.hero-final-state.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .philosophy-subtitle {
