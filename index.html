@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCOB | AI-Docket 24-25</title>
+    <!-- Fonts for AI Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=6">
+
+    <!-- Globe Dependencies (Three.js is bundled with globe.gl standalone) -->
+    <script src="https://unpkg.com/globe.gl"></script>
+</head>
+
+<body class="ai-theme">
+
+    <!-- HUD Navigation -->
+    <nav class="hud-nav">
+        <div class="hud-brand">
+            <div class="brand-title">LEO CLUB OF BHIWANDI</div>
+            <div class="brand-subtitle">Digital Docket 2024–25</div>
+        </div>
+        <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+        <ul class="hud-menu" id="navMenu">
+            <li><a href="#module-1">Home</a></li>
+            <li><a href="#module-2">The Club</a></li>
+            <li><a href="#module-president">President</a></li>
+            <li><a href="#module-3">Leadership</a></li>
+            <li><a href="#module-timeline">Timeline</a></li>
+            <li><a href="#module-4">Service & Projects</a></li>
+            <li><a href="#module-5">Impact</a></li>
+            <li><a href="#module-6">Members</a></li>
+            <li><a href="#module-7">Resolution</a></li>
+            <li><a href="#module-8">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Presentation Container -->
+    <main class="docket-container" id="docket">
+
+        <!-- MODULE 1: INIT / HERO -->
+        <section class="docket-slide active hero-slide" id="module-1">
+            <div id="golden-glow-overlay"></div>
+            <div id="particles-overlay"></div>
+            <div id="globeViz"></div>
+            <div class="hero-overlays">
+                <!-- Text Sequence -->
+                <div class="hero-text-step" id="hero-text-1">While parts of the world face conflict and uncertainty...
+                </div>
+                <div class="hero-text-step" id="hero-text-2">India stands united — where young leaders choose service
+                    over division.</div>
+
+                <!-- Location Pin -->
+                <div class="hero-bhiwandi-pin" id="hero-pin">
+                    <div class="pin-marker"></div>
+                    <div class="pin-label text-sm mt-2">Bhiwandi, India</div>
+                </div>
+
+                <div class="hero-text-step" id="hero-text-3">Serving Communities Across Our Region</div>
+
+                <!-- Particle Logo Overlay -->
+                <div class="hero-particle-logo" id="hero-particle-logo"></div>
+
+                <div class="hero-text-step" id="hero-text-4">Because when the world faces uncertainty, service becomes
+                    our common language.</div>
+
+                <!-- STEP 4 to 7: Final state -->
+                <div class="hero-final-state" id="hero-final">
+                    <!-- Logos -->
+                    <div class="hero-logos">
+                        <div class="hero-logo-slice sl-1" title="Lions International"></div>
+                        <div class="hero-logo-slice sl-2" title="LEO"></div>
+                        <div class="hero-logo-slice sl-3" title="Leo Club of Bhiwandi"></div>
+                        <div class="hero-logo-slice sl-4" title="Leo District 3231 A2"></div>
+                        <div class="hero-logo-slice sl-5" title="District Theme"></div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="hero-title-group">
+                        <h1 class="elegant-title mt-4">LEO CLUB OF BHIWANDI</h1>
+                        <div class="elegant-subtitle mt-2" style="line-height: 1.5;">LIONS INTERNATIONAL<br>LEO MULTIPLE
+                            3231 | LEO DISTRICT 3231 A2</div>
+                        <p class="elegant-tagline mt-3">"A Year of Service, Leadership and Impact"</p>
+                    </div>
+
+                    <!-- Welcome Panel -->
+                    <div class="elegant-panel mt-5 hero-welcome-panel border-gold-animated">
+                        <h3 class="text-gold tracking-widest text-sm elegant-heading">District President Official Visit
+                            2024–25</h3>
+                        <p class="mt-3 text-sm text-dim">We warmly welcome</p>
+                        <h2 class="text-blue my-2 elegant-name"
+                            style="font-family: var(--font-heading); color: #fff; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);">
+                            Leo Lion Shivani Shah.</h2>
+                        <p class="text-sm text-gold">District President</p>
+                        <p class="mt-3 text-xs text-dim" style="line-height: 1.6;">along with the District Executive
+                            Council<br>for the Official District President Visit<br>to Leo Club of Bhiwandi.</p>
+                    </div>
+
+                    <!-- Explore Button -->
+                    <a href="#module-2" class="explore-btn mt-5">Explore Our Journey</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 2: ABOUT THE CLUB & LEO PHILOSOPHY -->
+        <section class="docket-slide" id="module-2">
+            <div class="slide-content full-width-content">
+                <div class="text-center mb-5 reveal">
+                    <h2 class="cyber-heading">About Leo Club of Bhiwandi</h2>
+                    <p class="elegant-subtitle mt-3 text-dim"
+                        style="max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                        Leo Club of Bhiwandi is a youth leadership organization under Lions Clubs International
+                        dedicated to community service, leadership development, and fellowship. The club focuses on
+                        empowering young leaders to create positive change in society through service initiatives and
+                        community engagement.
+                    </p>
+                </div>
+
+                <!-- Club Info Cards -->
+                <div class="info-card-container mt-5">
+                    <div class="info-card reveal delay-1">
+                        <div class="info-label">Charter Year</div>
+                        <div class="info-value">2012</div>
+                    </div>
+                    <div class="info-card reveal delay-2">
+                        <div class="info-label">Sponsor Club</div>
+                        <div class="info-value">Lions Club of Bhiwandi</div>
+                    </div>
+                    <div class="info-card reveal delay-3">
+                        <div class="info-label">Club ID</div>
+                        <div class="info-value">118104</div>
+                    </div>
+                    <div class="info-card reveal delay-4">
+                        <div class="info-label">Charter Members</div>
+                        <div class="info-value">24</div>
+                    </div>
+                </div>
+
+                <!-- Leo Philosophy Visual (Canvas Particle Animation) -->
+                <div class="philosophy-wrapper mt-5" id="philosophy-anim-container">
+                    <canvas id="philosophy-canvas"></canvas>
+
+                    <!-- Animated Subtitles Overlay -->
+                    <div class="philosophy-subtitle" id="subtitle-1">
+                        <h4>Leadership</h4>
+                        <p>Guiding communities through service.</p>
+                    </div>
+
+                    <div class="philosophy-subtitle" id="subtitle-2">
+                        <h4>Experience</h4>
+                        <p>Learning and growing through service.</p>
+                    </div>
+
+                    <div class="philosophy-subtitle" id="subtitle-3">
+                        <h4>Opportunity</h4>
+                        <p>Creating leaders of tomorrow.</p>
+                    </div>
+
+                    <!-- Final Logo Reveal -->
+                    <div class="philosophy-final-logo" id="final-leo-logo">
+                        <div class="pulse-gold-logo"></div>
+                    </div>
+
+                    <h3>Leadership &bull; Experience &bull; Opportunity</h3>
+                </div>
+            </div>
+            </div>
+            <a href="#module-president" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE PRESIDENT: PRESIDENT'S DESK -->
+        <section class="docket-slide" id="module-president">
+            <div class="slide-content full-width-content">
+                <div class="text-center mb-5 reveal">
+                    <div class="president-emblem mb-3">
+                        <img src="leo logo.png" alt="Leo Emblem"
+                            style="width: 40px; height: 40px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255,184,0,0.5));">
+                    </div>
+                    <h2 class="cyber-heading">President's Desk</h2>
+                </div>
+
+                <div class="president-container mt-4">
+                    <!-- Left Column: Parallax Photo -->
+                    <div class="president-photo-col reveal reveal-left">
+                        <div class="president-frame">
+                            <div class="parallax-photo-wrapper">
+                                <img src="president.png" alt="Leo Yeman Adep" class="parallax-photo"
+                                    onerror="this.src='https://via.placeholder.com/400x500/0a1020/ffb800?text=President+Photo'">
+                            </div>
+                        </div>
+                        <div class="president-label text-center mt-4">
+                            <h3 class="signature-name">Leo Yeman Adep</h3>
+                            <p class="signature-title">Club President</p>
+                            <p class="signature-year">Leoistic Year 2024–25</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Parchment Message -->
+                    <div class="president-text-col reveal reveal-right">
+                        <div class="parchment-card">
+                            <h3 class="message-title mb-4">President’s Note</h3>
+
+                            <p class="resolution-text">
+                                It is a privilege to serve as the President of Leo Club of Bhiwandi, and I am grateful
+                                to lead such a passionate and dedicated team. Our club is more than just an
+                                organization; it is a family that believes in service, leadership, and positive change.
+                            </p>
+
+                            <p class="resolution-text mt-3">
+                                Each project we take on is a step towards making a difference in our community. Our
+                                actions, no matter how small, create an impact that inspires others to join our mission.
+                                Together, we can turn ideas into reality and challenges into opportunities.
+                            </p>
+
+                            <p class="resolution-text mt-3">
+                                This meeting is an opportunity for us to collaborate, plan, and strengthen our vision. I
+                                encourage everyone to participate actively, share new ideas, and take ownership of
+                                initiatives. Your enthusiasm and commitment are what drive this club forward.
+                            </p>
+
+                            <p class="resolution-text mt-3">
+                                Let’s continue to support each other, grow as leaders, and serve with dedication. Our
+                                journey is just beginning, and with teamwork and passion, we can achieve great
+                                milestones.
+                            </p>
+
+                            <!-- Signature Animation -->
+                            <div class="signature-anim-container mt-5">
+                                <svg class="animated-signature" viewBox="0 0 500 100"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- A cursive representation of "Leo Yeman Adep" -->
+                                    <path class="signature-path" d="M30 60 C 20 20, 50 10, 60 50 C 70 80, 100 80, 120 50 
+                                             M100 50 C 120 20, 140 30, 150 50 C 160 70, 180 70, 200 50
+                                             M180 50 C 200 10, 220 10, 240 50 C 260 90, 280 90, 290 50
+                                             M280 50 C 300 20, 320 20, 340 50 C 360 80, 380 80, 400 50
+                                             M390 50 C 410 20, 430 30, 440 50 C 450 70, 470 70, 480 50" />
+                                </svg>
+
+                                <div class="signature-footer mt-2">
+                                    <h4 class="signature-name">Leo Yeman Adep</h4>
+                                    <p class="signature-title">Club President</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#module-3" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE 3: EXECUTIVE COUNCIL ORG CHART -->
+        <section class="docket-slide" id="module-3">
+            <div class="slide-content full-width-content">
+                <div class="text-center mb-5 reveal">
+                    <h2 class="cyber-heading">Executive Council 2024–25</h2>
+                    <p class="elegant-subtitle mt-2 neon-blue">Leadership through Service</p>
+                </div>
+
+                <div class="org-chart mt-5">
+                    <!-- Level 1: President -->
+                    <div class="org-level level-1 reveal delay-1">
+                        <div class="org-card president-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Yeman Adep</h4>
+                            <p class="org-designation">President</p>
+                        </div>
+                    </div>
+
+                    <!-- Level 2: VPs & Advisor -->
+                    <div class="org-level level-2 reveal delay-2">
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Vinod Siricilla</h4>
+                            <p class="org-designation">Leo Advisor</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Rahul Dudam</h4>
+                            <p class="org-designation">Immediate Past President</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Namra Gada</h4>
+                            <p class="org-designation">Vice President I</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Manasa Samba</h4>
+                            <p class="org-designation">Vice President II</p>
+                        </div>
+                    </div>
+
+                    <!-- Level 3: Administration -->
+                    <div class="org-level level-3 reveal delay-3">
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Veman Chippa</h4>
+                            <p class="org-designation">Secretary</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Dhriti Shetty</h4>
+                            <p class="org-designation">Joint Secretary</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Omshankar Nakka</h4>
+                            <p class="org-designation">Joint Secretary</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Varsha Siricilla</h4>
+                            <p class="org-designation">Treasurer</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Shrisha Mergud</h4>
+                            <p class="org-designation">Joint Treasurer</p>
+                        </div>
+                    </div>
+
+                    <!-- Level 4: Mentors & Global Team -->
+                    <div class="org-level level-4 reveal delay-4">
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Jitendra Rathod</h4>
+                            <p class="org-designation">Joint Treasurer</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Nilesh Jaywant</h4>
+                            <p class="org-designation">Club Mentor</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Saloni Jarol</h4>
+                            <p class="org-designation">Global Service Team Head</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Roshni Patel</h4>
+                            <p class="org-designation">Global Membership Team Head</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Sonia Andavrapu</h4>
+                            <p class="org-designation">Global Leadership Team Head</p>
+                        </div>
+                    </div>
+
+                    <!-- Level 5: Directors & Team Leads -->
+                    <div class="org-level level-5 reveal delay-5 flex-wrap wrap-container">
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Srikar Yelle</h4>
+                            <p class="org-designation">Public Relations Officer</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Yuvraj Rai</h4>
+                            <p class="org-designation">Social Media Head</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Gopi Darji</h4>
+                            <p class="org-designation">Creative Head</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Abhilash Jejela</h4>
+                            <p class="org-designation">Twinning Director</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Rushikesh Kamurthi</h4>
+                            <p class="org-designation">Fellowship Director</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Rakesh Pathak</h4>
+                            <p class="org-designation">Sports Head</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Sanjay Pathipaka</h4>
+                            <p class="org-designation">Sports Co-Head</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Sneha Adep</h4>
+                            <p class="org-designation">Board of Director</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Vivek Butla</h4>
+                            <p class="org-designation">Board of Director</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Rahul Dudam</h4>
+                            <p class="org-designation">Board of Director</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Jaya Adep</h4>
+                            <p class="org-designation">Tail Twister</p>
+                        </div>
+                        <div class="org-card">
+                            <div class="org-photo-placeholder"></div>
+                            <h4>Akshaya Vadigoppula</h4>
+                            <p class="org-designation">Tamer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#module-timeline" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE TIMELINE: HISTORY SCROLL -->
+        <section class="docket-slide" id="module-timeline">
+            <div class="slide-content full-width-content">
+                <div class="text-center mb-5 reveal">
+                    <h2 class="cyber-heading">Club Timeline</h2>
+                    <p class="elegant-subtitle mt-2 neon-blue">A legacy of leadership and service.</p>
+                </div>
+
+                <div class="timeline-container mt-4 reveal delay-1">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-horizontal-scroll" id="timelineScroll">
+
+                        <!-- 2012-13 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-top">
+                                <h3 class="year-heading">2012–13</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Nilesh Jaywant</li>
+                                    <li>Leo Rupesh Patil</li>
+                                    <li>Leo Shashank Wadke</li>
+                                    <li>Leo Monish Mhatre</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2013-14 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-bottom">
+                                <h3 class="year-heading">2013–14</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Rupesh Patil</li>
+                                    <li>Leo Sonal Patel</li>
+                                    <li>Leo Shashank Wadke</li>
+                                    <li>Leo Monish Mhatre</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2014-15 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-top">
+                                <h3 class="year-heading">2014–15</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Sonali Patel</li>
+                                    <li>Leo Sayli Mystry</li>
+                                    <li>Leo Shankar Mahale</li>
+                                    <li>Leo Monish Mhatre</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2015-16 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-bottom">
+                                <h3 class="year-heading">2015–16</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Shashank Wadke</li>
+                                    <li>Leo Sayli Mystry</li>
+                                    <li>Leo Ashish Alshi</li>
+                                    <li>Leo Monish Mhatre</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2016-17 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-top">
+                                <h3 class="year-heading">2016–17</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Jayesh Jaywant</li>
+                                    <li>Leo Shraddha Jaywant</li>
+                                    <li>Leo Ashok Poojari</li>
+                                    <li>Leo Harish Poojary</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2017-18 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-bottom">
+                                <h3 class="year-heading">2017–18</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Harish Poojary</li>
+                                    <li>Leo Vinod Siricilla</li>
+                                    <li>Leo Amar Poojary</li>
+                                    <li>Leo Uday Sallan</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2018-19 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-top">
+                                <h3 class="year-heading">2018–19</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Ashok Poojari</li>
+                                    <li>Leo Anurag Gupta</li>
+                                    <li>Leo Rajesh Choudhary</li>
+                                    <li>Leo Sridhar Eppalapelli</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2019-20 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-bottom">
+                                <h3 class="year-heading">2019–20</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Vinod Siricilla</li>
+                                    <li>Leo Shrikanth Samala</li>
+                                    <li>Leo Naresh Dussa</li>
+                                    <li>Leo Anurag Gupta</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2020-21 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-top">
+                                <h3 class="year-heading">2020–21</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Anurag Gupta</li>
+                                    <li>Leo Chandrashekar Baluri</li>
+                                    <li>Leo Sunil Balla</li>
+                                    <li>Leo Sneha Adep</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2021-22 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-bottom">
+                                <h3 class="year-heading">2021–22</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Sneha Adep</li>
+                                    <li>Leo Suraj Gujja</li>
+                                    <li>Leo Bhavya Dontul</li>
+                                    <li>Leo Sunil Balla (VP I)</li>
+                                    <li>Leo C. Baluri (VP II)</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2022-23 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-top">
+                                <h3 class="year-heading">2022–23</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Chandrashekar Baluri</li>
+                                    <li>Leo Manasa Samala</li>
+                                    <li>Leo Leena Adep</li>
+                                    <li>Leo Vivek Butla</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- 2023-24 -->
+                        <div class="timeline-item">
+                            <div class="timeline-card card-bottom">
+                                <h3 class="year-heading">2023–24</h3>
+                                <ul class="timeline-leaders">
+                                    <li>Leo Vivek Butla</li>
+                                    <li>Leo Yeman Adep</li>
+                                    <li>Leo Manikiran Kyatam</li>
+                                    <li>Leo Yeman Adep</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-node"></div>
+                        </div>
+
+                        <!-- Spacer for scrolling comfort -->
+                        <div class="timeline-item timeline-spacer"></div>
+
+                    </div>
+                </div>
+            </div>
+            <a href="#module-4" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE 4: SERVICE & PROJECTS -->
+        <section class="docket-slide" id="module-4">
+            <div class="slide-content full-width-content">
+                <div class="text-center mb-5 reveal">
+                    <h2 class="cyber-heading">Service & Projects</h2>
+                    <p class="elegant-subtitle mt-2 neon-blue">Making a difference through service.</p>
+                </div>
+
+                <div class="projects-grid mt-4">
+
+                    <!-- Project 1 -->
+                    <article class="project-card reveal delay-1">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop"
+                                alt="Tree Plantation"
+                                onerror="this.src='https://via.placeholder.com/600x400/0a1020/2ac3ff?text=Tree+Plantation'">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category border-green">Environment</span>
+                            <h3 class="project-title neon-gold mt-2">Tree Plantation Drive</h3>
+                            <div class="project-meta mt-3">
+                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> August 2024</span>
+                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 150
+                                    Beneficiaries</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal delay-2">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&h=400&fit=crop"
+                                alt="Blood Donation"
+                                onerror="this.src='https://via.placeholder.com/600x400/0a1020/ef4444?text=Blood+Donation'">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category border-red"
+                                style="color:#ef4444; border-color:#ef4444;">Health</span>
+                            <h3 class="project-title neon-gold mt-2">Blood Donation Camp</h3>
+                            <div class="project-meta mt-3">
+                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> September 2024</span>
+                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 200
+                                    Beneficiaries</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal delay-3">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop"
+                                alt="Food Distribution"
+                                onerror="this.src='https://via.placeholder.com/600x400/0a1020/eab308?text=Food+Distribution'">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category border-gold">Community Service</span>
+                            <h3 class="project-title neon-gold mt-2">Food Distribution Drive</h3>
+                            <div class="project-meta mt-3">
+                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> October 2024</span>
+                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 300
+                                    Beneficiaries</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card reveal delay-1">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
+                                alt="Medical Check-up"
+                                onerror="this.src='https://via.placeholder.com/600x400/0a1020/ef4444?text=Medical+Camp'">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category border-red"
+                                style="color:#ef4444; border-color:#ef4444;">Health</span>
+                            <h3 class="project-title neon-gold mt-2">Medical Check-up Camp</h3>
+                            <div class="project-meta mt-3">
+                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> November 2024</span>
+                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 180
+                                    Beneficiaries</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card reveal delay-2">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
+                                alt="Educational Support"
+                                onerror="this.src='https://via.placeholder.com/600x400/0a1020/3b82f6?text=Education+Support'">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category border-blue">Education</span>
+                            <h3 class="project-title neon-gold mt-2">Educational Support Program</h3>
+                            <div class="project-meta mt-3">
+                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> December 2024</span>
+                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 120
+                                    Beneficiaries</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project-card reveal delay-3">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?w=600&h=400&fit=crop"
+                                alt="Clothes Donation"
+                                onerror="this.src='https://via.placeholder.com/600x400/0a1020/eab308?text=Clothes+Donation'">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category border-gold">Community Service</span>
+                            <h3 class="project-title neon-gold mt-2">Clothes Donation Drive</h3>
+                            <div class="project-meta mt-3">
+                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> January 2025</span>
+                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 250
+                                    Beneficiaries</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+            <a href="#module-5" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE 5: OUR IMPACT -->
+        <section class="docket-slide" id="module-5">
+            <div class="slide-content text-center">
+                <h2 class="cyber-heading reveal">Our Impact</h2>
+                <p class="elegant-subtitle mt-2 neon-blue reveal delay-1">Measuring the difference we made through
+                    service and leadership.</p>
+
+                <div class="impact-grid mt-5">
+
+                    <!-- Card 1 -->
+                    <div class="impact-card reveal delay-1">
+                        <i class="fa-solid fa-users impact-icon"></i>
+                        <h3 class="impact-counter"><span class="counter-num" data-target="48">0</span></h3>
+                        <p class="impact-title">Total Members</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="impact-card reveal delay-2">
+                        <i class="fa-solid fa-hand-holding-heart impact-icon"></i>
+                        <h3 class="impact-counter"><span class="counter-num" data-target="15">0</span></h3>
+                        <p class="impact-title">Service Projects</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="impact-card reveal delay-3">
+                        <i class="fa-solid fa-earth-asia impact-icon"></i>
+                        <h3 class="impact-counter"><span class="counter-num" data-target="1200">0</span>+</h3>
+                        <p class="impact-title">Beneficiaries Served</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="impact-card reveal delay-4">
+                        <i class="fa-solid fa-indian-rupee-sign impact-icon"></i>
+                        <h3 class="impact-counter">₹<span class="counter-num" data-target="30000">0</span>+</h3>
+                        <p class="impact-title">Funds Raised</p>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#module-6" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE 6: MEMBERS -->
+        <section class="docket-slide" id="module-6">
+            <div class="slide-content full-width-content text-center">
+                <h2 class="cyber-heading">Club Members</h2>
+                <p class="elegant-subtitle mt-2 neon-blue">The strength of Leo Club of Bhiwandi lies in its dedicated
+                    members.</p>
+
+                <div class="members-container mt-5 reveal delay-1">
+                    <div class="search-wrapper mb-4">
+                        <i class="fa-solid fa-search search-icon"></i>
+                        <input type="text" id="member-search" class="cyber-input"
+                            placeholder="Search by First Name or Last Name...">
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="cyber-table" id="members-table">
+                            <thead>
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Member ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5353759</td>
+                                    <td>Leo Sneha</td>
+                                    <td>Adep</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>5412396</td>
+                                    <td>Leo Yeman</td>
+                                    <td>Adep</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>5412413</td>
+                                    <td>Leo Prem</td>
+                                    <td>Bootla</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>5412423</td>
+                                    <td>Leo Naveenkumar</td>
+                                    <td>Madas</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5412440</td>
+                                    <td>Leo Sainath</td>
+                                    <td>Dikonda</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>5412708</td>
+                                    <td>Leo Rajesh</td>
+                                    <td>Mali</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>5412973</td>
+                                    <td>Leo Ramu</td>
+                                    <td>Gundeti</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>5413000</td>
+                                    <td>Leo Anvesh</td>
+                                    <td>Kota</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>5471502</td>
+                                    <td>Leo Supriya</td>
+                                    <td>Samala</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>5471511</td>
+                                    <td>Leo Abhilash</td>
+                                    <td>Jelje</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>5566060</td>
+                                    <td>Leo Srikanth</td>
+                                    <td>Yelle</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>5580669</td>
+                                    <td>Leo Laxman</td>
+                                    <td>Ganapuram</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>5653672</td>
+                                    <td>Leo Rahul</td>
+                                    <td>Dudam</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>5653672</td>
+                                    <td>Leo Rahul</td>
+                                    <td>Dontul</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>5653678</td>
+                                    <td>Leo Manasa</td>
+                                    <td>Samala</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>5653692</td>
+                                    <td>Leo Vivek</td>
+                                    <td>Butla</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>5653697</td>
+                                    <td>Leo Manikiran</td>
+                                    <td>Kyatham</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>5728034</td>
+                                    <td>Leo Namra</td>
+                                    <td>Gada</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>5810877</td>
+                                    <td>Leo Sagar</td>
+                                    <td>Myakal</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>5945974</td>
+                                    <td>Leo Omshankar</td>
+                                    <td>Nakka</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td>5947265</td>
+                                    <td>Leo Sohan</td>
+                                    <td>Gujjul</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>5947288</td>
+                                    <td>Leo Saicharan</td>
+                                    <td>Kokkula</td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>6189830</td>
+                                    <td>Leo Shwetha</td>
+                                    <td>Yenaganti</td>
+                                </tr>
+                                <tr>
+                                    <td>24</td>
+                                    <td>6189833</td>
+                                    <td>Leo Saikrishna</td>
+                                    <td>Gujja</td>
+                                </tr>
+                                <tr>
+                                    <td>25</td>
+                                    <td>6189835</td>
+                                    <td>Leo Varun</td>
+                                    <td>Algunde</td>
+                                </tr>
+                                <tr>
+                                    <td>26</td>
+                                    <td>6189842</td>
+                                    <td>Leo Pranay</td>
+                                    <td>Banka</td>
+                                </tr>
+                                <tr>
+                                    <td>27</td>
+                                    <td>6189844</td>
+                                    <td>Leo Sanjaykumar</td>
+                                    <td>Pathipaka</td>
+                                </tr>
+                                <tr>
+                                    <td>28</td>
+                                    <td>6189845</td>
+                                    <td>Leo Arvind</td>
+                                    <td>Junga</td>
+                                </tr>
+                                <tr>
+                                    <td>29</td>
+                                    <td>26799848</td>
+                                    <td>Leo Veman</td>
+                                    <td>Chippa</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>26800309</td>
+                                    <td>Leo Manoj</td>
+                                    <td>Cheryala</td>
+                                </tr>
+                                <tr>
+                                    <td>31</td>
+                                    <td>26800102</td>
+                                    <td>Leo Nitin</td>
+                                    <td>Kusuma</td>
+                                </tr>
+                                <tr>
+                                    <td>32</td>
+                                    <td>26800104</td>
+                                    <td>Leo Vishal</td>
+                                    <td>Vemul</td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>26800108</td>
+                                    <td>Leo Praveen</td>
+                                    <td>Madas</td>
+                                </tr>
+                                <tr>
+                                    <td>34</td>
+                                    <td>26800109</td>
+                                    <td>Leo Jaya</td>
+                                    <td>Kiran</td>
+                                </tr>
+                                <tr>
+                                    <td>35</td>
+                                    <td>26803112</td>
+                                    <td>Leo Akhilesh</td>
+                                    <td>Koduri</td>
+                                </tr>
+                                <tr>
+                                    <td>36</td>
+                                    <td>26803113</td>
+                                    <td>Leo Mitesh</td>
+                                    <td>Birru</td>
+                                </tr>
+                                <tr>
+                                    <td>37</td>
+                                    <td>2684064</td>
+                                    <td>Leo Varsha</td>
+                                    <td>Siricilla</td>
+                                </tr>
+                                <tr>
+                                    <td>38</td>
+                                    <td>26844969</td>
+                                    <td>Leo Ganesh</td>
+                                    <td>Nyaman</td>
+                                </tr>
+                                <tr>
+                                    <td>39</td>
+                                    <td>26846073</td>
+                                    <td>Leo Ranjit</td>
+                                    <td>Dumpetti</td>
+                                </tr>
+                                <tr>
+                                    <td>40</td>
+                                    <td>26846080</td>
+                                    <td>Leo Navin</td>
+                                    <td>Musha</td>
+                                </tr>
+                                <tr>
+                                    <td>41</td>
+                                    <td>26849060</td>
+                                    <td>Leo Rakesh</td>
+                                    <td>Kunder</td>
+                                </tr>
+                                <tr>
+                                    <td>42</td>
+                                    <td>26849070</td>
+                                    <td>Leo Sweta</td>
+                                    <td>Kodur</td>
+                                </tr>
+                                <tr>
+                                    <td>43</td>
+                                    <td>26852093</td>
+                                    <td>Leo Aarti</td>
+                                    <td>Eppalapelli</td>
+                                </tr>
+                                <tr>
+                                    <td>44</td>
+                                    <td>26852012</td>
+                                    <td>Leo Navya</td>
+                                    <td>Annaldas</td>
+                                </tr>
+                                <tr>
+                                    <td>45</td>
+                                    <td>26857311</td>
+                                    <td>Leo Kavya</td>
+                                    <td>Rawla</td>
+                                </tr>
+                                <tr>
+                                    <td>46</td>
+                                    <td>26860541</td>
+                                    <td>Leo Kavya</td>
+                                    <td>Bijja</td>
+                                </tr>
+                                <tr>
+                                    <td>47</td>
+                                    <td>2686275</td>
+                                    <td>Leo Aarti</td>
+                                    <td>Chiliveri</td>
+                                </tr>
+                                <tr>
+                                    <td>48</td>
+                                    <td>26862750</td>
+                                    <td>Leo Ajay</td>
+                                    <td>Gone</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a href="#module-7" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE 7: COURTESY RESOLUTION -->
+        <section class="docket-slide" id="module-7">
+            <div class="slide-content full-width-content text-center">
+                <h2 class="cyber-heading">Courtesy Resolution</h2>
+                <p class="elegant-subtitle mt-2 neon-blue">A Message of Gratitude</p>
+
+                <!-- Parchment Scroll Wrapper -->
+                <div class="parchment-container mt-5">
+                    <div class="parchment-top"></div>
+                    <div class="parchment-scroll reveal">
+                        <div class="scroll-content">
+                            <!-- Leo Logo Emblem -->
+                            <div class="scroll-emblem mb-4">
+                                <img src="leo logo.png" alt="Leo Emblem"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                            </div>
+
+                            <p class="resolution-text">
+                                WE, THE MEMBERS OF LEO CLUB OF BHIWANDI, SINCERELY APPRECIATE THE DEDICATION AND
+                                LEADERSHIP OF DISTRICT PRESIDENT LEO LION SHIVANI SHAH., LEO DISTRICT ADVISOR LION
+                                NILESH
+                                JAYWANT, VICE-DISTRICT PRESIDENT LEO LION SHIVANI SHAH, DISTRICT SECRETARY LEO LION
+                                SHWETHA SAJNANI, DISTRICT TREASURER LEO VED JOBANPUTRA, IMMEDIATE PAST DISTRICT
+                                PRESIDENT LEO HENAL PAREKH, AND THE ENTIRE EXECUTIVE COUNCIL FOR THEIR EFFORTS AND
+                                COMMITMENT DURING THE LEOISTIC YEAR 2024–25.
+                            </p>
+
+                            <p class="resolution-text mt-4">
+                                WE ACKNOWLEDGE THEIR HARD WORK AND THE SACRIFICES THEY MAKE IN FULFILLING THEIR
+                                RESPONSIBILITIES.
+                            </p>
+
+                            <p class="resolution-text mt-4">
+                                WE EXTEND OUR FULL SUPPORT IN ACHIEVING THE DISTRICT PRESIDENT'S VISION — REACH •
+                                RESOLVE • RADIATE — TO STRENGTHEN AND PROMOTE LEOISM IN DISTRICT 3231 A2.
+                            </p>
+
+                            <p class="resolution-text mt-4">
+                                WITH THIS RESOLUTION, WE EXPRESS OUR GRATITUDE AND PLEDGE OUR COOPERATION IN MAKING THIS
+                                YEAR A REMARKABLE ONE FOR OUR DISTRICT.
+                            </p>
+
+                            <!-- Signature Block -->
+                            <div class="signature-block mt-5">
+                                <h4 class="signature-name">Leo Yeman Adep</h4>
+                                <p class="signature-title">Club President</p>
+                                <p class="signature-year">Leoistic Year 2024–25</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parchment-bottom"></div>
+                </div>
+            </div>
+            <a href="#module-8" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE 8: GALLERY -->
+        <section class="docket-slide" id="module-8">
+            <div class="slide-content text-center">
+                <h2 class="cyber-heading">> MEDIA_GALLERY</h2>
+                <p class="mt-4 text-dim">[Visual assets loading...]</p>
+            </div>
+        </section>
+
+    </main>
+    <script src="particles.js?v=2"></script>
+    <script src="main.js?v=4"></script>
+</body>
+
+</html>
