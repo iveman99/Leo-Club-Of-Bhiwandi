@@ -326,18 +326,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Remove zoom/pan interaction during intro
         world.controls().enableZoom = false;
 
-        // Conflict Zones Rings Configuration
-        const conflictZones = [
-            { lat: 31.5, lng: 34.8, maxR: 8, color: '#ff4b4b' }, // Middle East
-            { lat: 49.0, lng: 31.4, maxR: 10, color: '#ff4b4b' }  // Eastern Europe
+        // Global Volatility Configuration
+        const volatilityZones = [
+            { lat: 35.0, lng: 35.0, maxR: 12, color: '#ff4b4b' }, // Middle East / Mediterranean
+            { lat: 50.0, lng: 25.0, maxR: 15, color: '#ff4b4b' }, // Eastern Europe
+            { lat: 15.0, lng: 30.0, maxR: 10, color: '#ff8c00' }  // Symbolic instability
         ];
 
-        // Ring settings
-        world.ringsData(conflictZones)
+        // Pulsating abstract rings representing global shifts/volatility
+        world.ringsData(volatilityZones)
             .ringColor('color')
             .ringMaxRadius('maxR')
             .ringPropagationSpeed(3)
-            .ringRepeatPeriod(800);
+            .ringRepeatPeriod(600);
+
+        // Remove literal labels and arcs 
+        world.labelsData([]);
+        world.arcsData([]);
 
         // Sequence Elements
         const text1 = document.getElementById('hero-text-1');
@@ -360,10 +365,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let directionalLight = scene.children.find(o => o.type === 'DirectionalLight');
         let ambientLight = scene.children.find(o => o.type === 'AmbientLight');
 
-        // Step 1: Global View (0s - 4s)
-        showFadeText(text1, 500, 3500);
+        // Step 1: Global View (0s - 4.5s)
+        showFadeText(text1, 500, 4000);
 
-        // Step 2: India Focus (4s)
+        // Step 2: India Focus (4.5s)
         setTimeout(() => {
             world.pointOfView({ lat: 20.59, lng: 78.96, altitude: 1.2 }, 2500);
             if (directionalLight) {
@@ -375,21 +380,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 ambientLight.intensity = 1.0;
             }
             world.ringsData([]); // Remove conflict zones
-            showFadeText(text2, 1000, 3500); // Relative to 4s: appears at 5s, hides at 7.5s
-        }, 4000);
+            world.labelsData([]); // Remove conflict labels
+            world.arcsData([]); // Remove conflict missiles
+            showFadeText(text2, 1000, 4500); // Relative to 4.5s: appears at 5.5s, hides at 10.0s
+        }, 4500);
 
-        // Step 3: Bhiwandi Location (8s)
+        // Step 3: Bhiwandi Location (10s)
         setTimeout(() => {
             if (pin) pin.classList.add('visible');
-        }, 8000);
+        }, 10000);
 
-        // Step 4: Service Impact Waves (11s)
+        // Step 4: Service Impact Waves (11.5s)
         setTimeout(() => {
-            showFadeText(text3, 500, 7500); // appears 11.5s, hides 18.5s (stays through step 5)
+            showFadeText(text3, 500, 6000); // appears 12s, hides 18s (stays through step 5)
 
             // Add Service Waves
             const serviceWaves = [
-                { lat: 19.3, lng: 73.06, maxR: 12, color: '#d4a017' } // Bhiwandi coords
+                { lat: 19.07, lng: 72.87, maxR: 12, color: '#d4a017' } // Mumbai focus
             ];
 
             world.ringsData(serviceWaves)
@@ -397,34 +404,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 .ringMaxRadius('maxR')
                 .ringPropagationSpeed(2)
                 .ringRepeatPeriod(1000);
-        }, 11000);
+        }, 11500);
 
-        // Step 5: Service Network Map (14s)
+        // Step 5: Growth Network Map (14s)
         setTimeout(() => {
             const networkArcs = [
-                { startLat: 19.3, startLng: 73.06, endLat: 19.21, endLng: 72.97, color: '#2ac3ff' }, // Thane
-                { startLat: 19.3, startLng: 73.06, endLat: 19.65, endLng: 73.14, color: '#2ac3ff' }, // Wada
-                { startLat: 19.3, startLng: 73.06, endLat: 19.08, endLng: 72.91, color: '#2ac3ff' }  // Ghatkopar
+                { startLat: 19.07, startLng: 72.87, endLat: 28.70, endLng: 77.10, color: '#2ac3ff' }, // Mumbai -> Delhi (Tech Connect)
+                { startLat: 19.07, startLng: 72.87, endLat: 12.97, endLng: 77.59, color: '#16a34a' }, // Mumbai -> Bangalore (Growth)
+                { startLat: 19.07, startLng: 72.87, endLat: 23.02, endLng: 72.57, color: '#d4a017' }, // Mumbai -> Ahmedabad (Gold/Festive)
+                { startLat: 28.70, startLng: 77.10, endLat: 22.57, endLng: 88.36, color: '#d4a017' } // Delhi -> Kolkata
             ];
-            const networkNodes = [
-                { lat: 19.21, lng: 72.97, label: 'Thane', color: '#2ac3ff' },
-                { lat: 19.65, lng: 73.14, label: 'Wada', color: '#2ac3ff' },
-                { lat: 19.08, lng: 72.91, label: 'Ghatkopar', color: '#2ac3ff' }
+
+            // Abstract nodes representing thriving hubs, no explicit labels needed because the text conveys it.
+            const abstractNodes = [
+                { lat: 28.70, lng: 77.10, size: 0.8, color: '#2ac3ff' }, // Delhi
+                { lat: 12.97, lng: 77.59, size: 1.0, color: '#16a34a' }, // Bangalore
+                { lat: 23.02, lng: 72.57, size: 1.2, color: '#d4a017' }, // Ahmedabad
+                { lat: 22.57, lng: 88.36, size: 0.9, color: '#facc15' }  // Kolkata
             ];
 
             world.arcsData(networkArcs)
                 .arcColor('color')
-                .arcDashLength(0.4)
-                .arcDashGap(0.2)
+                .arcDashLength(0.6)
+                .arcDashGap(0.3)
                 .arcDashInitialGap(() => Math.random())
-                .arcDashAnimateTime(1500);
+                .arcDashAnimateTime(2000); // Slower, more elegant arcs
 
-            world.labelsData(networkNodes)
+            // Repurpose labelsData point rendering for abstract glowing hubs
+            world.labelsData(abstractNodes)
                 .labelLat('lat')
                 .labelLng('lng')
-                .labelText('label')
-                .labelSize(1.5)
-                .labelDotRadius(0.5)
+                .labelText(() => '') // Clear text, just the glowing dot
+                .labelDotRadius('size')
                 .labelColor('color')
                 .labelResolution(2);
         }, 14000);
@@ -435,16 +446,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (particleLogo) particleLogo.classList.add('visible');
         }, 18000);
 
-        // Step 7: Final Message (22s)
+        // Step 7: Final Message (20.5s)
         setTimeout(() => {
             if (particleLogo) particleLogo.classList.remove('visible');
-            world.ringsData([]); // Remove service waves
-            world.arcsData([]);  // Remove network lines
-            world.labelsData([]); // Remove network nodes
-            showFadeText(text4, 500, 4500); // appears 22.5s, hides 27s
-        }, 22000);
+            // Deliberately NOT removing the rings/arcs so they persist globally
+            showFadeText(text4, 500, 4500); // appears 21s, hides 25.5s
+        }, 20500);
 
-        // Step 8 & 9: Landing Page Reveal (27s)
+        // Step 8 & 9: Landing Page Reveal (25.5s)
         setTimeout(() => {
             if (glowOverlay) glowOverlay.classList.add('active'); // dim globe slightly
             if (finalState) finalState.classList.add('visible');
@@ -458,8 +467,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Do NOT re-enable zoom, let user scroll freely
             world.controls().enableZoom = false;
-            world.controls().autoRotate = false;
-        }, 27000);
+            // Keep the globe spinning continuously as a background!
+            world.controls().autoRotate = true;
+            world.controls().autoRotateSpeed = 0.5; // Slow down for gentle background spinning
+        }, 25500);
 
         // Window resize handling
         window.addEventListener('resize', () => {
