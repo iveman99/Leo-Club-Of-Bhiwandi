@@ -36,6 +36,7 @@
             <li><a href="#module-4">Service & Projects</a></li>
             <li><a href="#module-5">Impact</a></li>
             <li><a href="#module-6">Members</a></li>
+            <li><a href="#module-questionnaire">Questionnaire</a></li>
             <li><a href="#module-7">Resolution</a></li>
             <li><a href="#module-8">Gallery</a></li>
         </ul>
@@ -650,118 +651,24 @@
                     <p class="elegant-subtitle mt-2 neon-blue">Making a difference through service.</p>
                 </div>
 
-                <div class="projects-grid mt-4">
+                <div class="projects-dashboard mb-4 reveal delay-1">
+                    <div class="dashboard-stat"><span class="stat-number text-cyan">16</span><span class="stat-label">Activities</span></div>
+                    <div class="dashboard-stat"><span class="stat-number text-green">1,605</span><span class="stat-label">Beneficiaries</span></div>
+                    <div class="dashboard-stat"><span class="stat-number text-gold">₹3,713</span><span class="stat-label">Raised</span></div>
+                    <div class="dashboard-stat"><span class="stat-number" style="color: #ff4b4b;">₹77,013</span><span class="stat-label">Donated</span></div>
+                </div>
 
-                    <!-- Project 1 -->
-                    <article class="project-card reveal delay-1">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop"
-                                alt="Tree Plantation"
-                                onerror="this.src='leo logo.png'; this.style.opacity='0.2'; this.style.objectFit='contain';">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category border-green">Environment</span>
-                            <h3 class="project-title neon-gold mt-2">Tree Plantation Drive</h3>
-                            <div class="project-meta mt-3">
-                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> August 2024</span>
-                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 150
-                                    Beneficiaries</span>
-                            </div>
-                        </div>
-                    </article>
+                <!-- Category Filters -->
+                <div class="project-filters mb-4 reveal delay-2">
+                    <button class="project-filter-btn active" data-filter="all">All</button>
+                    <button class="project-filter-btn" data-filter="service">Service</button>
+                    <button class="project-filter-btn" data-filter="leadership">Leadership</button>
+                    <button class="project-filter-btn" data-filter="admin">Administration</button>
+                </div>
 
-                    <!-- Project 2 -->
-                    <article class="project-card reveal delay-2">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&h=400&fit=crop"
-                                alt="Blood Donation"
-                                onerror="this.src='leo logo.png'; this.style.opacity='0.2'; this.style.objectFit='contain';">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category border-red"
-                                style="color:#ef4444; border-color:#ef4444;">Health</span>
-                            <h3 class="project-title neon-gold mt-2">Blood Donation Camp</h3>
-                            <div class="project-meta mt-3">
-                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> September 2024</span>
-                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 200
-                                    Beneficiaries</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card reveal delay-3">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop"
-                                alt="Food Distribution"
-                                onerror="this.src='leo logo.png'; this.style.opacity='0.2'; this.style.objectFit='contain';">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category border-gold">Community Service</span>
-                            <h3 class="project-title neon-gold mt-2">Food Distribution Drive</h3>
-                            <div class="project-meta mt-3">
-                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> October 2024</span>
-                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 300
-                                    Beneficiaries</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 4 -->
-                    <article class="project-card reveal delay-1">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
-                                alt="Medical Check-up"
-                                onerror="this.src='leo logo.png'; this.style.opacity='0.2'; this.style.objectFit='contain';">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category border-red"
-                                style="color:#ef4444; border-color:#ef4444;">Health</span>
-                            <h3 class="project-title neon-gold mt-2">Medical Check-up Camp</h3>
-                            <div class="project-meta mt-3">
-                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> November 2024</span>
-                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 180
-                                    Beneficiaries</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 5 -->
-                    <article class="project-card reveal delay-2">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
-                                alt="Educational Support"
-                                onerror="this.src='leo logo.png'; this.style.opacity='0.2'; this.style.objectFit='contain';">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category border-blue">Education</span>
-                            <h3 class="project-title neon-gold mt-2">Educational Support Program</h3>
-                            <div class="project-meta mt-3">
-                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> December 2024</span>
-                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 120
-                                    Beneficiaries</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 6 -->
-                    <article class="project-card reveal delay-3">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1532622784013-41bbd93c11e6?w=600&h=400&fit=crop"
-                                alt="Clothes Donation"
-                                onerror="this.src='leo logo.png'; this.style.opacity='0.2'; this.style.objectFit='contain';">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category border-gold">Community Service</span>
-                            <h3 class="project-title neon-gold mt-2">Clothes Donation Drive</h3>
-                            <div class="project-meta mt-3">
-                                <span class="meta-item"><i class="fa-regular fa-calendar"></i> January 2025</span>
-                                <span class="meta-item border-left"><i class="fa-solid fa-users"></i> 250
-                                    Beneficiaries</span>
-                            </div>
-                        </div>
-                    </article>
-
+                <!-- Projects Container -->
+                <div class="projects-grid mt-4" id="projects-container">
+                    <!-- Dynamic Project Cards will be rendered here via JS -->
                 </div>
             </div>
             <a href="#module-5" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
@@ -1127,6 +1034,30 @@
                     </div>
                 </div>
             </div>
+            <a href="#module-questionnaire" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- MODULE QUESTIONNAIRE: Q&A -->
+        <section class="docket-slide" id="module-questionnaire">
+            <div class="slide-content full-width-content text-center">
+                <h2 class="cyber-heading">Questionnaire</h2>
+                <p class="elegant-subtitle mt-2 neon-blue">Vital Information & Strategic Review</p>
+                
+                <!-- Category Filters -->
+                <div class="qna-filters mt-4 reveal delay-1">
+                    <button class="qna-filter-btn active" data-filter="all">All</button>
+                    <button class="qna-filter-btn" data-filter="treasury">Treasury</button>
+                    <button class="qna-filter-btn" data-filter="secretarial">Secretarial</button>
+                    <button class="qna-filter-btn" data-filter="membership">Membership</button>
+                    <button class="qna-filter-btn" data-filter="leadership">Leadership</button>
+                    <button class="qna-filter-btn" data-filter="service">Service</button>
+                </div>
+
+                <!-- QnA Container -->
+                <div class="qna-container mt-5" id="qna-container">
+                    <!-- Dynamic QnAs will be structured here via JS -->
+                </div>
+            </div>
             <a href="#module-7" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
         </section>
 
@@ -1212,8 +1143,42 @@
         </section>
 
     </main>
-    <script src="particles.js?v=2"></script>
-    <script src="main.js?v=4"></script>
+    <!-- CYBER MODAL (PROJECT DETAILS) -->
+    <div id="cyberModal" class="cyber-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content-wrapper">
+            <button id="closeModal" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImg" src="" alt="Project Image">
+                    <div class="modal-glitch-overlay"></div>
+                </div>
+                <div class="modal-info-container">
+                    <span id="modalCategory" class="project-category border-cyan mb-2"></span>
+                    <h2 id="modalTitle" class="neon-cyan mb-3"></h2>
+                    <div class="modal-meta-grid mb-4">
+                        <div class="meta-box">
+                            <i class="fa-regular fa-calendar text-gold"></i>
+                            <span id="modalDate"></span>
+                        </div>
+                        <div class="meta-box">
+                            <i class="fa-solid fa-users text-blue"></i>
+                            <span id="modalBeneficiaries"></span>
+                        </div>
+                    </div>
+                    <div class="modal-description-wrapper">
+                        <p id="modalDescription" class="text-main" style="line-height: 1.8; font-size: 1rem;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/globe.gl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="particles.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
