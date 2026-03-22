@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (filter !== "all") {
                 filteredData = qnaData.filter(item => item.category === filter);
             }
-            
+
             filteredData.forEach((item, index) => {
                 // Determine icon based on category
                 let icon = "fa-circle-info";
@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === MODULE 4: SERVICE & PROJECTS (DYNAMIC DATA & FILTERING) ===
-    const projectsData = [
+        const projectsData = [
         {
             title: "Gaushala Visit",
             date: "13-07-2025",
@@ -622,6 +622,51 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+July"
         },
         {
+            title: "Sai Baba Palki Seva",
+            date: "26-07-2025",
+            category: "service",
+            displayCategory: "Pilgrim Service",
+            beneficiaries: "200",
+            description: "A spiritually driven activity focused on selfless service at Datta Mandir, distributing Prasad and serving 200 pilgrims.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Palki+Seva"
+        },
+        {
+            title: "Zone Chairperson Visit & Canva Workshop",
+            date: "27-07-2025",
+            category: "leadership",
+            displayCategory: "Workshop / Interaction",
+            beneficiaries: "0",
+            description: "Members gained valuable insights from Zone Chairperson Leo Rahul Dudham and enhanced their creative skills through a hands-on Canva workshop.",
+            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=Canva+Workshop"
+        },
+        {
+            title: "Zone 3 & 4 Joint Orientation & Fellowship",
+            date: "10-08-2025",
+            category: "leadership",
+            displayCategory: "Fellowship",
+            beneficiaries: "0",
+            description: "A knowledge-driven event at The Next School aimed at strengthening leadership, networking, and understanding of Leoism.",
+            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=Joint+Orientation"
+        },
+        {
+            title: "District Orientation – Leo District 3231 A2",
+            date: "10-08-2025",
+            category: "leadership",
+            displayCategory: "Orientation",
+            beneficiaries: "0",
+            description: "A district-level leadership initiative focused on preparing Leos for the year through structured sessions and guidance from experienced leaders.",
+            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=District+Orientation"
+        },
+        {
+            title: "LEOS Go Green – Mega Tree Plantation Drive",
+            date: "17-08-2025",
+            category: "service",
+            displayCategory: "Environment",
+            beneficiaries: "125",
+            description: "An environmental initiative focused on sustainability. We planted 125 saplings & 25 herbal plants at Dudhni Village. Event Chairperson: Leo Srikanth Yelle.",
+            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop"
+        },
+        {
             title: "August BOD Meeting",
             date: "24-08-2025",
             category: "admin",
@@ -631,13 +676,22 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+August"
         },
         {
-            title: "Mega Tree Plantation Drive",
-            date: "17-08-2025",
+            title: "Project Drishti & Smile – Medical Camp",
+            date: "19-09-2025",
             category: "service",
-            displayCategory: "Environment",
-            beneficiaries: "125",
-            description: "Planted 125 saplings & 25 herbal plants at Dudhni Village with Lions Club & partners.",
-            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop"
+            displayCategory: "Health / Vision",
+            beneficiaries: "200",
+            description: "A healthcare initiative providing dental, eye, and general health screenings to improve student well-being at Dandekar School.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Drishti+Smile"
+        },
+        {
+            title: "OSW Activity – Donation Drive & Health Camp",
+            date: "20-09-2025",
+            category: "service",
+            displayCategory: "Health / Hunger",
+            beneficiaries: "0",
+            description: "Conducted under October Service Week, focusing on supporting underprivileged communities at Balika Ashram through grocery donations and health check-ups.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=OSW+Donation"
         },
         {
             title: "September BOD CUM GENERAL MEETING",
@@ -817,7 +871,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filteredProjects.forEach((proj, index) => {
                 let borderClass = "border-cyan";
                 let titleColor = "neon-cyan";
-                
+
                 if (proj.category === "leadership") {
                     borderClass = "border-gold";
                     titleColor = "neon-gold";
@@ -825,7 +879,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     borderClass = "border-blue";
                     titleColor = "neon-blue";
                 }
-                
+
                 // Truncate description for the card preview
                 let shortDesc = proj.description.length > 80 ? proj.description.substring(0, 80) + "..." : proj.description;
 
@@ -833,7 +887,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 article.className = "project-card reveal active";
                 article.style.transitionDelay = `${index * 0.05}s`;
                 article.style.cursor = "pointer";
-                
+
                 article.innerHTML = `
                     <div class="project-img-wrapper">
                         <img src="${proj.image}" alt="${proj.title}" onerror="this.src='leo logo.png'; this.style.opacity='0.2';">
@@ -849,7 +903,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 `;
-                
+
                 // Add click listener to open the interactive cyber modal
                 article.addEventListener("click", () => {
                     openProjectModal(proj, borderClass, titleColor);
@@ -870,42 +924,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderProjects(btn.getAttribute("data-filter"));
             });
         });
-        
+
         // Modal Logic
         const cyberModal = document.getElementById("cyberModal");
         const closeModalBtn = document.getElementById("closeModal");
         const modalBackdrop = document.querySelector(".modal-backdrop");
-        
+
         const openProjectModal = (proj, borderClass, titleColor) => {
             if (!cyberModal) return;
-            
+
             // Populate Data
             document.getElementById("modalImg").src = proj.image;
             document.getElementById("modalImg").alt = proj.title;
-            
+
             const categoryEl = document.getElementById("modalCategory");
             categoryEl.className = `project-category ${borderClass} mb-2`;
             categoryEl.textContent = proj.displayCategory;
-            
+
             const titleEl = document.getElementById("modalTitle");
             titleEl.className = `${titleColor} mb-3`;
             titleEl.textContent = proj.title;
-            
+
             document.getElementById("modalDate").textContent = proj.date;
             document.getElementById("modalBeneficiaries").textContent = `${proj.beneficiaries} Benefited`;
             document.getElementById("modalDescription").textContent = proj.description;
-            
+
             // Show modal
             cyberModal.classList.add("active");
             document.body.style.overflow = "hidden"; // Prevent background scrolling
         };
-        
+
         const closeProjectModal = () => {
             if (!cyberModal) return;
             cyberModal.classList.remove("active");
             document.body.style.overflow = "auto";
         };
-        
+
         if (closeModalBtn) closeModalBtn.addEventListener("click", closeProjectModal);
         if (modalBackdrop) modalBackdrop.addEventListener("click", closeProjectModal);
     }
