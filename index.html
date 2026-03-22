@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCOB | AI-Docket 24-25</title>
+    <title>LCOB | AI-Docket 25-26</title>
     <!-- Fonts for AI Theme -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=9">
 
     <!-- Globe Dependencies (Three.js is bundled with globe.gl standalone) -->
     <script src="https://unpkg.com/globe.gl"></script>
@@ -23,7 +24,7 @@
     <nav class="hud-nav">
         <div class="hud-brand">
             <div class="brand-title">LEO CLUB OF BHIWANDI</div>
-            <div class="brand-subtitle">Digital Docket 2024–25</div>
+            <div class="brand-subtitle">Digital Docket 2025–26</div>
         </div>
         <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
         <ul class="hud-menu" id="navMenu">
@@ -95,7 +96,7 @@
                     <!-- Welcome Panel -->
                     <div class="elegant-panel mt-5 hero-welcome-panel border-gold-animated">
                         <h3 class="text-gold tracking-widest text-sm elegant-heading">District President Official Visit
-                            2024–25</h3>
+                            2025–26</h3>
                         <p class="mt-3 text-sm text-dim">We warmly welcome</p>
                         <h2 class="text-blue my-2 elegant-name"
                             style="font-family: var(--font-heading); color: #fff; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);">
@@ -179,103 +180,87 @@
 
         <!-- MODULE PRESIDENT: PRESIDENT'S DESK -->
         <section class="docket-slide" id="module-president">
+            <!-- Decorative Section Background -->
+            <div class="cyber-section-bg"></div>
+            
             <div class="slide-content full-width-content">
                 <div class="text-center mb-5 reveal">
                     <div class="president-emblem mb-3">
-                        <img src="leo logo.png" alt="Leo Emblem"
-                            style="width: 40px; height: 40px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255,184,0,0.5));">
+                        <i class="fa-solid fa-crown" style="font-size: 2.2rem; color: var(--neon-gold); filter: drop-shadow(0 0 15px rgba(255,184,0,0.6));"></i>
                     </div>
                     <h2 class="cyber-heading">President's Desk</h2>
+                    <p class="elegant-subtitle mt-2 text-gold tracking-widest">Visionary Leadership | 2025-26</p>
                 </div>
 
-                <div class="president-container mt-4">
-                    <!-- Left Column: Parallax Photo -->
-                    <div class="president-photo-col reveal reveal-left">
-                        <div class="president-frame">
-                            <div class="parallax-photo-wrapper">
-                                <img src="president.png" alt="Leo Yeman Adep" class="parallax-photo"
-                                    onerror="this.src='leo logo.png'; this.style.opacity='0.5'; this.style.objectFit='contain';">
+                <div class="cyber-president-grid mt-4">
+                    <!-- Image Card with Creative Decorations -->
+                    <div class="cyber-president-image-col reveal reveal-left">
+                        <div class="president-cyber-frame-wrapper">
+                            <!-- Animated Glow Rings -->
+                            <div class="glow-ring gr-1"></div>
+                            <div class="glow-ring gr-2"></div>
+                            
+                            <div class="president-cyber-frame">
+                                <div class="scanline-overlay"></div>
+                                <img src="./Photos/yeman.jpg" alt="Leo Yeman Adep" class="president-hero-img"
+                                    onerror="this.src='./Photos/yeman-president.jpg'; this.onerror=function(){this.src='leo logo.png'; this.style.opacity='0.5';};">
+                                
+                                <div class="cyber-badge">
+                                    <span class="badge-title text-gold">CLUB PRESIDENT</span>
+                                    <span class="badge-year">2025–26</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="president-label text-center mt-4">
-                            <h3 class="signature-name">Leo Yeman Adep</h3>
-                            <p class="signature-title">Club President</p>
-                            <p class="signature-year">Leoistic Year 2024–25</p>
+
+                            <!-- Logo Showcase Shelf -->
+                            <div class="president-logos-shelf mt-5 reveal delay-2">
+                                <div class="shelf-label">OFFICIAL AFFILIATIONS</div>
+                                <div class="shelf-logos">
+                                    <div class="hero-logo-slice sl-1" title="Lions International"></div>
+                                    <div class="hero-logo-slice sl-2" title="LEO"></div>
+                                    <div class="hero-logo-slice sl-4" title="Leo District 3231 A2"></div>
+                                    <div class="hero-logo-slice sl-3" title="Leo Club of Bhiwandi"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Right Column: Parchment Message -->
-                    <div class="president-text-col reveal reveal-right">
-                        <div class="parchment-card">
-                            <h3 class="message-title mb-4">President’s Note</h3>
+                    <!-- Content Card with Corner Accents -->
+                    <div class="cyber-president-text-col reveal reveal-right">
+                        <div class="cyber-card-glass decorated">
+                            <!-- Corner Accents -->
+                            <div class="corner-accent top-left"></div>
+                            <div class="corner-accent top-right"></div>
+                            <div class="corner-accent bottom-left"></div>
+                            <div class="corner-accent bottom-right"></div>
 
-                            <p class="resolution-text">
-                                It is a privilege and a moment of great pride to serve as the President of the Leo Club
-                                of Bhiwandi. Leading this incredible group of passionate young leaders has been a
-                                journey filled with learning, service, and a shared commitment to making a meaningful
-                                difference in the lives of others.
-                            </p>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h3 class="neon-cyan mb-4" style="font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 1px;">A Message of Service</h3>
+                            
+                            <div class="cyber-text-content">
+                                <p>
+                                    It is a privilege and a moment of great pride to serve as the President of the Leo Club
+                                    of Bhiwandi. Leading this incredible group of passionate young leaders has been a
+                                    journey filled with learning, service, and a shared commitment to making a meaningful
+                                    difference in the lives of others.
+                                </p>
 
-                            <p class="resolution-text mt-3">
-                                This year, our guiding belief has been simple yet powerful: to be the hands that help
-                                others rise and stand stronger. Service, for us, is not just about extending help; it is
-                                about empowering individuals, restoring hope, and reminding our community that they are
-                                never alone. Every initiative we undertook was driven by compassion, unity, and the
-                                desire to uplift those around us.
-                            </p>
+                                <p>
+                                    This year, our guiding belief has been simple yet powerful: <strong class="text-cyan">To be the hands that help others rise.</strong> Service, for us, is not just about extending help; it is about empowering individuals, restoring hope, and reminding our community that they are never alone.
+                                </p>
 
-                            <p class="resolution-text mt-3">
-                                The Leo Club of Bhiwandi is more than an organization; it is a family bound by the
-                                values of Leadership, Experience, and Opportunity. Each project we execute, every effort
-                                we make, and every smile we bring reflects the collective dedication of our members who
-                                believe in serving with sincerity and heart.
-                            </p>
+                                <p>
+                                    As we welcome our esteemed District President, we reflect on our journey with pride and look forward to receiving valuable guidance. Such moments remind us that we are part of a greater movement of young leaders committed to building a compassionate world.
+                                </p>
 
-                            <p class="resolution-text mt-3">
-                                The visit of our esteemed District President is a proud and memorable occasion for our
-                                club. It is an opportunity for us to reflect on our journey, present our efforts with
-                                pride, and receive valuable guidance that will inspire us to continue striving for
-                                excellence. Such moments remind us that we are part of a greater movement of young
-                                leaders committed to building a better and more compassionate world.
-                            </p>
+                                <p>
+                                    When our hands unite for service, even the smallest efforts can create the greatest impact. Let us continue to lead with compassion and serve with humility.
+                                </p>
+                            </div>
 
-                            <p class="resolution-text mt-3">
-                                I extend my heartfelt gratitude to every Leo member, our guiding Lions, advisors, and
-                                supporters whose encouragement and dedication have been the backbone of our success.
-                                Your unwavering belief in service continues to inspire our club to grow stronger with
-                                every step we take.
-                            </p>
-
-                            <p class="resolution-text mt-3">
-                                As we move forward, let us continue to lead with compassion, serve with humility, and
-                                stand together in our mission to uplift those in need. When our hands unite for service,
-                                even the smallest efforts can create the greatest impact.
-                            </p>
-
-                            <blockquote class="president-quote mt-4 mb-2">
-                                “The best way to find yourself is to lose yourself in the service of others.”
-                            </blockquote>
-
-                            <!-- Signature Animation -->
-                            <div class="signature-anim-container mt-5">
-                                <svg class="animated-signature" viewBox="0 0 500 100"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <!-- A cursive representation of "Leo Yeman Adep" -->
-                                    <path class="signature-path" d="M30 60 C 20 20, 50 10, 60 50 C 70 80, 100 80, 120 50 
-                                             M100 50 C 120 20, 140 30, 150 50 C 160 70, 180 70, 200 50
-                                             M180 50 C 200 10, 220 10, 240 50 C 260 90, 280 90, 290 50
-                                             M280 50 C 300 20, 320 20, 340 50 C 360 80, 380 80, 400 50
-                                             M390 50 C 410 20, 430 30, 440 50 C 450 70, 470 70, 480 50" />
-                                </svg>
-
-                                <div class="signature-footer mt-2">
-                                    <p class="resolution-text mb-1"
-                                        style="font-family: var(--font-heading); color: #8b6508; font-size: 0.9rem;">
-                                        Yours in Leoism,</p>
-                                    <h4 class="signature-name">Leo Yeman Adep</h4>
-                                    <p class="signature-title">President</p>
-                                    <p class="signature-year mt-1">Leo Club of Bhiwandi</p>
-                                </div>
+                            <div class="cyber-signature-block mt-4">
+                                <div class="signature-line"></div>
+                                <h4 class="neon-gold signature-name" style="font-size: 1.6rem;">Leo Yeman Adep</h4>
+                                <p class="text-dim text-sm italic">Yours in Leoism</p>
                             </div>
                         </div>
                     </div>
@@ -288,7 +273,7 @@
         <section class="docket-slide" id="module-3">
             <div class="slide-content full-width-content">
                 <div class="text-center mb-5 reveal">
-                    <h2 class="cyber-heading">Executive Council 2024–25</h2>
+                    <h2 class="cyber-heading">Executive Council 2025–26</h2>
                     <p class="elegant-subtitle mt-2 neon-blue">Leadership through Service</p>
                 </div>
 
@@ -651,10 +636,14 @@
                 </div>
 
                 <div class="projects-dashboard mb-4 reveal delay-1">
-                    <div class="dashboard-stat"><span class="stat-number text-cyan">28</span><span class="stat-label">Activities</span></div>
-                    <div class="dashboard-stat"><span class="stat-number text-green">2,004</span><span class="stat-label">Beneficiaries</span></div>
-                    <div class="dashboard-stat"><span class="stat-number text-gold">₹3,713</span><span class="stat-label">Raised</span></div>
-                    <div class="dashboard-stat"><span class="stat-number" style="color: #ff4b4b;">₹77,013</span><span class="stat-label">Donated</span></div>
+                    <div class="dashboard-stat"><span class="stat-number text-cyan">28</span><span
+                            class="stat-label">Activities</span></div>
+                    <div class="dashboard-stat"><span class="stat-number text-green">2,004</span><span
+                            class="stat-label">Beneficiaries</span></div>
+                    <div class="dashboard-stat"><span class="stat-number text-gold">₹3,713</span><span
+                            class="stat-label">Raised</span></div>
+                    <div class="dashboard-stat"><span class="stat-number" style="color: #ff4b4b;">₹77,013</span><span
+                            class="stat-label">Donated</span></div>
                 </div>
 
                 <!-- Category Filters -->
@@ -1041,7 +1030,7 @@
             <div class="slide-content full-width-content text-center">
                 <h2 class="cyber-heading">Questionnaire</h2>
                 <p class="elegant-subtitle mt-2 neon-blue">Vital Information & Strategic Review</p>
-                
+
                 <!-- Category Filters -->
                 <div class="qna-filters mt-4 reveal delay-1">
                     <button class="qna-filter-btn active" data-filter="all">All</button>

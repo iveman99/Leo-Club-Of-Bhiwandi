@@ -2765,3 +2765,311 @@ h3,
     padding: 20px;
   }
 }
+
+/* CYBER PRESIDENT DESK REDESIGN */
+.cyber-president-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: stretch;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    .cyber-president-grid {
+        grid-template-columns: 4fr 6fr; /* 40% image, 60% text */
+        gap: 60px;
+    }
+}
+
+.cyber-president-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.president-cyber-frame {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(10, 16, 32, 0.8);
+    box-shadow: 0 0 20px rgba(42, 195, 255, 0.2);
+    border: 1px solid rgba(42, 195, 255, 0.3);
+    padding: 10px;
+    isolation: isolate;
+}
+
+.president-cyber-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(42,195,255,0.1), transparent);
+    z-index: -1;
+}
+
+.president-hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: contrast(1.1) drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+.president-cyber-frame:hover .president-hero-img {
+    transform: scale(1.02);
+    filter: contrast(1.1) brightness(1.1);
+}
+
+.cyber-badge {
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    background: rgba(6, 11, 24, 0.95);
+    border: 1px solid var(--neon-gold);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.4);
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    transform: translateY(-50%);
+}
+
+.badge-title {
+    color: var(--neon-gold);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.badge-year {
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    margin-top: 2px;
+}
+
+.cyber-card-glass {
+    position: relative;
+    background: rgba(10, 16, 32, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(42, 195, 255, 0.15);
+    border-radius: 12px;
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(42,195,255,0.05);
+}
+
+.cyber-card-glass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    opacity: 0.5;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: rgba(42, 195, 255, 0.1);
+    z-index: 0;
+}
+
+.cyber-text-content {
+    position: relative;
+    z-index: 1;
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+    text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+
+.cyber-text-content p {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid rgba(42, 195, 255, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.cyber-text-content p:hover {
+    border-left: 2px solid var(--neon-cyan);
+    color: #fff;
+}
+
+.cyber-signature-block {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255, 184, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cyber-signature-block .signature-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* CREATIVE DECORATIONS FOR PRESIDENT SECTION */
+.president-cyber-frame-wrapper {
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.glow-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(42, 195, 255, 0.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gr-1 {
+    width: 450px;
+    height: 450px;
+    animation: spin 15s linear infinite;
+    border-top: 1px solid rgba(42, 195, 255, 0.4);
+}
+
+.gr-2 {
+    width: 550px;
+    height: 550px;
+    animation: spin 25s linear infinite reverse;
+    border-bottom: 1px solid rgba(255, 184, 0, 0.4);
+}
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.scanline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(42, 195, 255, 0.03) 3px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 2;
+    animation: scanline-move 8s linear infinite;
+}
+
+@keyframes scanline-move {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.president-logos-shelf {
+    background: rgba(10, 16, 32, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(42, 195, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-bottom: 2px solid var(--neon-cyan);
+}
+
+.shelf-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+}
+
+.shelf-logos {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.shelf-logos .hero-logo-slice {
+    width: 45px;
+    height: 45px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    transition: all 0.3s ease;
+}
+
+.shelf-logos .hero-logo-slice:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+/* Corner Accents */
+.cyber-card-glass.decorated {
+    position: relative;
+    overflow: hidden;
+}
+
+.corner-accent {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--neon-cyan);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.top-left { top: 0; left: 0; border-right: none; border-bottom: none; }
+.top-right { top: 0; right: 0; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 0; left: 0; border-right: none; border-top: none; }
+.bottom-right { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+.cyber-card-glass.decorated:hover .corner-accent {
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    border-color: var(--neon-gold);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.signature-line {
+    width: 60px;
+    height: 2px;
+    background: var(--neon-gold);
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px var(--neon-gold);
+}
+
+.cyber-section-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(42, 195, 255, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
