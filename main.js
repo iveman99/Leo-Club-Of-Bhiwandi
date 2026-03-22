@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayCategory: "Fellowship",
             beneficiaries: "0",
             description: "A knowledge-driven event at The Next School aimed at strengthening leadership, networking, and understanding of Leoism.",
-            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=Joint+Orientation"
+            image: "./photos/joint-orientation.jpg"
         },
         {
             title: "District Orientation – Leo District 3231 A2",

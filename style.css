@@ -149,7 +149,7 @@ h3,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 2vw; /* Reduced from 40px to give more room */
   z-index: 1000;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
@@ -168,18 +168,18 @@ h3,
 
 .brand-title {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly reduced to save space */
   font-weight: 700;
   color: var(--text-main);
-  letter-spacing: 1.5px;
+  letter-spacing: 1px; /* Reduced tracking */
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .brand-subtitle {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--neon-gold);
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-top: 2px;
 }
@@ -187,16 +187,16 @@ h3,
 .hud-menu {
   list-style: none;
   display: flex;
-  gap: 15px;
-  /* Reduced from 30px to prevent wrapping of 'Service & Projects' */
+  justify-content: flex-end;
+  gap: 1vw; /* Responsive gap */
 }
 
 .hud-menu a {
   color: var(--text-dim);
   text-decoration: none;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem; /* Scaled down slightly */
+  letter-spacing: 0.5px;
   white-space: nowrap;
   transition: color 0.3s, text-shadow 0.3s;
   position: relative;
@@ -213,7 +213,8 @@ h3,
   width: 0;
   background-color: var(--neon-gold);
   box-shadow: 0 0 8px var(--neon-gold);
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease;
+  opacity: 0; /* Hides the glowing dot when inactive */
 }
 
 .hud-menu a:hover,
@@ -226,6 +227,7 @@ h3,
 .hud-menu a:hover::after,
 .hud-menu a.active::after {
   width: 100%;
+  opacity: 1; /* Shows the full line */
 }
 
 .nav-toggle {
