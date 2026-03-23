@@ -237,11 +237,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Remove zoom/pan interaction during intro
         world.controls().enableZoom = false;
 
-        // Global Volatility Configuration
+        // Global Volatility Configuration (More Crazy Graphics)
         const volatilityZones = [
             { lat: 35.0, lng: 35.0, maxR: 12, color: '#ff4b4b' }, // Middle East / Mediterranean
             { lat: 50.0, lng: 25.0, maxR: 15, color: '#ff4b4b' }, // Eastern Europe
-            { lat: 15.0, lng: 30.0, maxR: 10, color: '#ff8c00' }  // Symbolic instability
+            { lat: 15.0, lng: 30.0, maxR: 10, color: '#ff4b4b' }, // Symbolic instability
+            { lat: 45.0, lng: -100.0, maxR: 18, color: '#ff4b4b' }, // North America Conflict
+            { lat: -10.0, lng: -60.0, maxR: 14, color: '#ff4b4b' }, // South America Conflict
+            { lat: 35.0, lng: 105.0, maxR: 16, color: '#ff4b4b' } // East Asia Conflict
         ];
 
         // Pulsating abstract rings representing global shifts/volatility
@@ -290,7 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ambientLight.color.setHex(0x2ac3ff); // Neon blue
                 ambientLight.intensity = 1.0;
             }
-            world.ringsData([]); // Remove conflict zones
+            // Keep global conflict active, introduce festive Peace/Growth rings over India
+            const indiaFestiveZones = [
+                { lat: 28.70, lng: 77.10, maxR: 6, color: '#16a34a' }, // Delhi Green Growth
+                { lat: 19.07, lng: 72.87, maxR: 8, color: '#d4a017' }, // Mumbai Gold Peace
+                { lat: 12.97, lng: 77.59, maxR: 7, color: '#ffffff' }, // Bangalore Bright Core
+                { lat: 22.57, lng: 88.36, maxR: 6, color: '#2ac3ff' }  // Kolkata Vibrant Blue
+            ];
+            world.ringsData([...volatilityZones, ...indiaFestiveZones]); // Keep conflict active!
             world.labelsData([]); // Remove conflict labels
             world.arcsData([]); // Remove conflict missiles
             showFadeText(text2, 1000, 4500); // Relative to 4.5s: appears at 5.5s, hides at 10.0s
@@ -305,12 +315,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             showFadeText(text3, 500, 6000); // appears 12s, hides 18s (stays through step 5)
 
-            // Add Service Waves
+            // Add Service Waves (Keep global volatility, boost local impact)
             const serviceWaves = [
-                { lat: 19.07, lng: 72.87, maxR: 12, color: '#d4a017' } // Mumbai focus
+                { lat: 19.07, lng: 72.87, maxR: 15, color: '#d4a017' }, // Mumbai focus strong
+                { lat: 23.02, lng: 72.57, maxR: 10, color: '#16a34a' }  // Secondary growth node
             ];
 
-            world.ringsData(serviceWaves)
+            world.ringsData([...volatilityZones, ...serviceWaves])
                 .ringColor('color')
                 .ringMaxRadius('maxR')
                 .ringPropagationSpeed(2)
@@ -396,6 +407,25 @@ document.addEventListener('DOMContentLoaded', () => {
             world.width(globeViz.clientWidth);
             world.height(globeViz.clientHeight);
         }
+    }
+
+    // === SITE-WIDE CRAZY GRAPHICS TSPARTICLES BACKGROUND ===
+    if (typeof tsParticles !== 'undefined') {
+        tsParticles.load("particles-overlay", {
+            background: { color: { value: "transparent" } },
+            fpsLimit: 60,
+            interactivity: { events: { onHover: { enable: true, mode: "repulse" }, resize: true }, modes: { repulse: { distance: 100, duration: 0.4 } } },
+            particles: {
+                color: { value: ["#ff4b4b", "#10b981", "#d4a017", "#2ac3ff"] },
+                links: { color: "random", distance: 150, enable: true, opacity: 0.3, width: 2 },
+                move: { direction: "top", enable: true, outModes: { default: "out" }, random: true, speed: 2.5, straight: false },
+                number: { density: { enable: true, area: 800 }, value: 150 }, // High density for crazy visuals
+                opacity: { value: { min: 0.1, max: 0.7 } },
+                shape: { type: ["circle", "triangle", "edge"] },
+                size: { value: { min: 1, max: 5 } }
+            },
+            detectRetina: true
+        });
     }
 
     // === MODULE QUESTIONNAIRE: DYNAMIC DATA & FILTERING ===
