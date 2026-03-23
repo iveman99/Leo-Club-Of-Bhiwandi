@@ -964,4 +964,46 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalBackdrop) modalBackdrop.addEventListener("click", closeProjectModal);
     }
 
+    // === MODULE LEADERSHIP: DYNAMIC MARQUEE RENDERING ===
+    const renderLeadershipMarquees = () => {
+        const coreTrack = document.getElementById('core-marquee-track');
+        const leadsTrack = document.getElementById('leads-marquee-track');
+
+        if (!coreTrack || !leadsTrack || typeof LEADERSHIP_DATA === 'undefined') return;
+
+        const createCard = (member) => {
+            const card = document.createElement('div');
+            card.className = `member-card ${member.elite ? 'elite' : ''}`;
+            
+            // Check if photo exists and is not empty
+            const hasPhoto = member.photo && member.photo.trim() !== "";
+            const photoContent = hasPhoto 
+                ? `<img src="${member.photo}" alt="${member.name}" 
+                    onerror="console.error('Failed to load image:', '${member.photo}'); this.style.display='none'; this.parentElement.querySelector('.photo-placeholder').style.display='flex';">
+                   <div class="photo-placeholder" style="display:none;"><i class="fa-solid fa-user"></i></div>`
+                : `<div class="photo-placeholder"><i class="fa-solid fa-user"></i></div>`;
+
+            card.innerHTML = `
+                <div class="card-hud-decor top-left"></div>
+                <div class="member-photo">${photoContent}</div>
+                <div class="member-info">
+                    <h4>${member.name}</h4>
+                    <p>${member.role}</p>
+                </div>
+            `;
+            return card;
+        };
+
+        // Render Core Executives
+        LEADERSHIP_DATA.coreExecutives.forEach(m => coreTrack.appendChild(createCard(m)));
+        // Duplicate for seamless loop
+        LEADERSHIP_DATA.coreExecutives.forEach(m => coreTrack.appendChild(createCard(m)));
+
+        // Render Team Leads
+        LEADERSHIP_DATA.teamLeads.forEach(m => leadsTrack.appendChild(createCard(m)));
+        // Duplicate for seamless loop
+        LEADERSHIP_DATA.teamLeads.forEach(m => leadsTrack.appendChild(createCard(m)));
+    };
+
+    renderLeadershipMarquees();
 });
