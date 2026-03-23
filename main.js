@@ -323,10 +323,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function startCinematicSequence() {
-        // Step 1: Global View (0s - 4.5s)
-        showFadeText(text1, 500, 4000);
+        // Step 1: Global View (0s - 7.5s)
+        showFadeText(text1, 500, 7000);
 
-        // Step 2: India Focus (4.5s)
+        // Step 2: India Focus (7.5s)
         setTimeout(() => {
             document.body.classList.remove('war-zone'); // RESTORE PEACE
             
@@ -369,17 +369,17 @@ document.addEventListener('DOMContentLoaded', () => {
             world.ringsData([...volatilityZones, ...indiaFestiveZones]); // Keep conflict active!
             world.labelsData([]); // Keep conflict labels empty
             // Deliberately letting conflict arcs (missiles) continue running in background
-            showFadeText(text2, 1000, 4500); // Relative to 4.5s: appears at 5.5s, hides at 10.0s
-        }, 4500);
+            showFadeText(text2, 1000, 4500); // Relative to 7.5s: appears at 8.5s, hides at 13.0s
+        }, 7500);
 
-        // Step 3: Bhiwandi Location (10s)
+        // Step 3: Bhiwandi Location (13s)
         setTimeout(() => {
             if (pin) pin.classList.add('visible');
-        }, 10000);
+        }, 13000);
 
-        // Step 4: Service Impact Waves (11.5s)
+        // Step 4: Service Impact Waves (14.5s)
         setTimeout(() => {
-            showFadeText(text3, 500, 6000); // appears 12s, hides 18s (stays through step 5)
+            showFadeText(text3, 500, 6000); // appears 15s, hides 21s (stays through step 5)
 
             // Add Service Waves (Keep global volatility, boost local impact)
             const serviceWaves = [
@@ -392,9 +392,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 .ringMaxRadius('maxR')
                 .ringPropagationSpeed(2)
                 .ringRepeatPeriod(1000);
-        }, 11500);
+        }, 14500);
 
-        // Step 5: Growth Network Map (14s)
+        // Step 5: Growth Network Map (17s)
         setTimeout(() => {
             const networkArcs = [
                 { startLat: 19.07, startLng: 72.87, endLat: 28.70, endLng: 77.10, color: '#2ac3ff' }, // Mumbai -> Delhi (Tech Connect)
@@ -426,22 +426,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 .labelDotRadius('size')
                 .labelColor('color')
                 .labelResolution(2);
-        }, 14000);
+        }, 17000);
 
-        // Step 6: Particle Leo Logo (18s)
+        // Step 6: Particle Leo Logo (21s)
         setTimeout(() => {
             if (pin) pin.classList.remove('visible'); // hide pin
             if (particleLogo) particleLogo.classList.add('visible');
-        }, 18000);
+        }, 21000);
 
-        // Step 7: Final Message (20.5s)
+        // Step 7: Final Message (23.5s)
         setTimeout(() => {
             if (particleLogo) particleLogo.classList.remove('visible');
             // Deliberately NOT removing the rings/arcs so they persist globally
-            showFadeText(text4, 500, 4500); // appears 21s, hides 25.5s
-        }, 20500);
+            showFadeText(text4, 500, 4500); // appears 24s, hides 28.5s
+        }, 23500);
 
-        // Step 8 & 9: Landing Page Reveal (25.5s)
+        // Step 8 & 9: Landing Page Reveal (28.5s)
         setTimeout(() => {
             if (glowOverlay) glowOverlay.classList.add('active'); // dim globe slightly
             if (finalState) finalState.classList.add('visible');
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Keep the globe spinning continuously as a background!
             world.controls().autoRotate = true;
             world.controls().autoRotateSpeed = 0.5; // Slow down for gentle background spinning
-        }, 25500);
+        }, 28500);
         } // End startCinematicSequence()
 
         // Window resize handling
