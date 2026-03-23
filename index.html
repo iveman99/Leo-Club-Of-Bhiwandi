@@ -22,6 +22,18 @@
 
 <body class="ai-theme">
 
+    <!-- SOUNDTRACK -->
+    <audio id="audio-war" src="https://actions.google.com/sounds/v1/alarms/spaceship_alarm.ogg" loop preload="auto"></audio>
+    <audio id="audio-peace" src="https://actions.google.com/sounds/v1/ambiences/outdoor_summer_ambience.ogg" loop preload="auto"></audio>
+
+    <!-- INITIALIZATION OVERLAY -->
+    <div id="init-overlay" style="position: fixed; inset: 0; z-index: 100000; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); transition: opacity 0.5s ease;">
+        <h1 class="neon-red" style="font-family: 'Orbitron'; margin-bottom: 2rem; font-size: clamp(2rem, 5vw, 4rem); text-align: center; text-shadow: 0 0 20px #ff0000; letter-spacing: 5px;">SYSTEM<br>VOLATILE</h1>
+        <button id="init-btn" style="padding: 15px 40px; font-family: 'Orbitron'; font-size: 1.2rem; font-weight: bold; color: #fff; background: rgba(255, 75, 75, 0.2); border: 2px solid #ff4b4b; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(255, 75, 75, 0.4); text-transform: uppercase;">
+            INITIATE SEQUENCE
+        </button>
+    </div>
+
     <!-- PERSISTENT THEME HUD (Global Volatility vs Local Peace) -->
     <div class="theme-hud-frame">
         <div class="hud-border hud-top"></div>

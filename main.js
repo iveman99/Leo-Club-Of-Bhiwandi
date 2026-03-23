@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // === HERO CINEMATIC SEQUENCE ===
     const globeViz = document.getElementById('globeViz');
     if (globeViz && typeof Globe !== 'undefined') {
+        document.body.classList.add('war-zone'); // ADD EXTREME WAR VISUALS
         // Initialize Globe
         const world = Globe()
             (globeViz)
@@ -254,9 +255,32 @@ document.addEventListener('DOMContentLoaded', () => {
             .ringPropagationSpeed(3)
             .ringRepeatPeriod(600);
 
-        // Remove literal labels and arcs 
+        // Remove literal labels
         world.labelsData([]);
-        world.arcsData([]);
+
+        // Mass Combat Visuals: Hundreds of missiles for "Crazy Graphics"
+        const conflictArcs = [];
+        // Generate 150 random high-speed arcs concentrated in conflict zones
+        for (let i = 0; i < 150; i++) {
+            const isMidEast = Math.random() > 0.4;
+            const startLat = isMidEast ? 20 + Math.random() * 20 : 40 + Math.random() * 20;
+            const startLng = isMidEast ? 30 + Math.random() * 30 : 10 + Math.random() * 30;
+            const endLat = startLat + (Math.random() - 0.5) * 15;
+            const endLng = startLng + (Math.random() - 0.5) * 15;
+            conflictArcs.push({
+                startLat, startLng, endLat, endLng, 
+                color: Math.random() > 0.5 ? '#ff0000' : '#ffaa00'
+            });
+        }
+        
+        // Render extreme combat missiles
+        world.arcsData(conflictArcs)
+            .arcColor('color')
+            .arcDashLength(0.15) // Shorter, faster dashes
+            .arcDashGap(0.1)
+            .arcDashInitialGap(() => Math.random())
+            .arcDashAnimateTime(400) // Much faster flight time!
+            .arcStroke(1.2); 
 
         // Sequence Elements
         const text1 = document.getElementById('hero-text-1');
@@ -279,11 +303,53 @@ document.addEventListener('DOMContentLoaded', () => {
         let directionalLight = scene.children.find(o => o.type === 'DirectionalLight');
         let ambientLight = scene.children.find(o => o.type === 'AmbientLight');
 
+        const audioWar = document.getElementById('audio-war');
+        const audioPeace = document.getElementById('audio-peace');
+        const initOverlay = document.getElementById('init-overlay');
+        const initBtn = document.getElementById('init-btn');
+
+        if (initBtn) {
+            initBtn.addEventListener('click', () => {
+                initOverlay.style.opacity = '0';
+                setTimeout(() => initOverlay.style.display = 'none', 500);
+                if(audioWar) {
+                    audioWar.volume = 0.5;
+                    audioWar.play().catch(e => console.log('Audio blocked:', e));
+                }
+                startCinematicSequence();
+            });
+        } else {
+            startCinematicSequence();
+        }
+
+        function startCinematicSequence() {
         // Step 1: Global View (0s - 4.5s)
         showFadeText(text1, 500, 4000);
 
         // Step 2: India Focus (4.5s)
         setTimeout(() => {
+            document.body.classList.remove('war-zone'); // RESTORE PEACE
+            
+            // Audio Transition
+            if (audioWar) {
+                let vol = audioWar.volume;
+                const fadeOut = setInterval(() => {
+                    vol -= 0.05;
+                    if (vol <= 0) { clearInterval(fadeOut); audioWar.pause(); } 
+                    else { audioWar.volume = vol; }
+                }, 100);
+            }
+            if (audioPeace) {
+                audioPeace.volume = 0;
+                audioPeace.play().catch(e => console.log('Audio blocked:', e));
+                let vol = 0;
+                const fadeIn = setInterval(() => {
+                    vol += 0.05;
+                    if (vol >= 0.5) clearInterval(fadeIn);
+                    else audioPeace.volume = vol;
+                }, 100);
+            }
+
             world.pointOfView({ lat: 20.59, lng: 78.96, altitude: 1.2 }, 2500);
             if (directionalLight) {
                 directionalLight.color.setHex(0xd4a017); // Leo gold
@@ -301,8 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { lat: 22.57, lng: 88.36, maxR: 6, color: '#2ac3ff' }  // Kolkata Vibrant Blue
             ];
             world.ringsData([...volatilityZones, ...indiaFestiveZones]); // Keep conflict active!
-            world.labelsData([]); // Remove conflict labels
-            world.arcsData([]); // Remove conflict missiles
+            world.labelsData([]); // Keep conflict labels empty
+            // Deliberately letting conflict arcs (missiles) continue running in background
             showFadeText(text2, 1000, 4500); // Relative to 4.5s: appears at 5.5s, hides at 10.0s
         }, 4500);
 
@@ -393,6 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
             world.controls().autoRotate = true;
             world.controls().autoRotateSpeed = 0.5; // Slow down for gentle background spinning
         }, 25500);
+        } // End startCinematicSequence()
 
         // Window resize handling
         window.addEventListener('resize', () => {

@@ -71,6 +71,47 @@
 .status-row.local i { color: #10b981; margin-right: 8px; }
 .neon-red { color: #ff4b4b; text-shadow: 0 0 8px rgba(255, 75, 75, 0.8); font-weight: bold; }
 
+/* EXTREME WAR ZONE THEME */
+body.war-zone::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    box-shadow: inset 0 0 250px rgba(255, 0, 0, 0.9);
+    background: radial-gradient(circle, transparent 40%, rgba(255, 0, 0, 0.25) 100%);
+    pointer-events: none;
+    z-index: 100;
+    animation: war-pulse 1s infinite alternate;
+}
+
+@keyframes war-pulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+body.war-zone #globeViz {
+    filter: sepia(100%) hue-rotate(320deg) saturate(300%) contrast(120%);
+    transition: filter 0.5s ease-out;
+}
+
+#globeViz {
+    transition: filter 2s ease-in-out;
+}
+
+body.war-zone #hero-text-1 {
+    color: #ff4b4b;
+    text-shadow: 0 0 20px #ff0000;
+    transform: translate(-50%, -50%) scale(1.1);
+    font-weight: 900;
+    animation: text-glitch 0.2s infinite;
+}
+
+@keyframes text-glitch {
+    0% { transform: translate(-50%, -50%) scale(1.1); }
+    25% { transform: translate(calc(-50% - 2px), calc(-50% + 2px)) scale(1.1); text-shadow: -2px 0 red, 2px 0 blue; }
+    50% { transform: translate(calc(-50% + 2px), calc(-50% - 2px)) scale(1.1); }
+    75% { transform: translate(calc(-50% - 2px), calc(-50% - 2px)) scale(1.1); text-shadow: 2px 0 red, -2px 0 blue; }
+    100% { transform: translate(-50%, -50%) scale(1.1); }
+}
 
 html {
   scroll-behavior: smooth;
