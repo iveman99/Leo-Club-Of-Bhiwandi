@@ -12,7 +12,9 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=25">
+    <!-- Timeline specific CSS -->
+    <link rel="stylesheet" href="timeline-module.css?v=25">
 
     <!-- Globe Dependencies (Three.js is bundled with globe.gl standalone) -->
     <script src="https://unpkg.com/globe.gl"></script>
@@ -324,192 +326,9 @@
         </section>
 
         <!-- MODULE TIMELINE: HISTORY SCROLL -->
+        <!-- Driven entirely by timeline-module.js and timeline-module.css -->
         <section class="docket-slide" id="module-timeline">
-            <div class="slide-content full-width-content">
-                <div class="text-center mb-5 reveal">
-                    <h2 class="cyber-heading">Club Timeline</h2>
-                    <p class="elegant-subtitle mt-2 neon-blue">A legacy of leadership and service.</p>
-                </div>
-
-                <div class="timeline-container mt-4 reveal delay-1">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-horizontal-scroll" id="timelineScroll">
-
-                        <!-- 2012-13 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-top">
-                                <h3 class="year-heading">2012–13</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Nilesh Jaywant</li>
-                                    <li>Leo Rupesh Patil</li>
-                                    <li>Leo Shashank Wadke</li>
-                                    <li>Leo Monish Mhatre</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2013-14 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-bottom">
-                                <h3 class="year-heading">2013–14</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Rupesh Patil</li>
-                                    <li>Leo Sonal Patel</li>
-                                    <li>Leo Shashank Wadke</li>
-                                    <li>Leo Monish Mhatre</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2014-15 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-top">
-                                <h3 class="year-heading">2014–15</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Sonali Patel</li>
-                                    <li>Leo Sayli Mystry</li>
-                                    <li>Leo Shankar Mahale</li>
-                                    <li>Leo Monish Mhatre</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2015-16 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-bottom">
-                                <h3 class="year-heading">2015–16</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Shashank Wadke</li>
-                                    <li>Leo Sayli Mystry</li>
-                                    <li>Leo Ashish Alshi</li>
-                                    <li>Leo Monish Mhatre</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2016-17 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-top">
-                                <h3 class="year-heading">2016–17</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Jayesh Jaywant</li>
-                                    <li>Leo Shraddha Jaywant</li>
-                                    <li>Leo Ashok Poojari</li>
-                                    <li>Leo Harish Poojary</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2017-18 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-bottom">
-                                <h3 class="year-heading">2017–18</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Harish Poojary</li>
-                                    <li>Leo Vinod Siricilla</li>
-                                    <li>Leo Amar Poojary</li>
-                                    <li>Leo Uday Sallan</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2018-19 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-top">
-                                <h3 class="year-heading">2018–19</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Ashok Poojari</li>
-                                    <li>Leo Anurag Gupta</li>
-                                    <li>Leo Rajesh Choudhary</li>
-                                    <li>Leo Sridhar Eppalapelli</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2019-20 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-bottom">
-                                <h3 class="year-heading">2019–20</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Vinod Siricilla</li>
-                                    <li>Leo Shrikanth Samala</li>
-                                    <li>Leo Naresh Dussa</li>
-                                    <li>Leo Anurag Gupta</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2020-21 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-top">
-                                <h3 class="year-heading">2020–21</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Anurag Gupta</li>
-                                    <li>Leo Chandrashekar Baluri</li>
-                                    <li>Leo Sunil Balla</li>
-                                    <li>Leo Sneha Adep</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2021-22 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-bottom">
-                                <h3 class="year-heading">2021–22</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Sneha Adep</li>
-                                    <li>Leo Suraj Gujja</li>
-                                    <li>Leo Bhavya Dontul</li>
-                                    <li>Leo Sunil Balla (VP I)</li>
-                                    <li>Leo C. Baluri (VP II)</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2022-23 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-top">
-                                <h3 class="year-heading">2022–23</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Chandrashekar Baluri</li>
-                                    <li>Leo Manasa Samala</li>
-                                    <li>Leo Leena Adep</li>
-                                    <li>Leo Vivek Butla</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- 2023-24 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card card-bottom">
-                                <h3 class="year-heading">2023–24</h3>
-                                <ul class="timeline-leaders">
-                                    <li>Leo Vivek Butla</li>
-                                    <li>Leo Yeman Adep</li>
-                                    <li>Leo Manikiran Kyatam</li>
-                                    <li>Leo Yeman Adep</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-node"></div>
-                        </div>
-
-                        <!-- Spacer for scrolling comfort -->
-                        <div class="timeline-item timeline-spacer"></div>
-
-                    </div>
-                </div>
-            </div>
+            <div id="timeline-module-root"></div>
             <a href="#module-4" class="scroll-down-arrow"><i class="fa-solid fa-chevron-down"></i></a>
         </section>
 
@@ -1053,8 +872,10 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="particles.js?v=2"></script>
     <!-- App Logic -->
-    <script src="leadershipData.js?v=2"></script>
-    <script src="main.js?v=7"></script>
+    <script src="leadershipData.js?v=25"></script>
+    <script src="timelineData.js?v=25"></script>
+    <script src="main.js?v=25"></script>
+    <script src="timeline-module.js?v=25"></script>
 </body>
 
 </html>

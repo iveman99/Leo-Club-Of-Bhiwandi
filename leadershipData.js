@@ -10,7 +10,7 @@ const LEADERSHIP_DATA = {
     // Row 1: Core Executive Board
     coreExecutives: [
         { name: "Yeman Adep", role: "President", photo: "./Photos/yeman.jpg", elite: true },
-        { name: "Vinod Siricilla", role: "Leo Advisor", photo: "./Photos/vinod.jpg" },
+        { name: "Vinod Siricilla", role: "Leo Advisor", photo: "./Photos/anna.jpg" },
         { name: "Rahul Dudam", role: "IPP", photo: "./Photos/rahul.jpg" },
         { name: "Veman Chippa", role: "Secretary", photo: "./Photos/veman.jpg" },
         { name: "Varsha Siricilla", role: "Treasurer", photo: "./Photos/varsha.jpg" },
@@ -32,7 +32,7 @@ const LEADERSHIP_DATA = {
         { name: "Gopi Darji", role: "Creative Head", photo: "" },
         { name: "Abhilash Jejela", role: "Twinning Dir", photo: "./Photos/abhilash.jpg" },
         { name: "Rushikesh Kamurthi", role: "Fellowship Dir", photo: "./Photos/rushi.jpg" },
-        { name: "Rakesh Kundan", role: "Sports Head", photo: "" },
+        { name: "Rakesh Kundan", role: "Sports Head", photo: "./Photos/rakesh.jpg" },
         { name: "Sneha Adep", role: "Director", photo: "" },
         { name: "Vivek Butla", role: "Director", photo: "./Photos/vivek.jpg" },
         { name: "Jaya Adep", role: "Tail Twister", photo: "" },

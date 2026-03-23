@@ -1,0 +1,300 @@
+/* ============================================================
+   TIMELINE MODULE (ISOLATED & 100vh RESPONSIVE)
+   ============================================================ */
+
+/* Root container locks to exactly 100vh for a perfect single-slide fit */
+#timeline-module-root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #02060e;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0; /* Reduced safety padding */
+    box-sizing: border-box;
+}
+
+/* Background Atmospheric Glow */
+#timeline-module-root::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(42, 195, 255, 0.05) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Container limits width and holds the UI together */
+.tm-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Timeline Header */
+.tm-header {
+    text-align: center;
+    margin-bottom: 30px;
+    flex-shrink: 0;
+}
+.tm-icon i {
+    font-size: 2.5rem;
+    color: #ffb800;
+    text-shadow: 0 0 15px rgba(255, 184, 0, 0.5);
+    margin-bottom: 10px;
+}
+.tm-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem; /* Slighly smaller */
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(42, 195, 255, 0.4);
+}
+.tm-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: #2ac3ff;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* Central Horizontal Scroll Track Area */
+.tm-track-wrapper {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 480px; /* Precise height for the carousel */
+}
+
+/* The neon glowing central axis line */
+.tm-central-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(42, 195, 255, 0.3);
+    z-index: 1;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(42, 195, 255, 0.5);
+}
+
+/* The actual scrollable flex container */
+.tm-track {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    padding: 20px 10vw; /* Offset padding so first/last item peak */
+    gap: 40px;
+    align-items: center;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar IE/Edge */
+    position: relative;
+    z-index: 2;
+    cursor: grab;
+    /* Adjust padding to account for top/bottom alternations */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.tm-track::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+.tm-grabbing {
+    cursor: grabbing !important;
+}
+
+/* Each Timeline Node (The Card + The Link) */
+.tm-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: 260px; /* Much smaller width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Alternate positioning up/down relative to straight axis */
+.tm-node-up { transform: translateY(-45px); }
+.tm-node-down { transform: translateY(45px); }
+
+/* The glowing node connection point */
+.tm-dot {
+    width: 14px;
+    height: 14px;
+    background: #02060e;
+    border: 2px solid #ffb800;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.8);
+    position: absolute;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+/* Connect dot to the central line vertically */
+.tm-node-up .tm-dot { bottom: -60px; }
+.tm-node-down .tm-dot { top: -60px; }
+
+/* The Glassmorphism Card Design */
+.tm-card {
+    width: 100%;
+    background: rgba(10, 16, 30, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(42, 195, 255, 0.4);
+    border-radius: 8px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease;
+}
+.tm-item:hover .tm-card {
+    border-color: #2ac3ff;
+    box-shadow: 0 10px 40px rgba(42, 195, 255, 0.2);
+    transform: scale(1.02);
+}
+.tm-item:hover .tm-dot {
+    background: #ffb800;
+    transform: scale(1.3);
+}
+
+/* Connector Lines from Card to Dot */
+.tm-card::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 45px;
+    background: rgba(255, 184, 0, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.tm-node-up .tm-card::after { bottom: -45px; }
+.tm-node-down .tm-card::after { top: -45px; }
+
+
+/* Text inside cards */
+.tm-card-year {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #ffb800;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.tm-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tm-card-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevent messy wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.tm-bullet {
+    color: #2ac3ff;
+    margin-right: 12px;
+    font-size: 0.8rem;
+}
+
+/* User Controls HUD */
+.tm-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    flex-shrink: 0;
+}
+.tm-indicator {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.tm-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(42, 195, 255, 0.1);
+    border: 1px solid #2ac3ff;
+    color: #2ac3ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+.tm-btn:hover {
+    background: #2ac3ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(42, 195, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/* Responsive UI */
+@media (max-width: 900px) {
+    .tm-item { width: 320px; }
+    .tm-card { padding: 25px; }
+    .tm-card-year { font-size: 1.6rem; }
+    .tm-card-list li { font-size: 0.9rem; }
+}
+
+@media (max-width: 600px) {
+    .tm-title { font-size: 2rem; }
+    /* On extreme mobile, ditch the staggered up/down to save huge vertical space */
+    .tm-track {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .tm-node-up, .tm-node-down {
+        transform: none !important; 
+    }
+    .tm-node-up .tm-card::after, .tm-node-down .tm-card::after {
+        display: none !important;
+    }
+    .tm-dot {
+        position: relative;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: unset !important;
+        margin-top: 15px;
+    }
+    .tm-item {
+        flex-direction: column-reverse; /* dot below card on mobile line */
+    }
+    .tm-central-line {
+        top: auto;
+        bottom: 60px; /* shift line to bottom of track */
+    }
+}
