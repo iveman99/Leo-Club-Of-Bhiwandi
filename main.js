@@ -116,59 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // === MODULE 5: IMPACT COUNTER ANIMATION ===
-    const impactCards = document.querySelectorAll('.impact-card');
-
-    if (impactCards.length > 0) {
-        const animateCounter = (el) => {
-            const target = +el.getAttribute('data-target');
-            if (el.classList.contains('counted')) return;
-
-            const duration = 2000; // 2 seconds
-            const startTime = performance.now();
-
-            const updateCounter = (currentTime) => {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / duration, 1);
-
-                // Ease out cubic
-                const easeProgress = 1 - Math.pow(1 - progress, 3);
-                const currentCount = Math.floor(easeProgress * target);
-
-                if (currentCount >= 1000) {
-                    el.innerText = currentCount.toLocaleString('en-IN');
-                } else {
-                    el.innerText = currentCount;
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    el.innerText = target.toLocaleString('en-IN');
-                    el.classList.add('counted');
-                }
-            };
-
-            requestAnimationFrame(updateCounter);
-        };
-
-        const impactObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    const counterElement = entry.target.querySelector('.counter-num');
-                    if (counterElement) {
-                        animateCounter(counterElement);
-                    }
-                }
-            });
-        }, { threshold: 0.3 });
-
-        impactCards.forEach(card => {
-            impactObserver.observe(card);
-        });
-    }
-
     // === MODULE PRESIDENT: PARALLAX & SIGNATURE ===
     const parallaxPhoto = document.querySelector('.parallax-photo');
     const presidentFrame = document.querySelector('.president-frame');
