@@ -610,258 +610,375 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === MODULE 4: SERVICE & PROJECTS (DYNAMIC DATA & FILTERING) ===
-        const projectsData = [
+            const projectsData = [
+        {
+            title: "CODE & SCHOOLING",
+            date: "01-07-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "CODE & SCHOOLING WAS A FANTASTIC LEARNING EXPERIENCE FOR CLUB LEADERS, FILLED WITH VALUABLE INSIGHTS AND TAKEAWAYS.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=CODE+%26+SCHOOLING"
+        },
+        {
+            title: "District Installation and PCM",
+            date: "05-07-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "We began with the PCM, where our President shared plans and policies for the year ahead. It was a great platform to align with the district vision ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=District+Installation+and+PCM"
+        },
+        {
+            title: "BOD Meeting",
+            date: "13-07-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "1",
+            description: "A focused BOD meeting was held on 13th July 2025 to kickstart Leoistic Year 2025–26. Key discussions included finalizing the installation ceremony ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=BOD+Meeting"
+        },
         {
             title: "Gaushala Visit",
             date: "13-07-2025",
             category: "service",
-            displayCategory: "Other Humanitarian",
+            displayCategory: "Humanitarian",
             beneficiaries: "1",
-            description: "A total of 15 Leos and 4 Ex-Leos participated, earning 45 Leo Hours. An online donation of ₹4,213 was made to Gopal Gaushala.",
+            description: "Event Report – Gaushala Visit Leo Club of Bhiwandi conducted its first service activity for Leoistic Year 2025–26 with a visit to Angoan Gaushala o...",
             image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Gaushala+Visit"
         },
         {
-            title: "July BOD Meeting",
-            date: "13-07-2025",
+            title: "SSC and HSC Meri Shield Distribution",
+            date: "19-07-2025",
+            category: "service",
+            displayCategory: "Youth",
+            beneficiaries: "100",
+            description: "We successfully has Merit shield distribution to the students of SSC and HSC who came out exceptionally with their marks.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=SSC+and+HSC+Meri+Shield+Distribution"
+        },
+        {
+            title: "Leo Club of Bhiwandi Installation Ceremony of Leo Yeman Adep",
+            date: "20-07-2025",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "A focused BOD meeting to kickstart Leoistic Year 2025–26, discussing installation, roles, and strategic planning.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+July"
+            description: "On this day we had Installation Ceremony of Leo Yeman Adep and his team. New Leo’s were also inducted. This event was graced by all our past presid...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+Installation+Ceremony+of+Leo+Yeman+Adep"
         },
         {
-            title: "Sai Baba Palki Seva",
+            title: "Sai Baba Palkhi Prasadham Distribution",
             date: "26-07-2025",
             category: "service",
-            displayCategory: "Pilgrim Service",
+            displayCategory: "Humanitarian",
             beneficiaries: "200",
-            description: "A spiritually driven activity focused on selfless service at Datta Mandir, distributing Prasad and serving 200 pilgrims.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Palki+Seva"
+            description: "We had distributed Prasadham to Sai Baba Palkhi Pilgrimages who walk miles to Shirdi and seeking divine blessings. Prasadham was sponsored by Lion ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Sai+Baba+Palkhi+Prasadham+Distribution"
         },
         {
-            title: "Zone Chairperson Visit & Canva Workshop",
+            title: "ZC Visit x Canva Workshop",
             date: "27-07-2025",
             category: "leadership",
-            displayCategory: "Workshop / Interaction",
+            displayCategory: "Workshop",
             beneficiaries: "0",
-            description: "Members gained valuable insights from Zone Chairperson Leo Rahul Dudham and enhanced their creative skills through a hands-on Canva workshop.",
-            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=Canva+Workshop"
+            description: "We successfully had our ZC Visit at Shakti Group Office where our ZC Leo Rahul Dudam graced the event and shared the valuable insights. Later we ha...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=ZC+Visit+x+Canva+Workshop"
         },
         {
-            title: "Zone 3 & 4 Joint Orientation & Fellowship",
-            date: "10-08-2025",
-            category: "leadership",
-            displayCategory: "Fellowship",
+            title: "Multiple District Installation 3231",
+            date: "03-08-2025",
+            category: "admin",
+            displayCategory: "Administration",
             beneficiaries: "0",
-            description: "A knowledge-driven event at The Next School aimed at strengthening leadership, networking, and understanding of Leoism.",
-            image: "./photos/joint-orientation.jpg"
+            description: "We attended Multiple District Installation Ceremony of Leo Lion Shishir Maheshwari and Team at Kandivali. It was very welcoming and later we witnes...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Multiple+District+Installation+3231"
         },
         {
-            title: "District Orientation – Leo District 3231 A2",
+            title: "District Orientation- Class of 2025",
             date: "10-08-2025",
             category: "leadership",
             displayCategory: "Orientation",
             beneficiaries: "0",
-            description: "A district-level leadership initiative focused on preparing Leos for the year through structured sessions and guidance from experienced leaders.",
-            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=District+Orientation"
+            description: "We had attend joint zone orientation with our club members where members got brief idea of how Leoism works and thank you to DP, ZC and ZS for such...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=District+Orientation-+Class+of+2025"
         },
         {
-            title: "LEOS Go Green – Mega Tree Plantation Drive",
+            title: "Project Shikshanam- Independence Day",
+            date: "15-08-2025",
+            category: "service",
+            displayCategory: "Youth",
+            beneficiaries: "33",
+            description: "on this Independence Day, we successfully conducted Project Shikshanam at Umbar Bandhan ZP School! ✨ Here’s a quick recap of the event: Total Leos ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Shikshanam-+Independence+Day"
+        },
+        {
+            title: "BOD Meeting",
+            date: "16-08-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "Post flag hoisting, a BOD meeting was held with Leos and ex-Leos. Members shared key inputs on upcoming events and initiatives. Focus remained on p...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=BOD+Meeting"
+        },
+        {
+            title: "𐌱✨ LEOs Go Green! – Mega Tree Plantation Drive 2025 ✨𐌱",
             date: "17-08-2025",
             category: "service",
             displayCategory: "Environment",
             beneficiaries: "125",
-            description: "An environmental initiative focused on sustainability. We planted 125 saplings & 25 herbal plants at Dudhni Village. Event Chairperson: Leo Srikanth Yelle.",
-            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop"
+            description: "𐌱✨ The Leo Club of Bhiwandi, with Lions Club of Bhiwandi & partners, proudly hosted the Mega Tree Plantation Drive 2025 at Dudhni Village! Together...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=𐌱✨+LEOs+Go+Green!+–+Mega+Tree+Plantation+Drive+2025+✨𐌱"
         },
         {
-            title: "August BOD Meeting",
-            date: "24-08-2025",
+            title: "Pot Luck and Power Meet- General Meeting",
+            date: "14-09-2025",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Monthly Board of Directors meeting for August tracking ongoing projects and financial updates.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+August"
+            description: "𐍲✨ Potluck & Power Meet – Leo Club of Bhiwandi ✨𐍲 Dear Leos & Lions Family 𐂛𐆁, Today’s BOD cum General Meeting + Potluck Gathering was a perfect bl...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Pot+Luck+and+Power+Meet-+General+Meeting"
         },
         {
-            title: "Project Drishti & Smile – Medical Camp",
-            date: "19-09-2025",
-            category: "service",
-            displayCategory: "Health / Vision",
-            beneficiaries: "200",
-            description: "A healthcare initiative providing dental, eye, and general health screenings to improve student well-being at Dandekar School.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Drishti+Smile"
-        },
-        {
-            title: "OSW Activity – Donation Drive & Health Camp",
-            date: "20-09-2025",
-            category: "service",
-            displayCategory: "Health / Hunger",
+            title: "Leo Lion Meeting with Parent Club",
+            date: "18-09-2025",
+            category: "admin",
+            displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Conducted under October Service Week, focusing on supporting underprivileged communities at Balika Ashram through grocery donations and health check-ups.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=OSW+Donation"
+            description: "We had a meeting with Lions Club of Bhiwandi regarding upcoming OSW activities.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Lion+Meeting+with+Parent+Club"
         },
         {
-            title: "September BOD CUM GENERAL MEETING",
+            title: "Scam Sangeet- District First Council Meet",
+            date: "21-09-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "LCOB attended Scam sangeet FCM and Zonal Dance Competition where out proud President Leo Yeman Adep shared his plans and policies for the quarter. ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Scam+Sangeet-+District+First+Council+Meet"
+        },
+        {
+            title: "BOD CUM GENERAL MEETING",
             date: "27-09-2025",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Review and planning meeting for OSW activities with active participation from all members.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+September"
+            description: "𐃢 Dear All, We had a meeting today regarding OSW activities. This meeting was conducted as part of our BOD (Board of Directors) review and planning...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=BOD+CUM+GENERAL+MEETING"
         },
         {
-            title: "Project Dhristi & Water on Wheels",
+            title: "Project Dhristi and Project Water on Wheels",
             date: "03-10-2025",
             category: "service",
-            displayCategory: "Humanitarian / Vision",
+            displayCategory: "Humanitarian",
             beneficiaries: "404",
-            description: "Eye check-up camp for students and distribution of mineral water bottles to those in need.",
-            image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
+            description: "The Leo Club of Bhiwandi successfully organized two impactful initiatives — Project Dhristi and Water on Wheels. Under Project Dhristi, an eye chec...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Dhristi+and+Project+Water+on+Wheels"
         },
         {
-            title: "Project Annadanam",
+            title: "BOD Meeting For OSW",
+            date: "04-10-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "A BOD meeting was held to finalize the OSW action plan. Roles, timelines, and strategies were clearly defined. Focus was on smooth and effective ex...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=BOD+Meeting+For+OSW"
+        },
+        {
+            title: "Leo Club of Bhiwandi – Project Annadanam",
             date: "04-10-2025",
             category: "service",
             displayCategory: "Hunger",
             beneficiaries: "280",
-            description: "Prepared and distributed meals, spreading kindness and care within the community.",
-            image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop"
+            description: "The Leo Club of Bhiwandi successfully carried out Project Annadanam, an initiative dedicated to serving food to those in need. Club members activel...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Annadanam"
         },
         {
-            title: "Blood Donation Camp",
+            title: "Leo Club of Bhiwandi – Blood Donation Camp",
             date: "05-10-2025",
             category: "service",
-            displayCategory: "Health",
+            displayCategory: "Humanitarian",
             beneficiaries: "230",
-            description: "Collected over 200 bottles of blood, marking another milestone in supporting healthcare.",
-            image: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&h=400&fit=crop"
+            description: "The Blood Donation Camp is one of the signature events of the Leo Club of Bhiwandi, organized every year with great enthusiasm and participation. I...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Blood+Donation+Camp"
         },
         {
-            title: "Peace Poster Competition",
+            title: "Leo Club of Bhiwandi – Project Peace Poster Competition",
             date: "06-10-2025",
             category: "service",
             displayCategory: "Youth",
             beneficiaries: "200",
-            description: "Encouraged creativity and spread the message of peace among students through art.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Peace+Poster"
+            description: "The Leo Club of Bhiwandi successfully organized the Project Peace Poster Competition at Dadasaheb Dandekar Vidyalaya. The event aimed to encourage ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Peace+Poster+Competition"
         },
         {
-            title: "Project Shraddha",
+            title: "Leo Club of Bhiwandi – Project Shraddha",
             date: "07-10-2025",
             category: "service",
             displayCategory: "Environment",
             beneficiaries: "6",
-            description: "Permanent annual initiative carried out as part of ongoing commitment to community service.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Shraddha"
+            description: "Project Shraddha is a permanent annual initiative of the Leo Club of Bhiwandi. The project is carried out every year as part of the club’s ongoing ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Shraddha"
         },
         {
-            title: "Project Gaushala Visit",
+            title: "Leo Club of Bhiwandi – Project Gaushala Visit",
             date: "08-10-2025",
             category: "service",
             displayCategory: "Humanitarian",
             beneficiaries: "1",
-            description: "Heartwarming experience feeding and caring for cows, promoting compassion towards animals.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Gaushala+Visit+2"
+            description: "The Leo Club of Bhiwandi organized a Gaushala Visit, where members visited the Gaushala and spent time feeding and caring for the cows. The visit w...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Gaushala+Visit"
         },
         {
-            title: "Project Sehat",
+            title: "Leo Club of Bhiwandi – Project Sehat",
             date: "09-10-2025",
             category: "service",
-            displayCategory: "Health / Youth",
+            displayCategory: "Vision",
             beneficiaries: "100",
-            description: "Promoting menstrual hygiene and health awareness among young girls at Government School No. 59.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Sehat"
+            description: "The Leo Club of Bhiwandi conducted Project Sehat at Government School No. 59, Bhiwandi, focusing on promoting menstrual hygiene and health awarenes...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Sehat"
         },
         {
-            title: "Project Ummeed",
+            title: "Leo Club of Bhiwandi – Project Annapurna Seva",
             date: "10-10-2025",
             category: "service",
-            displayCategory: "Youth / Support",
-            beneficiaries: "1",
-            description: "Extended financial assistance to a child in need, providing hope for a better future.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Ummeed"
-        },
-        {
-            title: "Project Annapurna Seva",
-            date: "10-10-2025",
-            category: "service",
-            displayCategory: "Vision / Hunger",
+            displayCategory: "Vision",
             beneficiaries: "56",
-            description: "Dental check-up camp and grocery donation at Mathrychaya Balika Ashram.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Annapurna+Seva"
+            description: "The Leo Club of Bhiwandi organized Project Annapurna Seva at Mathrychaya Balika Ashram, combining care and service through multiple meaningful acti...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Annapurna+Seva"
         },
         {
-            title: "October BOD Meeting",
-            date: "26-10-2025",
+            title: "Leo Club of Bhiwandi – Project Ummeed",
+            date: "10-10-2025",
+            category: "service",
+            displayCategory: "Youth",
+            beneficiaries: "1",
+            description: "Under Project Ummeed, the Leo Club of Bhiwandi extended financial assistance to a child in need. The initiative aimed to provide support and hope f...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Club+of+Bhiwandi+–+Project+Ummeed"
+        },
+        {
+            title: "OSW Finale Day",
+            date: "12-10-2025",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Monthly Board of Directors meeting evaluating October mega-events and club health.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+October"
+            description: "We attended OSW Finale Day with our eco friendly Model which depicted our club Logo. We had also got recognition for our Model at Finale Day.",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=OSW+Finale+Day"
         },
         {
-            title: "November BOD Meeting",
+            title: "Project Aashirwaad",
+            date: "18-10-2025",
+            category: "service",
+            displayCategory: "Humanitarian",
+            beneficiaries: "75",
+            description: "*𐌸 PROJECT AASHIRWAAD – SUCCESSFUL COMPLETION 𐌸* *Hey Leos! 𐂛* Yesterday, we successfully carried out one of our most soulful and heart-touching in...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Aashirwaad"
+        },
+        {
+            title: "Project Umang",
+            date: "19-10-2025",
+            category: "service",
+            displayCategory: "Hunger",
+            beneficiaries: "200",
+            description: "It was our privilege to be part of Projetc Umang. Kudos to DP Leo Shivani Shah and her team for such an heart touching service activity",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+Umang"
+        },
+        {
+            title: "First Multiple Council Meet",
+            date: "02-11-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "We LCOB attended First Multiple Council Meet, where in our MDP shared his plans and policies of upcoming quarter. It was very fruitful meeting Leo’...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=First+Multiple+Council+Meet"
+        },
+        {
+            title: "Charter Nite Celebration and Peace Poster Prize Distribution",
+            date: "08-11-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "✨ *LEO CLUB OF BHIWANDI* ✨ 𐃍Dist. 3231-A2 | Zone 4 | We are glad to share that 7 Leos from our club actively participated in the Official Visit Pro...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Charter+Nite+Celebration+and+Peace+Poster+Prize+Distribution"
+        },
+        {
+            title: "General Meeting",
+            date: "16-11-2025",
+            category: "admin",
+            displayCategory: "Administration",
+            beneficiaries: "0",
+            description: "𐃄 Minutes of Meeting – Leo Club Date: 16th November 2025 Time: 11:00 AM Duration: 45 minutes Total Leos Attended: 9 Summary We conducted a 45-minut...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=General+Meeting"
+        },
+        {
+            title: "Pahal 5.0",
             date: "23-11-2025",
-            category: "admin",
-            displayCategory: "Administration",
-            beneficiaries: "0",
-            description: "Board meeting preparing detailed road maps for winter and year-end leadership initiatives.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+November"
+            category: "service",
+            displayCategory: "Hunger",
+            beneficiaries: "23",
+            description: "*PAHAL 5.0 Event Highlight* Date: November 23, 2025 calendar 𐇓️ Location:~ Ashram Shala, Chikle, Panvel𐃍 *Leo Club of Bhiwandi at PAHAL 5.0*𐄩 ✨Even...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Pahal+5.0"
         },
         {
-            title: "December BOD Meeting",
+            title: "Project KambhalDaan - Blanket Distribution",
+            date: "29-11-2025",
+            category: "service",
+            displayCategory: "Humanitarian",
+            beneficiaries: "150",
+            description: "✨ LEO CLUB OF BHIWANDI ✨ We are grateful to share the heartfelt success of *Project Khambal Daan*, our winter blanket distribution drive dedicated ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Project+KambhalDaan+-+Blanket+Distribution"
+        },
+        {
+            title: "Leo Leadership Institute (Host Club)",
+            date: "30-11-2025",
+            category: "leadership",
+            displayCategory: "Workshop",
+            beneficiaries: "0",
+            description: "✨ LEO LEADERSHIP INSTITUTE — A DAY WE WILL NEVER FORGET ✨ Proudly hosted by Leo Club of Bhiwandi 𐆁𐂥 Some days change us. Some days define us. Yeste...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Leo+Leadership+Institute+(Host+Club)"
+        },
+        {
+            title: "BOD Meeting",
             date: "27-12-2025",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Discussions on CheckDam initiative, clothes donation, and the upcoming Leo-Lion Cricket Battle.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+December"
+            description: "The discussion was productive and positive, setting the tone for impactful initiatives ahead. 𐃌 *Events Discussed* : - 3rd Jan: Check Dam initiativ...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=BOD+Meeting"
         },
         {
-            title: "Vanrai Bandhara Project",
+            title: "𐌊 Vanrai Bandhara Project – Successfully Completed 𐌱",
             date: "03-01-2026",
             category: "service",
             displayCategory: "Environment",
             beneficiaries: "200",
-            description: "Constructed a small bridge to conserve water benefiting the surrounding community.",
-            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Vanrai+Bandhara"
+            description: "Thrilled to share that Leo Club of Bhiwandi, in collaboration with Lions Club of Bhiwandi, successfully executed today's event for Project Vanrai B...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=𐌊+Vanrai+Bandhara+Project+–+Successfully+Completed+𐌱"
         },
         {
-            title: "January BOD Meeting",
-            date: "24-01-2026",
-            category: "admin",
-            displayCategory: "Administration",
-            beneficiaries: "0",
-            description: "Special board meeting held to finalize logistics for the major LLCB Season 6 tournament.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+January"
-        },
-        {
-            title: "The Lion Leo Cricket Battle",
+            title: "The Lion Leo Cricket Battle (LLCB) Season 6",
             date: "25-01-2026",
             category: "leadership",
-            displayCategory: "Youth / Fellowship",
+            displayCategory: "Leadership & Youth",
             beneficiaries: "0",
-            description: "Flagship legacy event strengthening fellowship, teamwork, and sportsmanship among 12 teams.",
-            image: "https://via.placeholder.com/600x400/0a1020/d4af37?text=Cricket+Battle"
+            description: "The Lion Leo Cricket Battle (LLCB) Season 6 was successfully conducted on Sunday, 25th January 2026, at Dadasaheb Dandekar School Ground, Kalyan Na...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=The+Lion+Leo+Cricket+Battle+(LLCB)+Season+6"
         },
         {
-            title: "February BOD Meeting",
+            title: "General Meeting",
             date: "22-02-2026",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Review meeting assessing the impact of the LLCB and planning the remaining term's projects.",
-            image: "https://via.placeholder.com/600x400/0a1020/3b82f6?text=BOD+February"
+            description: "We had our BOD cum General Meeting with Advisor Lion Vinod Siricilla regarding the clubs upcoming activities. He shared his valuable insights regar...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=General+Meeting"
         },
         {
-            title: "March BOD Meeting",
+            title: "Housie Night cum General Meeting",
             date: "14-03-2026",
             category: "admin",
             displayCategory: "Administration",
             beneficiaries: "0",
-            description: "Planning for the upcoming DP visit and finalizing other upcoming mega events.",
-            image: "./photos/bod-march.jpg"
+            description: "Leo Club of Bhiwandi 𐃅 Date: 14th March 2026 𐃍 Venue: Residence of Leo Yeman Adep, Arihant Shopping Complex, Dhamankar Naka, Bhiwandi ⏰ Duration: 2...",
+            image: "https://via.placeholder.com/600x400/0a1020/2facff?text=Housie+Night+cum+General+Meeting"
         }
     ];
 
