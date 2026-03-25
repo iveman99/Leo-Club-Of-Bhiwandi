@@ -1400,16 +1400,16 @@ h3,
 /* Logos Sequence */
 .hero-logos {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   flex-wrap: wrap;
 }
 
 .hero-logo-slice {
-  height: clamp(50px, 8vh, 90px);
-  width: clamp(50px, 8vh, 90px);
+  height: clamp(60px, 9vh, 90px);
+  width: clamp(60px, 9vh, 90px);
   background-image: url("leo logo.png");
   background-size: 500% 100%;
   background-repeat: no-repeat;
@@ -1457,7 +1457,7 @@ h3,
 
 /* Elegant Title Formatting */
 .elegant-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   color: var(--text-main);
   line-height: 1.1;
   font-family: var(--font-heading);
@@ -1466,9 +1466,10 @@ h3,
 }
 
 .elegant-subtitle {
-  color: var(--text-dim);
-  font-size: 0.9rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
   letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 5px rgba(42, 195, 255, 0.3);
 }
 
 .elegant-tagline {
@@ -1487,7 +1488,7 @@ h3,
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding: 30px;
+  padding: 15px 25px;
   opacity: 0;
   transform: translateY(20px);
   transition: all 1s ease 0.5s;

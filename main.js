@@ -252,18 +252,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const audioWar = document.getElementById('audio-war');
         const audioPeace = document.getElementById('audio-peace');
+        const audioEntry = document.getElementById('audio-entry');
+        const audioHover = document.getElementById('audio-hover');
         const initOverlay = document.getElementById('init-overlay');
         const initBtn = document.getElementById('init-btn');
 
         if (initBtn) {
-            initBtn.addEventListener('click', () => {
-                initOverlay.style.opacity = '0';
-                setTimeout(() => initOverlay.style.display = 'none', 500);
-                if(audioWar) {
-                    audioWar.volume = 0.5;
-                    audioWar.play().catch(e => console.log('Audio blocked:', e));
+            initBtn.addEventListener('mouseenter', () => {
+                if(audioHover) {
+                    audioHover.currentTime = 0;
+                    audioHover.volume = 0.3;
+                    audioHover.play().catch(e => {});
                 }
-                startCinematicSequence();
+            });
+
+            initBtn.addEventListener('click', () => {
+                if(audioEntry) {
+                    audioEntry.volume = 0.8;
+                    audioEntry.play().catch(e => console.log('Audio blocked:', e));
+                }
+                
+                // Crazy Animation: Intense shake during glitch
+                document.body.style.animation = "textGlitch 0.3s 4";
+                
+                // Add creative visual transition classes
+                initOverlay.classList.add('entry-glitch-active');
+                initOverlay.classList.add('entry-zoom-out');
+                
+                setTimeout(() => {
+                    initOverlay.style.display = 'none';
+                    if(audioWar) {
+                        audioWar.volume = 0.5;
+                        audioWar.play().catch(e => console.log('Audio blocked:', e));
+                    }
+                    startCinematicSequence();
+                }, 1200);
             });
         } else {
             startCinematicSequence();
@@ -425,6 +448,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === SITE-WIDE CRAZY GRAPHICS TSPARTICLES BACKGROUND ===
     if (typeof tsParticles !== 'undefined') {
+        // Particles for the Initialization screen
+        tsParticles.load("init-particles", {
+            background: { color: { value: "transparent" } },
+            fpsLimit: 60,
+            particles: {
+                color: { value: ["#ffaa00", "#2ac3ff", "#ffffff"] },
+                links: { enable: false },
+                move: { direction: "none", enable: true, random: true, speed: 2.5, straight: false },
+                number: { density: { enable: true, area: 800 }, value: 80 },
+                opacity: { value: { min: 0.2, max: 0.8 }, animation: { enable: true, speed: 1, minimumValue: 0.2 } },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 3 }, animation: { enable: true, speed: 2, minimumValue: 0.1 } }
+            },
+            detectRetina: true
+        });
+
         tsParticles.load("particles-overlay", {
             background: { color: { value: "transparent" } },
             fpsLimit: 60,
@@ -444,68 +483,127 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === MODULE QUESTIONNAIRE: DYNAMIC DATA & FILTERING ===
     const qnaData = [
-        // TREASURY & FINANCIAL MANAGEMENT
-        { category: "treasury", question: "1. Does the club have a bank account? If yes, carry a physical copy of the account statement during the DP visit.", answer: "Yes, the club maintains an active bank account. A physical copy of the statement is kept ready in our records." },
-        { category: "treasury", question: "2. Opening balance at the start & current closing balance", answer: "Opening balance (July 1st, 2024): ₹52,000. Current closing balance: ₹78,500." },
-        { category: "treasury", question: "3. Add Budget Sheet in Docket which was submitted to District", answer: "A detailed budget sheet including projected income and expenses has been prepared and physical copy is attached with the physical docket." },
-        { category: "treasury", question: "4. Total funds raised during the term", answer: "Total funds raised so far this term amount to approximately ₹1,50,000 through member contributions and sponsorships." },
-        { category: "treasury", question: "5. Any pending dues/ Reimbursement", answer: "There are no pending dues or reimbursements at the club level. All financial matters are settled promptly." },
-        { category: "treasury", question: "6. Any financial challenge faced by the club", answer: "Securing consistent corporate sponsorships for large-scale events has been moderately challenging, but we navigated it through member contributions and small local sponsorships." },
-        { category: "treasury", question: "7. Is a file of all accounts, bills, and receipts maintained and updated? (Yes/No)", answer: "Yes, a dedicated file with all accounts, bills, and receipts is meticulously maintained and updated by the Treasurer." },
-        { category: "treasury", question: "8. Are the treasury reports submitted to the District regularly?", answer: "Yes, monthly financial reports are submitted transparently to the District on time." },
+        // CLUB OVERVIEW & VISION
+        { category: "overview", question: "1. Club Vision & Theme (Leoistic Year 2025–26)", answer: "Our vision for this Leoistic year is 'Strength in Unity, Service with Impact.' Inspired by the interconnected hands in our logo, we aim to build a club where every member contributes towards meaningful community service. Our focus is on empowering individuals, uplifting communities, and standing together as one strong force of change, truly living our motto: 'Be the hand that helps them stand.'" },
+        { category: "overview", question: "2. Significant Changes Introduced as President", answer: "<ul><li>Enhanced Service Quality – Prioritizing meaningful and high-impact service activities.</li><li>Ex-Leo Engagement – Actively involving Ex-Leos for mentorship.</li><li>Stronger Parent Club Collaboration – Building closer coordination with Lions Club of Bhiwandi.</li><li>Structured Teamwork – Assigning clear roles for smoother execution.</li><li>Member Development – Encouraging leadership among all members.</li></ul>" },
+        { category: "overview", question: "3. What Makes Our Club Unique", answer: "<ul><li>Strong Service Legacy.</li><li>Ex-Leo Support System.</li><li>Excellent Bond with Parent Club.</li><li>Unity & Bonding.</li><li>Consistency & Commitment in community service.</li></ul>" },
+        { category: "overview", question: "4. Office Bearers – Roles & Tenure (2025–26)", answer: "Tenure: Leoistic Year 2025–2026." },
 
         // SECRETARIAL REPORT & ADMIN
-        { category: "secretarial", question: "1. Are all club members reported to Lions International via the MyLCI platform?", answer: "Yes, all active members of the Leo Club of Bhiwandi are properly reported and updated on the MyLCI platform." },
-        { category: "secretarial", question: "2. How many Board Meetings, and General/Regular Meetings were conducted?", answer: "We have conducted 9 Board of Directors Meetings and 8 Regular General Meetings to date this term." },
-        { category: "secretarial", question: "3. Were minutes recorded and circulated on time? Attach samples.", answer: "Yes, detailed minutes of every meeting were drafted by the Secretary and circulated within 48 hours to all members. Samples are available in the physical docket." },
-        { category: "secretarial", question: "4. Describe your internal communication system (WhatsApp, email, etc.).", answer: "Our primary internal communication is via WhatsApp groups for quick updates, and Google Drive for document sharing and formal communications." },
-        { category: "secretarial", question: "5. How is documentation maintained (Google Drive / Physical files)?", answer: "We maintain a hybrid system. Important records are kept in physical files for immediate access, backed up securely on a centralized Google Drive." },
-        { category: "secretarial", question: "6. Have reports been uploaded on time on the Leo Portal?", answer: "Yes, all mandatory monthly reports and activity details have been uploaded punctually on the Leo Portal." },
-        { category: "secretarial", question: "7. Challenges faced in secretarial operations and how they were resolved.", answer: "Initially, consolidating activity reports from various chairpersons was delayed. We implemented a standardized Google Form for activity reporting, resolving the issue effectively." },
-        { category: "secretarial", question: "8. Innovations introduced by the Secretary this year.", answer: "Introduced 'Digital Minutes' sent directly as aesthetic PDFs to members, and digitized our entire membership directory for easier access." },
-        { category: "secretarial", question: "9. Attach monthly activity reports and attendance records.", answer: "Physical copies of all MMARs and detailed attendance sheets for meetings and projects are attached in the main docket file." },
-        { category: "secretarial", question: "10. Have you participated in any of the District Secretary Team Initiatives?", answer: "Yes, our club actively participated in the District Secretary's reporting drives and attended the Secretarial schooling." },
-        { category: "secretarial", question: "11. Is the Monthly Membership and Activity Report (MMAR) submitted to the District on time? before the 3rd of every month.", answer: "Yes, we strictly adhere to the deadline, consistently submitting our MMARs before the 3rd of every month." },
+        { category: "secretarial", question: "1. Are all club members reported to Lions International via the MyLCI Platform?", answer: "Yes." },
+        { category: "secretarial", question: "2. How many Board Meetings, and General/Regular Meetings were Conducted?", answer: "10." },
+        { category: "secretarial", question: "3. Were minutes recorded and circulated on time? Attach samples.", answer: "Yes." },
+        { category: "secretarial", question: "4. Describe your internal communication system (WhatsApp, email, etc.).", answer: "Our club follows a structured and active communication system. WhatsApp as Primary Platform for quick updates. Pre-Activity Communication detailing roles. Regular Reminders sent. Post-Activity Reporting shared highlighting outcomes. Content & Visibility actively created." },
+        { category: "secretarial", question: "5. How is documentation maintained (Google Drive / Physical files)?", answer: "A hybrid system: Dedicated Google Account created for digital safety, and a Physical Record Book maintained for official documentation." },
+        { category: "secretarial", question: "6. Have reports been uploaded on time on the Leo Portal?", answer: "Yes." },
+        { category: "secretarial", question: "7. Challenges faced in secretarial operations and how they were Resolved.", answer: "Challenge: Delays in collecting activity reports. Solution: Event chairpersons submit details immediately. Challenge: Communication gaps. Solution: Clear messaging formats with reminders." },
+        { category: "secretarial", question: "8. Innovations introduced by the Secretary this year.", answer: "Real-Time Post Activity Updates: Key details, metrics, and summaries are shared immediately after each activity." },
+        { category: "secretarial", question: "9. Attach monthly activity reports and attendance records.", answer: "Attached in activities section." },
+        { category: "secretarial", question: "10. Have you participated in any of the District Secretary Team Initiatives?", answer: "No." },
+        { category: "secretarial", question: "11. Is the Monthly Membership and Activity Report (MMAR) submitted to the District on time? before the 3rd of every month.", answer: "Yes." },
+
+        // TREASURY & FINANCIAL MANAGEMENT
+        { category: "treasury", question: "1. Does the club have a bank account? If yes, carry a physical copy of the account statement during the DP visit.", answer: "We need to discuss this. Our club does not have an administrative account, but we do have a service account which has not been used throughout the year. In the last BD meeting, it was decided to close that account and open a new one at a nearby location." },
+        { category: "treasury", question: "2. Opening balance at the start & current closing balance", answer: "Opening balance: 27,097. Closing balance: 9,006." },
+        { category: "treasury", question: "3. Add Budget Sheet in Docket which was submitted to District", answer: "Attached." },
+        { category: "treasury", question: "4. Total funds raised during the term", answer: "No funds were raised during the term." },
+        { category: "treasury", question: "5. Any pending dues/Reimbursement", answer: "We are expecting to receive a pending reimbursement amount from the district via Umang." },
+        { category: "treasury", question: "6. Any financial challenge faced by the club", answer: "As of now, we have not faced any financial challenges due to minimal events. Please add if anything is missing." },
+        { category: "treasury", question: "7. Is a file of all accounts, bills, and receipts maintained and updated?", answer: "Yes, all accounts, bills, and receipts are properly maintained and updated." },
+        { category: "treasury", question: "8. Are the treasury reports submitted to the District regularly?", answer: "Yes, treasury reports are submitted to the District regularly." },
 
         // MEMBERSHIP DEVELOPMENT
-        { category: "membership", question: "1. What is the annual subscription fee per member?", answer: "The annual subscription fee per member is ₹1,500." },
-        { category: "membership", question: "2. Retention strategies used to reduce dropouts.", answer: "We focus on deep engagement through fellowship events, assigning new members as co-chairs for projects, and maintaining continuous communication." },
-        { category: "membership", question: "3. Member participation percentage across events.", answer: "Our average member participation rate across service and leadership events is approximately 75-80%." },
-        { category: "membership", question: "4. How are inactive members handled?", answer: "The Membership Director personally reaches out to inactive members to understand their constraints, offering them flexible ways to contribute or shifting them to a supporter role if needed." },
-        { category: "membership", question: "5. Success stories of member growth.", answer: "Several members who joined as shy volunteers last year have remarkably stepped up this year to independently lead major flagship projects and even district roles." },
-        { category: "membership", question: "6. Plans for future membership expansion.", answer: "We plan to conduct orientation seminars in local colleges specifically targeting enthusiastic youth to form a strong base of incoming Alpha members." },
-        { category: "membership", question: "7. What is the status of the club’s total collection as of 7 days before the District President’s visit?", answer: "Receivable: ₹72,000 | Received: ₹69,000 | Outstanding Balance: ₹3,000." },
-        { category: "membership", question: "8. Is the revenue from membership subscriptions sufficient to meet the club's expenses? If not, how are the expenses managed?", answer: "It covers basic administration. For major service projects, we rely on individual donor contributions, local business sponsorships, and dedicated fundraising drives." },
-        { category: "membership", question: "9. What benefits are offered to the members in return for their membership dues?", answer: "Members gain access to exclusive leadership workshops, networking opportunities, district events, personality development sessions, and the fulfillment of organized community service." },
-        { category: "membership", question: "10. How many members represent the club in the District’s Executive Council?", answer: "We are proud to have 3 members from our club serving actively in the District Executive Council." },
-        { category: "membership", question: "11. Is there a designated Membership Director?", answer: "Yes, Leo Roshni Patel currently serves as the Global Membership Team Head." },
-        { category: "membership", question: "12. Are there any Leo-Lion members in the club? If yes, please provide their names and Leo-Lion IDs.", answer: "Currently, there are no Leo-Lion members, but we have older members transitioning toward Lions membership." },
-        { category: "membership", question: "13. How many Alpha members are part of the club? Please provide their names.", answer: "We have 5 Alpha members (12-18 years): Leo Aarav, Leo Sneha, Leo Rohan, Leo Maya, and Leo Kiran." },
-        { category: "membership", question: "14. Membership Statistics (as of 7 days prior to the DP visit):", answer: "Opening as of 1st July 2024: 45 | Additions during the period: 5 | Retained members: 48 | Droppage during the period: 2 | Closing balance: 48." },
+        { category: "membership", question: "1. What is the annual subscription fee per member?", answer: "Rs 1500." },
+        { category: "membership", question: "2. Retention strategies used to reduce dropouts.", answer: "Mentorship from Ex-Leos, Strong Support from Parent Club, Consistent Communication & Follow-ups." },
+        { category: "membership", question: "3. Member participation percentage across events.", answer: "35%." },
+        { category: "membership", question: "4. How are inactive members handled?", answer: "Personal follow-ups to understand reasons for inactivity. Encouraging their closest friends in the club to motivate and reconnect them." },
+        { category: "membership", question: "5. Success stories of member growth.", answer: "Several members have improved their communication, confidence, and teamwork skills through active participation. With guidance from Ex-Leos and Lions Club, members have gained exposure and a strong sense of responsibility." },
+        { category: "membership", question: "6. Plans for future membership expansion.", answer: "An orientation with college students is planned and is in pipeline." },
+        { category: "membership", question: "7. What is the status of the club’s total collection as of 7 days before the District President’s visit?", answer: "Receivable: Rs. ____ Received: Rs. ____ Outstanding Balance: Rs. ____" },
+        { category: "membership", question: "8. Is the revenue from membership subscriptions sufficient to meet the club's expenses?", answer: "Yes, anyways we get good support from our Past Presidents and Ex Leos, who are still Leos by heart." },
+        { category: "membership", question: "9. What benefits are offered to the members in return for their membership dues?", answer: "Club Merchandise, Leadership & Growth Opportunities, Networking & Mentorship, and Participation in Service Activities." },
+        { category: "membership", question: "10. How many members represent the club in the District’s Executive Council?", answer: "5." },
+        { category: "membership", question: "11. Is there a designated Membership Director?", answer: "No." },
+        { category: "membership", question: "12. Are there any Leo-Lion members in the club?", answer: "Yes. 1. Leo Ln Sneha Adep 2. Leo Ln Srikanth Yelle 3. Leo Ln Rahul Dudam 4. Leo Ln Varsha Sircilla 5. Leo Ln Vivek Butla." },
+        { category: "membership", question: "13. How many Alpha members are part of the club?", answer: "0." },
+        { category: "membership", question: "14. Membership Statistics (as of 7 days prior to the DP visit):", answer: "Opening as of 1st July 2025: ____ Additions during the period: ____ Retained members: ____ Droppage during the period: ____ Closing balance: ____." },
 
         // LEADERSHIP
-        { category: "leadership", question: "1. Total Leadership activities conducted, mention 3 best.", answer: "Total 6 activities. Best 3: 'Speak to Lead' (Oratory Workshop), 'Financial Literacy for Youth', and 'Event Management Masterclass'." },
-        { category: "leadership", question: "2. Leadership roles held by members at Club/District/Multiple level.", answer: "Our members hold essential Club BOD roles; 3 are District Officers; and 1 member serves on a Multiple District committee." },
-        { category: "leadership", question: "3. Internal leadership grooming initiatives.", answer: "We host 'Shadow the Leader' programs, assigning junior members to closely assist senior members during mega projects." },
-        { category: "leadership", question: "4. How does the club motivate the members to take up event chairperson opportunity/responsibilities?", answer: "We offer full autonomy with senior mentorship, highlight chairperson achievements on our social media, and present 'Star of the Month' awards." },
-        { category: "leadership", question: "5. How do club leaders/club recognise and appreciate the efforts of members/chairpersons?", answer: "We give out Certificates of Appreciation during General Meetings, special mentions in the club newsletter, and personalized thank-you notes from the President." },
-        { category: "leadership", question: "6. Does the club have a GLT (Global Leadership Team) Director?", answer: "Yes, Leo Sonia Andavrapu serves as our Global Leadership Team Head." },
-        { category: "leadership", question: "7. Does the club have any leadership events in the pipeline? If yes, provide some details.", answer: "Yes, we are planning a 'Youth Conclave' in the coming month focusing on career guidance, mental health awareness, and resume building workshops." },
-        { category: "leadership", question: "8. Are event chairpersons appointed for specific events and activities?", answer: "Absolutely. Every single event has a designated Chairperson and Co-Chairperson to ensure focused leadership and accountability." },
-        { category: "leadership", question: "9. Have any guest speakers been invited to conduct the events?", answer: "Yes, we recently invited renowned motivational speaker and Lion member, Lion Dr. Ramesh, for a leadership alignment session." },
-        { category: "leadership", question: "10. Are you aware of 'Closed Door Meeting' at the club level? If yes, briefly mention the process.", answer: "Yes. A Closed Door Meeting is scheduled to transparently discuss internal challenges, club health, and strategic realignments in a strictly confidential setting." },
+        { category: "leadership", question: "1. Total Leadership activities conducted, mention 3 best.", answer: "1. Canva Workshop: A highly practical session where members learned design skills, content creation, and improved their digital creativity." },
+        { category: "leadership", question: "2. Leadership roles held by members at Club/District/Multiple level.", answer: "Canva Workshop by Leo Namra Gada." },
+        { category: "leadership", question: "3. Internal leadership grooming initiatives.", answer: "Canva Workshop." },
+        { category: "leadership", question: "4. How does the club motivate the members to take up event chairperson opportunity/responsibilities?", answer: "Encouragement & Personal Push from core team, and a Support System providing guidance from Past Presidents and Ex-Leos." },
+        { category: "leadership", question: "5. How do club leaders/club recognise and appreciate the efforts of members/chairpersons?", answer: "Public Recognition in WhatsApp groups and social media. Verbal Appreciation during meetings." },
+        { category: "leadership", question: "6. Does the club have a GLT (Global Leadership Team) Director?", answer: "Yes." },
+        { category: "leadership", question: "7. Does the club have any leadership events in the pipeline?", answer: "Yes, Leadership Interaction Sessions invoking experienced Ex-Leos and Lions Club members to share insights." },
+        { category: "leadership", question: "8. Are event chairpersons appointed for specific events and Activities?", answer: "Yes." },
+        { category: "leadership", question: "9. Have any guest speakers been invited to conduct the events?", answer: "No." },
+        { category: "leadership", question: "10. Are you aware of “Closed Door Meeting” at the club level?", answer: "Yes. Internal discussion among core members, evaluation, and finalization through mutual consensus. Scheduled Date: 25th April 2026." },
 
         // SERVICE ACTIVITIES & SOCIAL IMPACT
-        { category: "service", question: "1. Total number of service activities conducted, mention 3 best activities in detail.", answer: "Total 15 activities. Best 3: 1) Mega Blood Donation (200 units collected), 2) 'Green Earth' Tree Plantation (150 saplings), 3) 'Feed the Need' (distributed 300 meals to underprivileged)." },
-        { category: "service", question: "2. Categorization (as per all service areas).", answer: "We have covered Hunger (4), Environment (3), Vision (2), Childhood Cancer (1), Diabetes (2), and Youth/Education (3)." },
-        { category: "service", question: "3. Total beneficiaries served.", answer: "Over 1,200 beneficiaries served comprehensively across all projects." },
-        { category: "service", question: "4. How many members attend the service projects on an average?", answer: "An average of 25-30 members actively participate in our physical service projects." },
-        { category: "service", question: "5. Flagship service project of the year (details).", answer: "Our flagship project is the 'Udaan Educational Support,' where we adopted a local rural school to provide stationery, notebooks, and setup a mini-library benefiting 200+ students." },
-        { category: "service", question: "6. Community needs identified and addressed.", answer: "We identified a severe lack of awareness regarding diabetes in rural outskirts of Bhiwandi and addressed it by organizing two free check-up camps with expert consultations." },
-        { category: "service", question: "7. Collaborations with NGOs / schools / hospitals (mention 3)", answer: "We successfully collaborated with 1) Rotaract Club of Bhiwandi, 2) Zilla Parishad School, and 3) Lifeline Blood Bank." },
-        { category: "service", question: "8. Sustainable or long-term service initiatives.", answer: "We conduct a quarterly 'Beach/Lake Clean-up' drive and maintain a long-term 'Adopt a Grandparent' program at a local old age home." },
-        { category: "service", question: "9. What has been the response or feedback from the community /beneficiaries about the club’s service initiatives?", answer: "We have received overwhelmingly positive feedback. The school authorities and local panchayats have highly appreciated our consistent support, requesting continued partnerships." },
-        { category: "service", question: "10. Attach 10 best Photos, reports, and impact metrics.", answer: "High-resolution images and detailed impact reports are provided in the physical docket and highlighted in the 'Service & Projects' and 'Gallery' sections of our website." }
+        { category: "service", question: "1. Total number of service activities conducted, mention 3 best activities in detail.", answer: "Total Activities: 30. 1) Blood Donation Camp (200+ bottles). 2) Project Aashirwaad (Visit to Vanaprasthi Ashram). 3) Project Dhristi (Eye check-up camp for 400+ students)." },
+        { category: "service", question: "2. Categorization (as per all service areas).", answer: "Hunger Relief, Health & Vision, Youth Development, Environment, Humanitarian Service." },
+        { category: "service", question: "3. Total beneficiaries served.", answer: "Total Beneficiaries: 2,386+ people." },
+        { category: "service", question: "4. How many members attend the service projects on an average?", answer: "On average, 10–15 members actively participate." },
+        { category: "service", question: "5. Flagship service project of the year (details).", answer: "Blood Donation Camp. Annual signature event, 200+ blood units collected, strong volunteer coordination." },
+        { category: "service", question: "6. Community needs identified and addressed.", answer: "Healthcare, Hunger & Basic Needs, Education Support, Environmental Concerns, Support for Underprivileged." },
+        { category: "service", question: "7. Collaborations with NGOs / schools / hospitals (mention 3)", answer: "Lions Club of Bhiwandi, Government Schools (Dandekar, School No. 59, Umbar Bandhan), Mathrychaya Balika Ashram." },
+        { category: "service", question: "8. Sustainable or long-term service initiatives.", answer: "Annual Blood Donation Camp, Project Aashirwaad, Tree Plantation Drives, Vanrai Bandhara." },
+        { category: "service", question: "9. Response or feedback from the community.", answer: "Highly positive. Beneficiaries appreciated the consistent efforts and impactful activities." },
+        { category: "service", question: "10. Attach 10 best Photos, reports, and impact metrics.", answer: "Attached above." },
+
+        // PERMANENT & CONTINUOUS PROJECTS (Mapped under service)
+        { category: "service", question: "1. Does the club have any existing permanent projects?", answer: "Yes: Blood Donation Camp, Project Aashirwaad, Gaushala Visits." },
+        { category: "service", question: "2. Are there any new permanent projects executed or planned for this Leoistic year?", answer: "Project Sehat – Focused on menstrual hygiene awareness among young girls." },
+        { category: "service", question: "3. Does the club organize any continuous activities?", answer: "Food distribution (Annadanam), Donation drives, Community support initiatives as per need." },
+
+        // FUNDRAISING DRIVES
+        { category: "fundraising", question: "1. Has the club undertaken any major fundraising drives?", answer: "None completed yet." },
+        { category: "fundraising", question: "2. Are there plans for any upcoming fundraising activities?", answer: "Yes: Open Turf Tournament on 26th April 2026. Objective: Generate funds through participation and sponsorships for future service projects." },
+        { category: "fundraising", question: "3. Does the club provide receipts to the donors?", answer: "Yes, ensuring transparency and maintaining proper financial records." },
+
+        // IMAGE BUILDING & PUBLIC RELATIONS
+        { category: "pr", question: "1. Which social media platforms is the club active on?", answer: "Instagram." },
+        { category: "pr", question: "2. Total Social Media Initiatives. Describe any 2", answer: "0." },
+        { category: "pr", question: "3. Best-performing post/reel and why.", answer: "Reel featuring our Sports Head, Leo Rakesh Kunden, during the Installation Ceremony. Viral with 14.1K views due to his charismatic performance and high-quality editing." },
+        { category: "pr", question: "4. Attach screenshots of the instagram page.", answer: "Attached." },
+        { category: "pr", question: "5. Are these platforms updated regularly?", answer: "Yes." },
+        { category: "pr", question: "6. How does the club leverage social media?", answer: "Posting reels, photos, and updates to highlight service work and increase visibility." },
+        { category: "pr", question: "7. Did you receive any membership growth from your digital presence?", answer: "Yes, 2 members joined via Instagram." },
+
+        // FELLOWSHIP & MEMBER BONDING
+        { category: "fellowship", question: "1. Total fellowship events conducted. Mention 3 best.", answer: "Multiple activities. Best 3: Potluck & Power Meet, Housie Night, and Lion-Leo Cricket Battle (LLCB)." },
+        { category: "fellowship", question: "2. Average attendance percentage.", answer: "40–50%." },
+        { category: "fellowship", question: "3. Innovative or unique fellowship ideas executed.", answer: "Potluck Meetings, Housie Night with Planning, Leo-Lion Combined Events." },
+        { category: "fellowship", question: "4. Member feedback on fellowship activities.", answer: "Very positive: strong bonding, enjoyable interactions, better connection with peers." },
+        { category: "fellowship", question: "5. Has the club conducted any inter/intra district fellowship activities?", answer: "No." },
+
+        // PARENT CLUB
+        { category: "parentclub", question: "1. Does the club invite members of the Parent Lions Club to its BOD meetings and events?", answer: "Yes." },
+        { category: "parentclub", question: "2. Is the MMAR, Minutes of the meetings and Treasury Report shared with the Parent Lions Club?", answer: "No." },
+        { category: "parentclub", question: "3. How many activities or events have been conducted in twinning with the Parent Lions Club?", answer: "Total of 16 activities. Leos actively participate and volunteer on-ground. Benefits include mentorship and improved leadership skills." },
+        { category: "parentclub", question: "4. How does the club define and strengthen the Leo-Lion bonding?", answer: "Mentorship and collaboration via joint activities (Mega Tree Plantation, LLCB), guidance, and regular interactions." },
+
+        // DISTRICT INVOLVEMENT
+        { category: "district", question: "1. Does your club members actively participate in District events and Meetings?", answer: "Yes." },
+        { category: "district", question: "2. Has the club hosted any District event this year?", answer: "Yes, successfully hosted the Leo Leadership Institute (LLI) graduating 40+ empowered leaders." },
+        { category: "district", question: "3. What feedback or suggestions does the club have for improving the District's operation?", answer: "NA." },
+        { category: "district", question: "4. What changes can the District implement to attract more participation?", answer: "NA." },
+
+        // ACHIEVEMENTS & RECOGNITIONS
+        { category: "achievements", question: "1. Club-level achievements this year.", answer: "Appreciation for OSW Model at OSW Final Day." },
+        { category: "achievements", question: "2. Individual member achievements.", answer: "Grassroot Leo (Zone 4) recognition for Leo Dhriti Shetty." },
+        { category: "achievements", question: "3. Awards applied for / received.", answer: "NA." },
+        { category: "achievements", question: "4. Special recognitions from district or multiple.", answer: "Recognition received for our club model presentation at OSW Finale Day." },
+        { category: "achievements", question: "5. Proud moments of the year.", answer: "Successfully hosting the Leo Leadership Institute (LLI) and maintaining consistency with 41 service activities throughout the year." },
+
+        // CHALLENGES & LEARNINGS
+        { category: "learnings", question: "1. Major challenges faced by the club.", answer: "Maintaining consistent member participation due to personal commitments, and managing coordination among members." },
+        { category: "learnings", question: "2. Lessons learned as a team.", answer: "Importance of teamwork, clear role distribution, structured planning, and communication." },
+
+        // FUTURE ROADMAP
+        { category: "roadmap", question: "1. Pending activities planned for the year.", answer: "Open Turf Tournament (26th April) – Fundraising initiative, food distribution, and summer water projects." },
+        { category: "roadmap", question: "2. Administrative practices to continue next year.", answer: "Dedicated Google Drive + physical documentation system, strong Leo-Lion collaboration, focusing on impactful service and member leadership." }
     ];
 
     const qnaContainer = document.getElementById("qna-container");
@@ -523,11 +621,19 @@ document.addEventListener('DOMContentLoaded', () => {
             filteredData.forEach((item, index) => {
                 // Determine icon based on category
                 let icon = "fa-circle-info";
-                if (item.category === "treasury") icon = "fa-indian-rupee-sign";
+                if (item.category === "overview") icon = "fa-eye";
                 else if (item.category === "secretarial") icon = "fa-file-signature";
+                else if (item.category === "treasury" || item.category === "fundraising") icon = "fa-indian-rupee-sign";
                 else if (item.category === "membership") icon = "fa-users";
                 else if (item.category === "leadership") icon = "fa-lightbulb";
-                else if (item.category === "service") icon = "fa-hand-holding-heart";
+                else if (item.category === "service" || item.category === "permanent") icon = "fa-hand-holding-heart";
+                else if (item.category === "pr") icon = "fa-hashtag";
+                else if (item.category === "fellowship") icon = "fa-handshake";
+                else if (item.category === "parentclub") icon = "fa-people-group";
+                else if (item.category === "district") icon = "fa-globe";
+                else if (item.category === "achievements") icon = "fa-trophy";
+                else if (item.category === "learnings") icon = "fa-brain";
+                else if (item.category === "roadmap") icon = "fa-route";
 
                 const cardHtml = `
                     <div class="qna-card category-${item.category}" style="animation-delay: ${index * 0.02}s">

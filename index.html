@@ -18,6 +18,144 @@
 
     <!-- Globe Dependencies (Three.js is bundled with globe.gl standalone) -->
     <script src="https://unpkg.com/globe.gl"></script>
+    <style>
+        /* Default Visible Cyber Effects */
+        #init-overlay {
+            background: linear-gradient(135deg, rgba(5,5,15,0.95) 0%, rgba(10,20,30,0.98) 100%) !important;
+        }
+
+        .cyber-grid-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(42, 195, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(42, 195, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            animation: scrollGrid 20s linear infinite;
+        }
+
+        .cyber-scanline {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: rgba(42, 195, 255, 0.4);
+            box-shadow: 0 0 15px rgba(42, 195, 255, 0.8);
+            z-index: 1;
+            animation: scanline 4s linear infinite;
+            opacity: 0.6;
+        }
+
+        .cyber-h1 {
+            animation: textGlitchSubtle 4s infinite, pulseGlow 3s infinite alternate;
+        }
+
+        #init-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease, transform 0.1s !important;
+            animation: btnCyberPulse 2s infinite alternate !important;
+            z-index: 5;
+        }
+
+        #init-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+        #init-btn:hover::before {
+            left: 150%;
+        }
+        #init-btn:hover {
+            box-shadow: 0 0 30px rgba(212, 160, 23, 0.8), 0 0 50px rgba(42, 195, 255, 0.5) !important;
+            transform: scale(1.05) !important;
+            text-shadow: 0 0 10px #fff;
+            border-color: #2ac3ff !important;
+            background: rgba(42, 195, 255, 0.2) !important;
+            animation: none !important;
+        }
+        #init-btn:active {
+            transform: scale(0.95) !important;
+        }
+        
+        .entry-glitch-active .cyber-h1, .entry-glitch-active p, .entry-glitch-active h2, .entry-glitch-active h3 {
+            animation: textGlitch 0.15s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #2ac3ff !important;
+            text-shadow: 3px 0 red, -3px 0 blue;
+            transform: scale(1.05);
+        }
+        
+        .entry-zoom-out {
+            animation: gridZoomOut 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards !important;
+        }
+
+        .pulse-text-gold {
+            display: inline-block;
+            animation: textPulseGold 2s infinite alternate;
+        }
+
+        .pulse-text-white {
+            display: inline-block;
+            animation: textPulseWhite 2s infinite alternate;
+        }
+
+        @keyframes textPulseGold {
+            0% { text-shadow: 0 0 5px #ffaa00, 0 0 10px #ff6600, 0 2px 2px rgba(0,0,0,0.5); transform: scale(1); }
+            100% { text-shadow: 0 0 10px #ffaa00, 0 0 20px #ff6600, 0 2px 2px rgba(0,0,0,0.8); transform: scale(1.02); }
+        }
+
+        @keyframes textPulseWhite {
+            0% { text-shadow: 0 0 4px rgba(255,255,255,0.4); }
+            100% { text-shadow: 0 0 8px rgba(255,255,255,0.8); }
+        }
+        
+        /* New Crazy Button Glare */
+        .entry-btn-crazy:hover .hover-glare {
+            left: 150% !important;
+        }
+
+        @keyframes textGlitchSubtle {
+            0%, 95% { transform: translate(0); text-shadow: none; }
+            96% { transform: translate(-2px, 2px); text-shadow: 2px 0 #2ac3ff, -2px 0 #ff4b4b; }
+            98% { transform: translate(2px, -2px); text-shadow: -2px 0 #ff4b4b, 2px 0 #2ac3ff; }
+            100% { transform: translate(0); text-shadow: none; }
+        }
+
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(212, 160, 23, 1), 0 0 30px rgba(212, 160, 23, 0.6); }
+        }
+
+        @keyframes btnCyberPulse {
+            0% { box-shadow: 0 0 10px rgba(212, 160, 23, 0.3); border-color: #d4a017; }
+            100% { box-shadow: 0 0 25px rgba(42, 195, 255, 0.5); border-color: #2ac3ff; }
+        }
+
+        @keyframes scrollGrid {
+            0% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes scanline {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        @keyframes textGlitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-10px, 5px) }
+            40% { transform: translate(-5px, -10px) }
+            60% { transform: translate(10px, 5px) }
+            80% { transform: translate(5px, -5px) }
+            100% { transform: translate(0) }
+        }
+        @keyframes gridZoomOut {
+            0% { transform: scale(1); opacity: 1; filter: blur(0px); }
+            40% { transform: scale(1.1); filter: blur(2px) sepia(1); }
+            100% { transform: scale(15); opacity: 0; filter: blur(20px) contrast(2); background: transparent; }
+        }
+    </style>
 </head>
 
 <body class="ai-theme">
@@ -25,14 +163,48 @@
     <!-- SOUNDTRACK -->
     <audio id="audio-war" src="https://actions.google.com/sounds/v1/alarms/spaceship_alarm.ogg" loop preload="auto"></audio>
     <audio id="audio-peace" src="https://actions.google.com/sounds/v1/ambiences/outdoor_summer_ambience.ogg" loop preload="auto"></audio>
+    <audio id="audio-entry" src="https://actions.google.com/sounds/v1/science_fiction/sci_fi_door_open.ogg" preload="auto"></audio>
+    <audio id="audio-hover" src="https://actions.google.com/sounds/v1/ui/button_click.ogg" preload="auto"></audio>
 
     <!-- INITIALIZATION OVERLAY -->
-    <div id="init-overlay" style="position: fixed; inset: 0; z-index: 100000; background: rgba(0,0,0,0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); transition: opacity 0.5s ease; padding: 20px;">
-        <h1 class="text-gold" style="font-family: var(--font-heading); margin-bottom: 1rem; font-size: clamp(1.5rem, 4vw, 3rem); text-align: center; letter-spacing: 2px;">WELCOME<br>DISTRICT PRESIDENT</h1>
-        <p class="text-dim" style="margin-bottom: 2rem; text-align: center; font-size: 0.9rem; max-width: 600px; font-family: var(--font-mono);">Please proceed to experience the Digital Docket for Leoistic Year 2025–26.</p>
-        <button id="init-btn" style="padding: 15px 40px; font-family: var(--font-heading); font-size: 1.2rem; font-weight: bold; color: #fff; background: rgba(212, 160, 23, 0.2); border: 2px solid #d4a017; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(212, 160, 23, 0.4); text-transform: uppercase; border-radius: 4px;">
-            ENTER DOCKET
-        </button>
+    <div id="init-overlay" style="position: fixed; inset: 0; z-index: 100000; background: #03060c; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease; padding: 20px; overflow: hidden; overscroll-behavior: none;">
+        <div class="cyber-grid-overlay"></div>
+        <div class="cyber-scanline"></div>
+        <!-- Particle wrapper for crazy effect -->
+        <div id="init-particles" style="position: absolute; inset: 0; z-index: 1; pointer-events: none;"></div>
+        
+        <div class="entry-content-wrapper" style="position: relative; z-index: 10; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; height: 100%; justify-content: center;">
+            <!-- 5 Logos -->
+            <div class="hero-logos" style="margin-bottom: 2rem; gap: 15px; display: flex; justify-content: center; width: 100%;">
+                <div class="hero-logo-slice sl-1 visible" title="Lions International" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+                <div class="hero-logo-slice sl-2 visible" title="LEO" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+                <div class="hero-logo-slice sl-3 visible" title="Leo Club of Bhiwandi" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8)); transform: scale(1.15);"></div>
+                <div class="hero-logo-slice sl-4 visible" title="Leo District 3231 A2" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+                <div class="hero-logo-slice sl-5 visible" title="District Theme" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+            </div>
+
+            <h2 class="neon-cyan" style="font-family: var(--font-heading); font-weight: 700; letter-spacing: 5px; font-size: clamp(0.8rem, 2.5vw, 1.1rem); margin-bottom: 0.8rem; text-transform: uppercase; text-shadow: 0 0 15px rgba(42,195,255,0.8), 0 0 20px rgba(42,195,255,0.4);">
+                LEO CLUB OF BHIWANDI
+            </h2>
+            
+            <h1 class="text-gold cyber-h1" style="font-family: var(--font-heading); font-weight: 900; margin-bottom: 0.8rem; font-size: clamp(2rem, 5vw, 3.8rem); text-align: center; letter-spacing: 2px; line-height: 1.1; color: #ffd700;">
+                <span class="pulse-text-gold">WELCOME</span><br>
+                <span class="pulse-text-gold">DISTRICT PRESIDENT</span>
+            </h1>
+
+            <h3 style="font-family: var(--font-mono); font-weight: 700; color: #ffffff; letter-spacing: 4px; font-size: clamp(0.8rem, 2vw, 1rem); margin-bottom: 2rem; text-transform: uppercase;">
+                <span class="pulse-text-white">LEO LION SHIVANI SHAH</span>
+            </h3>
+
+            <p class="text-dim" style="margin-bottom: 2.5rem; text-align: center; font-size: clamp(0.75rem, 1.8vw, 0.9rem); max-width: 600px; font-family: var(--font-mono); color: #cbd5e1; line-height: 1.5; letter-spacing: 1px;">
+                Please proceed to experience the Digital Docket for Leoistic Year<br>2025–26.
+            </p>
+
+            <button id="init-btn" class="entry-btn-crazy" style="position: relative; overflow: hidden; padding: 16px 45px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: bold; color: #fff; background: rgba(30, 20, 5, 0.8); border: 2px solid #d4a017; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(212, 160, 23, 0.5), inset 0 0 10px rgba(212, 160, 23, 0.2); text-transform: uppercase; border-radius: 8px; letter-spacing: 3px; z-index: 5;">
+                <span style="position: relative; z-index: 2;">ENTER DOCKET</span>
+                <div class="hover-glare" style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); transition: 0.5s; z-index: 1;"></div>
+            </button>
+        </div>
     </div>
 
     <!-- PERSISTENT THEME HUD (Global Volatility vs Local Peace) -->
@@ -113,27 +285,27 @@
 
                     <!-- Title -->
                     <div class="hero-title-group">
-                        <h1 class="elegant-title mt-4">LEO CLUB OF BHIWANDI</h1>
+                        <h1 class="elegant-title mt-2">LEO CLUB OF BHIWANDI</h1>
                         <div class="elegant-subtitle mt-2" style="line-height: 1.5;">LIONS INTERNATIONAL<br>LEO MULTIPLE
                             3231 | LEO DISTRICT 3231 A2</div>
-                        <p class="elegant-tagline mt-3">"A Year of Service, Leadership and Impact"</p>
+                        <p class="elegant-tagline mt-2">"A Year of Service, Leadership and Impact"</p>
                     </div>
 
                     <!-- Welcome Panel -->
-                    <div class="elegant-panel mt-5 hero-welcome-panel border-gold-animated">
+                    <div class="elegant-panel mt-3 hero-welcome-panel border-gold-animated">
                         <h3 class="text-gold tracking-widest text-sm elegant-heading">District President Official Visit
                             2025–26</h3>
-                        <p class="mt-3 text-sm text-dim">We warmly welcome</p>
+                        <p class="mt-2 text-sm text-dim">We warmly welcome</p>
                         <h2 class="text-blue my-2 elegant-name"
                             style="font-family: var(--font-heading); color: #fff; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);">
                             Leo Lion Shivani Shah</h2>
                         <p class="text-sm text-gold">District President</p>
-                        <p class="mt-3 text-xs text-dim" style="line-height: 1.6;">along with the District Executive
-                            Council<br>for the Official District President Visit<br>to Leo Club of Bhiwandi.</p>
+                        <p class="mt-2 text-xs text-dim" style="line-height: 1.5;">along with the District Executive
+                            Council<br>for the Official District President Visit</p>
                     </div>
 
                     <!-- Explore Button -->
-                    <a href="#module-2" class="explore-btn mt-5">Explore Our Journey</a>
+                    <a href="#module-2" class="explore-btn mt-3">Explore Our Journey</a>
                 </div>
             </div>
         </section>
@@ -723,13 +895,22 @@
                 <p class="elegant-subtitle mt-2 neon-blue">Vital Information & Strategic Review</p>
 
                 <!-- Category Filters -->
-                <div class="qna-filters mt-4 reveal delay-1">
+                <div class="qna-filters mt-4 reveal delay-1" style="flex-wrap: wrap; justify-content: center; gap: 8px;">
                     <button class="qna-filter-btn active" data-filter="all">All</button>
-                    <button class="qna-filter-btn" data-filter="treasury">Treasury</button>
+                    <button class="qna-filter-btn" data-filter="overview">Overview</button>
                     <button class="qna-filter-btn" data-filter="secretarial">Secretarial</button>
+                    <button class="qna-filter-btn" data-filter="treasury">Treasury</button>
                     <button class="qna-filter-btn" data-filter="membership">Membership</button>
                     <button class="qna-filter-btn" data-filter="leadership">Leadership</button>
                     <button class="qna-filter-btn" data-filter="service">Service</button>
+                    <button class="qna-filter-btn" data-filter="fundraising">Fundraising</button>
+                    <button class="qna-filter-btn" data-filter="pr">PR</button>
+                    <button class="qna-filter-btn" data-filter="fellowship">Fellowship</button>
+                    <button class="qna-filter-btn" data-filter="parentclub">Parent Club</button>
+                    <button class="qna-filter-btn" data-filter="district">District</button>
+                    <button class="qna-filter-btn" data-filter="achievements">Achievements</button>
+                    <button class="qna-filter-btn" data-filter="learnings">Learnings</button>
+                    <button class="qna-filter-btn" data-filter="roadmap">Roadmap</button>
                 </div>
 
                 <!-- QnA Container -->
