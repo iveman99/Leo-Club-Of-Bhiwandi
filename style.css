@@ -2527,7 +2527,7 @@ h3,
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2000;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2560,16 +2560,21 @@ h3,
   border: 1px solid var(--neon-cyan);
   border-radius: 8px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(42, 195, 255, 0.2), inset 0 0 20px rgba(42, 195, 255, 0.1);
-  transform: scale(0.9) translateY(20px);
+  transform: perspective(2000px) rotateX(60deg) scale(0.6);
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.3s ease;
   overflow: hidden;
   z-index: 2;
 }
 
+@keyframes modalHologramEntry {
+  0% { transform: perspective(2000px) rotateX(60deg) scale(0.6); opacity: 0; filter: blur(20px); box-shadow: 0 0 100px var(--neon-cyan); }
+  50% { transform: perspective(2000px) rotateX(-5deg) scale(1.02); opacity: 1; filter: blur(2px); box-shadow: 0 0 50px var(--neon-cyan); }
+  100% { transform: perspective(2000px) rotateX(0deg) scale(1); opacity: 1; filter: blur(0); }
+}
+
 .cyber-modal.active .modal-content-wrapper {
-  transform: scale(1) translateY(0);
-  opacity: 1;
+  animation: modalHologramEntry 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .modal-close-btn {
@@ -2607,6 +2612,9 @@ h3,
 @media (min-width: 768px) {
   .modal-body {
     flex-direction: row;
+    height: 60vh;
+    min-height: 450px;
+    max-height: 600px;
   }
 }
 
@@ -2616,12 +2624,19 @@ h3,
   min-height: 250px;
   overflow: hidden;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .modal-glitch-overlay {
@@ -2633,14 +2648,24 @@ h3,
   background: linear-gradient(0deg, rgba(42, 195, 255, 0.2) 0%, transparent 50%, rgba(42, 195, 255, 0.1) 100%);
   mix-blend-mode: overlay;
   pointer-events: none;
+  z-index: 5;
 }
 
 .modal-info-container {
   flex: 1.2;
-  padding: 40px;
+  padding: 50px 40px 40px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.modal-info-container::-webkit-scrollbar {
+  width: 5px;
+}
+.modal-info-container::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 3px;
 }
 
 .modal-meta-grid {
