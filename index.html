@@ -21,14 +21,17 @@
     <style>
         /* Default Visible Cyber Effects */
         #init-overlay {
-            background: linear-gradient(135deg, rgba(5,5,15,0.95) 0%, rgba(10,20,30,0.98) 100%) !important;
+            background: linear-gradient(135deg, rgba(5, 5, 15, 0.95) 0%, rgba(10, 20, 30, 0.98) 100%) !important;
         }
 
         .cyber-grid-overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: linear-gradient(rgba(42, 195, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(42, 195, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(90deg, rgba(42, 195, 255, 0.05) 1px, transparent 1px);
             background-size: 30px 30px;
             z-index: 0;
             animation: scrollGrid 20s linear infinite;
@@ -36,7 +39,10 @@
 
         .cyber-scanline {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
             background: rgba(42, 195, 255, 0.4);
             box-shadow: 0 0 15px rgba(42, 195, 255, 0.8);
             z-index: 1;
@@ -59,14 +65,19 @@
         #init-btn::before {
             content: '';
             position: absolute;
-            top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transform: skewX(-20deg);
             transition: 0.5s;
         }
+
         #init-btn:hover::before {
             left: 150%;
         }
+
         #init-btn:hover {
             box-shadow: 0 0 30px rgba(212, 160, 23, 0.8), 0 0 50px rgba(42, 195, 255, 0.5) !important;
             transform: scale(1.05) !important;
@@ -75,17 +86,21 @@
             background: rgba(42, 195, 255, 0.2) !important;
             animation: none !important;
         }
+
         #init-btn:active {
             transform: scale(0.95) !important;
         }
-        
-        .entry-glitch-active .cyber-h1, .entry-glitch-active p, .entry-glitch-active h2, .entry-glitch-active h3 {
+
+        .entry-glitch-active .cyber-h1,
+        .entry-glitch-active p,
+        .entry-glitch-active h2,
+        .entry-glitch-active h3 {
             animation: textGlitch 0.15s cubic-bezier(.25, .46, .45, .94) both infinite;
             color: #2ac3ff !important;
             text-shadow: 3px 0 red, -3px 0 blue;
             transform: scale(1.05);
         }
-        
+
         .entry-zoom-out {
             animation: gridZoomOut 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards !important;
         }
@@ -101,59 +116,142 @@
         }
 
         @keyframes textPulseGold {
-            0% { text-shadow: 0 0 5px #ffaa00, 0 0 10px #ff6600, 0 2px 2px rgba(0,0,0,0.5); transform: scale(1); }
-            100% { text-shadow: 0 0 10px #ffaa00, 0 0 20px #ff6600, 0 2px 2px rgba(0,0,0,0.8); transform: scale(1.02); }
+            0% {
+                text-shadow: 0 0 5px #ffaa00, 0 0 10px #ff6600, 0 2px 2px rgba(0, 0, 0, 0.5);
+                transform: scale(1);
+            }
+
+            100% {
+                text-shadow: 0 0 10px #ffaa00, 0 0 20px #ff6600, 0 2px 2px rgba(0, 0, 0, 0.8);
+                transform: scale(1.02);
+            }
         }
 
         @keyframes textPulseWhite {
-            0% { text-shadow: 0 0 4px rgba(255,255,255,0.4); }
-            100% { text-shadow: 0 0 8px rgba(255,255,255,0.8); }
+            0% {
+                text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+            }
+
+            100% {
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            }
         }
-        
+
         /* New Crazy Button Glare */
         .entry-btn-crazy:hover .hover-glare {
             left: 150% !important;
         }
 
         @keyframes textGlitchSubtle {
-            0%, 95% { transform: translate(0); text-shadow: none; }
-            96% { transform: translate(-2px, 2px); text-shadow: 2px 0 #2ac3ff, -2px 0 #ff4b4b; }
-            98% { transform: translate(2px, -2px); text-shadow: -2px 0 #ff4b4b, 2px 0 #2ac3ff; }
-            100% { transform: translate(0); text-shadow: none; }
+
+            0%,
+            95% {
+                transform: translate(0);
+                text-shadow: none;
+            }
+
+            96% {
+                transform: translate(-2px, 2px);
+                text-shadow: 2px 0 #2ac3ff, -2px 0 #ff4b4b;
+            }
+
+            98% {
+                transform: translate(2px, -2px);
+                text-shadow: -2px 0 #ff4b4b, 2px 0 #2ac3ff;
+            }
+
+            100% {
+                transform: translate(0);
+                text-shadow: none;
+            }
         }
 
         @keyframes pulseGlow {
-            0% { text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); }
-            100% { text-shadow: 0 0 20px rgba(212, 160, 23, 1), 0 0 30px rgba(212, 160, 23, 0.6); }
+            0% {
+                text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+            }
+
+            100% {
+                text-shadow: 0 0 20px rgba(212, 160, 23, 1), 0 0 30px rgba(212, 160, 23, 0.6);
+            }
         }
 
         @keyframes btnCyberPulse {
-            0% { box-shadow: 0 0 10px rgba(212, 160, 23, 0.3); border-color: #d4a017; }
-            100% { box-shadow: 0 0 25px rgba(42, 195, 255, 0.5); border-color: #2ac3ff; }
+            0% {
+                box-shadow: 0 0 10px rgba(212, 160, 23, 0.3);
+                border-color: #d4a017;
+            }
+
+            100% {
+                box-shadow: 0 0 25px rgba(42, 195, 255, 0.5);
+                border-color: #2ac3ff;
+            }
         }
 
         @keyframes scrollGrid {
-            0% { transform: translateY(-30px); }
-            100% { transform: translateY(0); }
+            0% {
+                transform: translateY(-30px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
         }
 
         @keyframes scanline {
-            0% { top: -10%; }
-            100% { top: 110%; }
+            0% {
+                top: -10%;
+            }
+
+            100% {
+                top: 110%;
+            }
         }
 
         @keyframes textGlitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-10px, 5px) }
-            40% { transform: translate(-5px, -10px) }
-            60% { transform: translate(10px, 5px) }
-            80% { transform: translate(5px, -5px) }
-            100% { transform: translate(0) }
+            0% {
+                transform: translate(0)
+            }
+
+            20% {
+                transform: translate(-10px, 5px)
+            }
+
+            40% {
+                transform: translate(-5px, -10px)
+            }
+
+            60% {
+                transform: translate(10px, 5px)
+            }
+
+            80% {
+                transform: translate(5px, -5px)
+            }
+
+            100% {
+                transform: translate(0)
+            }
         }
+
         @keyframes gridZoomOut {
-            0% { transform: scale(1); opacity: 1; filter: blur(0px); }
-            40% { transform: scale(1.1); filter: blur(2px) sepia(1); }
-            100% { transform: scale(15); opacity: 0; filter: blur(20px) contrast(2); background: transparent; }
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                filter: blur(0px);
+            }
+
+            40% {
+                transform: scale(1.1);
+                filter: blur(2px) sepia(1);
+            }
+
+            100% {
+                transform: scale(15);
+                opacity: 0;
+                filter: blur(20px) contrast(2);
+                background: transparent;
+            }
         }
     </style>
 </head>
@@ -161,48 +259,66 @@
 <body class="ai-theme">
 
     <!-- SOUNDTRACK -->
-    <audio id="audio-war" src="https://actions.google.com/sounds/v1/alarms/spaceship_alarm.ogg" loop preload="auto"></audio>
-    <audio id="audio-peace" src="https://actions.google.com/sounds/v1/ambiences/outdoor_summer_ambience.ogg" loop preload="auto"></audio>
-    <audio id="audio-entry" src="https://actions.google.com/sounds/v1/science_fiction/sci_fi_door_open.ogg" preload="auto"></audio>
+    <audio id="audio-war" src="https://actions.google.com/sounds/v1/alarms/spaceship_alarm.ogg" loop
+        preload="auto"></audio>
+    <audio id="audio-peace" src="https://actions.google.com/sounds/v1/ambiences/outdoor_summer_ambience.ogg" loop
+        preload="auto"></audio>
+    <audio id="audio-entry" src="https://actions.google.com/sounds/v1/science_fiction/sci_fi_door_open.ogg"
+        preload="auto"></audio>
     <audio id="audio-hover" src="https://actions.google.com/sounds/v1/ui/button_click.ogg" preload="auto"></audio>
 
     <!-- INITIALIZATION OVERLAY -->
-    <div id="init-overlay" style="position: fixed; inset: 0; z-index: 100000; background: #03060c; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease; padding: 20px; overflow: hidden; overscroll-behavior: none;">
+    <div id="init-overlay"
+        style="position: fixed; inset: 0; z-index: 100000; background: #03060c; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease; padding: 20px; overflow: hidden; overscroll-behavior: none;">
         <div class="cyber-grid-overlay"></div>
         <div class="cyber-scanline"></div>
         <!-- Particle wrapper for crazy effect -->
         <div id="init-particles" style="position: absolute; inset: 0; z-index: 1; pointer-events: none;"></div>
-        
-        <div class="entry-content-wrapper" style="position: relative; z-index: 10; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; height: 100%; justify-content: center;">
+
+        <div class="entry-content-wrapper"
+            style="position: relative; z-index: 10; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; height: 100%; justify-content: center;">
             <!-- 5 Logos -->
-            <div class="hero-logos" style="margin-bottom: 2rem; gap: 15px; display: flex; justify-content: center; width: 100%;">
-                <div class="hero-logo-slice sl-1 visible" title="Lions International" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
-                <div class="hero-logo-slice sl-2 visible" title="LEO" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
-                <div class="hero-logo-slice sl-3 visible" title="Leo Club of Bhiwandi" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8)); transform: scale(1.15);"></div>
-                <div class="hero-logo-slice sl-4 visible" title="Leo District 3231 A2" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
-                <div class="hero-logo-slice sl-5 visible" title="District Theme" style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+            <div class="hero-logos"
+                style="margin-bottom: 2rem; gap: 15px; display: flex; justify-content: center; width: 100%;">
+                <div class="hero-logo-slice sl-1 visible" title="Lions International"
+                    style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+                <div class="hero-logo-slice sl-2 visible" title="LEO"
+                    style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+                <div class="hero-logo-slice sl-3 visible" title="Leo Club of Bhiwandi"
+                    style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8)); transform: scale(1.15);"></div>
+                <div class="hero-logo-slice sl-4 visible" title="Leo District 3231 A2"
+                    style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
+                <div class="hero-logo-slice sl-5 visible" title="District Theme"
+                    style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
             </div>
 
-            <h2 class="neon-cyan" style="font-family: var(--font-heading); font-weight: 700; letter-spacing: 5px; font-size: clamp(0.8rem, 2.5vw, 1.1rem); margin-bottom: 0.8rem; text-transform: uppercase; text-shadow: 0 0 15px rgba(42,195,255,0.8), 0 0 20px rgba(42,195,255,0.4);">
+            <h2 class="neon-cyan"
+                style="font-family: var(--font-heading); font-weight: 700; letter-spacing: 5px; font-size: clamp(0.8rem, 2.5vw, 1.1rem); margin-bottom: 0.8rem; text-transform: uppercase; text-shadow: 0 0 15px rgba(42,195,255,0.8), 0 0 20px rgba(42,195,255,0.4);">
                 LEO CLUB OF BHIWANDI
             </h2>
-            
-            <h1 class="text-gold cyber-h1" style="font-family: var(--font-heading); font-weight: 900; margin-bottom: 0.8rem; font-size: clamp(2rem, 5vw, 3.8rem); text-align: center; letter-spacing: 2px; line-height: 1.1; color: #ffd700;">
+
+            <h1 class="text-gold cyber-h1"
+                style="font-family: var(--font-heading); font-weight: 900; margin-bottom: 0.8rem; font-size: clamp(2rem, 5vw, 3.8rem); text-align: center; letter-spacing: 2px; line-height: 1.1; color: #ffd700;">
                 <span class="pulse-text-gold">WELCOME</span><br>
                 <span class="pulse-text-gold">DISTRICT PRESIDENT</span>
             </h1>
 
-            <h3 style="font-family: var(--font-mono); font-weight: 700; color: #ffffff; letter-spacing: 4px; font-size: clamp(0.8rem, 2vw, 1rem); margin-bottom: 2rem; text-transform: uppercase;">
+            <h3
+                style="font-family: var(--font-mono); font-weight: 700; color: #ffffff; letter-spacing: 4px; font-size: clamp(0.8rem, 2vw, 1rem); margin-bottom: 2rem; text-transform: uppercase;">
                 <span class="pulse-text-white">LEO LION SHIVANI SHAH</span>
             </h3>
 
-            <p class="text-dim" style="margin-bottom: 2.5rem; text-align: center; font-size: clamp(0.75rem, 1.8vw, 0.9rem); max-width: 600px; font-family: var(--font-mono); color: #cbd5e1; line-height: 1.5; letter-spacing: 1px;">
+            <p class="text-dim"
+                style="margin-bottom: 2.5rem; text-align: center; font-size: clamp(0.75rem, 1.8vw, 0.9rem); max-width: 600px; font-family: var(--font-mono); color: #cbd5e1; line-height: 1.5; letter-spacing: 1px;">
                 Please proceed to experience the Digital Docket for Leoistic Year<br>2025–26.
             </p>
 
-            <button id="init-btn" class="entry-btn-crazy" style="position: relative; overflow: hidden; padding: 16px 45px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: bold; color: #fff; background: rgba(30, 20, 5, 0.8); border: 2px solid #d4a017; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(212, 160, 23, 0.5), inset 0 0 10px rgba(212, 160, 23, 0.2); text-transform: uppercase; border-radius: 8px; letter-spacing: 3px; z-index: 5;">
+            <button id="init-btn" class="entry-btn-crazy"
+                style="position: relative; overflow: hidden; padding: 16px 45px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: bold; color: #fff; background: rgba(30, 20, 5, 0.8); border: 2px solid #d4a017; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(212, 160, 23, 0.5), inset 0 0 10px rgba(212, 160, 23, 0.2); text-transform: uppercase; border-radius: 8px; letter-spacing: 3px; z-index: 5;">
                 <span style="position: relative; z-index: 2;">ENTER DOCKET</span>
-                <div class="hover-glare" style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); transition: 0.5s; z-index: 1;"></div>
+                <div class="hover-glare"
+                    style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); transition: 0.5s; z-index: 1;">
+                </div>
             </button>
         </div>
     </div>
@@ -214,8 +330,10 @@
         <div class="hud-border hud-left"></div>
         <div class="hud-border hud-right"></div>
         <div class="hud-status-monitor">
-            <div class="status-row global"><i class="fa-solid fa-circle-radiation blink"></i> GLOBAL: <span class="neon-red">VOLATILE</span></div>
-            <div class="status-row local"><i class="fa-solid fa-shield-heart"></i> LOCAL: <span class="neon-green">PEACE & GROWTH</span></div>
+            <div class="status-row global"><i class="fa-solid fa-circle-radiation blink"></i> GLOBAL: <span
+                    class="neon-red">VOLATILE</span></div>
+            <div class="status-row local"><i class="fa-solid fa-shield-heart"></i> LOCAL: <span class="neon-green">PEACE
+                    & GROWTH</span></div>
         </div>
     </div>
 
@@ -411,13 +529,26 @@
 
                             <!-- Logo Showcase Shelf -->
                             <div class="president-logos-shelf mt-5 reveal delay-2">
-                                <div class="shelf-label" style="text-align: center; margin-bottom: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-cyan); letter-spacing: 2px;">OFFICIAL AFFILIATIONS</div>
-                                <div class="shelf-logos" style="display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap; width: 100%; align-items: center; overflow: hidden; padding: 5px 0;">
-                                    <div class="hero-logo-slice sl-1" title="Lions International" style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;"></div>
-                                    <div class="hero-logo-slice sl-2" title="LEO" style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;"></div>
-                                    <div class="hero-logo-slice sl-3" title="Leo Club of Bhiwandi" style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;"></div>
-                                    <div class="hero-logo-slice sl-4" title="Leo District 3231 A2" style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;"></div>
-                                    <div class="hero-logo-slice sl-5" title="District Theme" style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;"></div>
+                                <div class="shelf-label"
+                                    style="text-align: center; margin-bottom: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-cyan); letter-spacing: 2px;">
+                                    OFFICIAL AFFILIATIONS</div>
+                                <div class="shelf-logos"
+                                    style="display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap; width: 100%; align-items: center; overflow: hidden; padding: 5px 0;">
+                                    <div class="hero-logo-slice sl-1" title="Lions International"
+                                        style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;">
+                                    </div>
+                                    <div class="hero-logo-slice sl-2" title="LEO"
+                                        style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;">
+                                    </div>
+                                    <div class="hero-logo-slice sl-3" title="Leo Club of Bhiwandi"
+                                        style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;">
+                                    </div>
+                                    <div class="hero-logo-slice sl-4" title="Leo District 3231 A2"
+                                        style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;">
+                                    </div>
+                                    <div class="hero-logo-slice sl-5" title="District Theme"
+                                        style="transform: none !important; width: clamp(35px, 8vw, 55px) !important; height: clamp(35px, 8vw, 55px) !important; flex-shrink: 0;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -499,7 +630,8 @@
 
                     <!-- Row 1: Core Executives (Scroll Left) -->
                     <div class="marquee-wrapper mt-4">
-                        <div class="marquee-label"><i class="fa-solid fa-microchip neon-gold"></i> CORE EXECUTIVE BOARD</div>
+                        <div class="marquee-label"><i class="fa-solid fa-microchip neon-gold"></i> CORE EXECUTIVE BOARD
+                        </div>
                         <div class="marquee-container scroll-left">
                             <div class="marquee-track" id="core-marquee-track">
                                 <!-- Dynamically injected by main.js -->
@@ -509,7 +641,8 @@
 
                     <!-- Row 2: Team Leads (Scroll Right) -->
                     <div class="marquee-wrapper mt-5">
-                        <div class="marquee-label"><i class="fa-solid fa-satellite-dish neon-cyan"></i> TEAM LEADS & DIRECTORS</div>
+                        <div class="marquee-label"><i class="fa-solid fa-satellite-dish neon-cyan"></i> TEAM LEADS &
+                            DIRECTORS</div>
                         <div class="marquee-container scroll-right">
                             <div class="marquee-track" id="leads-marquee-track">
                                 <!-- Dynamically injected by main.js -->
@@ -537,11 +670,16 @@
                 </div>
 
                 <!-- Cool Glowing Separator -->
-                <div class="section-divider reveal delay-1" style="width: 150px; height: 2px; background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent); margin: 3rem auto; box-shadow: 0 0 10px var(--neon-cyan);"></div>
+                <div class="section-divider reveal delay-1"
+                    style="width: 150px; height: 2px; background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent); margin: 3rem auto; box-shadow: 0 0 10px var(--neon-cyan);">
+                </div>
 
                 <div class="text-center mb-4 reveal delay-1">
-                    <h3 class="cyber-heading" style="font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: 3px; color: var(--neon-gold); text-shadow: 0 0 15px rgba(255, 184, 0, 0.5);">Our Impact</h3>
-                    <p class="elegant-subtitle mt-2 neon-blue">Measuring the difference we made through service and leadership.</p>
+                    <h3 class="cyber-heading"
+                        style="font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: 3px; color: var(--neon-gold); text-shadow: 0 0 15px rgba(255, 184, 0, 0.5);">
+                        Our Impact</h3>
+                    <p class="elegant-subtitle mt-2 neon-blue">Measuring the difference we made through service and
+                        leadership.</p>
                 </div>
                 <div class="projects-dashboard mb-4 reveal delay-1">
                     <div class="dashboard-stat"><span class="stat-number text-cyan">41</span><span
@@ -898,7 +1036,8 @@
                 <p class="elegant-subtitle mt-2 neon-blue">Vital Information & Strategic Review</p>
 
                 <!-- Category Filters -->
-                <div class="qna-filters mt-4 reveal delay-1" style="flex-wrap: wrap; justify-content: center; gap: 8px;">
+                <div class="qna-filters mt-4 reveal delay-1"
+                    style="flex-wrap: wrap; justify-content: center; gap: 8px;">
                     <button class="qna-filter-btn active" data-filter="all">All</button>
                     <button class="qna-filter-btn" data-filter="overview">Overview</button>
                     <button class="qna-filter-btn" data-filter="secretarial">Secretarial</button>
@@ -938,39 +1077,47 @@
                             <!-- Leo Logo Emblem -->
                             <div class="scroll-emblem mb-4">
                                 <img src="leo logo.png" alt="Leo Emblem"
-                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                    style="height: 70px; width: auto; max-width: 100%; object-fit: contain;">
                             </div>
 
                             <p class="resolution-text">
                                 WE, THE MEMBERS OF LEO CLUB OF BHIWANDI, SINCERELY APPRECIATE THE DEDICATION AND
-                                LEADERSHIP OF DISTRICT PRESIDENT LEO LION SHIVANI SHAH., LEO DISTRICT ADVISOR LION
-                                NILESH
-                                JAYWANT, VICE-DISTRICT PRESIDENT LEO LION SHIVANI SHAH, DISTRICT SECRETARY LEO LION
-                                SHWETHA SAJNANI, DISTRICT TREASURER LEO VED JOBANPUTRA, IMMEDIATE PAST DISTRICT
-                                PRESIDENT LEO HENAL PAREKH, AND THE ENTIRE EXECUTIVE COUNCIL FOR THEIR EFFORTS AND
-                                COMMITMENT DURING THE LEOISTIC YEAR 2024–25.
+                                VISIONARY LEADERSHIP OF DISTRICT PRESIDENT <strong class="text-gold">LEO LION SHIVANI
+                                    SHAH</strong>, LEO DISTRICT ADVISOR <strong class="text-gold">LION RITU
+                                    AGARWAL</strong>, VICE-DISTRICT PRESIDENT <strong class="text-gold">LEO LION ISHIKA
+                                    SHAH</strong>, DISTRICT SECRETARY <strong class="text-gold">LEO LION SHEJAL
+                                    CHAVAN</strong>, DISTRICT TREASURER <strong class="text-gold">LEO LION HARSHIL
+                                    HARIA</strong>, IMMEDIATE PAST DISTRICT PRESIDENT <strong class="text-gold">LEO
+                                    VATSAL MANEK</strong>, AND THE ENTIRE EXECUTIVE COUNCIL FOR THE LEOISTIC YEAR
+                                2025–26.
                             </p>
 
                             <p class="resolution-text mt-4">
-                                WE ACKNOWLEDGE THEIR HARD WORK AND THE SACRIFICES THEY MAKE IN FULFILLING THEIR
-                                RESPONSIBILITIES.
+                                WE ACKNOWLEDGE THEIR CONTINUOUS EFFORTS, COMMITMENT, AND THE TIME AND ENERGY THEY INVEST
+                                IN GUIDING AND STRENGTHENING THE DISTRICT.
                             </p>
 
                             <p class="resolution-text mt-4">
-                                WE EXTEND OUR FULL SUPPORT IN ACHIEVING THE DISTRICT PRESIDENT'S VISION — REACH •
-                                RESOLVE • RADIATE — TO STRENGTHEN AND PROMOTE LEOISM IN DISTRICT 3231 A2.
+                                WE PROUDLY ALIGN OURSELVES WITH THE DISTRICT PRESIDENT’S THEME — CONNECT • UNITE • GROW
+                                — AND PLEDGE TO FOSTER STRONGER BONDS, ENCOURAGE UNITY AMONG MEMBERS, AND WORK
+                                COLLECTIVELY TOWARDS THE HOLISTIC GROWTH OF OUR CLUB AND DISTRICT.
                             </p>
 
                             <p class="resolution-text mt-4">
-                                WITH THIS RESOLUTION, WE EXPRESS OUR GRATITUDE AND PLEDGE OUR COOPERATION IN MAKING THIS
-                                YEAR A REMARKABLE ONE FOR OUR DISTRICT.
+                                WE EXTEND OUR FULL SUPPORT AND COOPERATION IN ACHIEVING THIS VISION AND STRIVE TO
+                                CONTRIBUTE MEANINGFULLY TOWARDS PROMOTING LEOISM IN DISTRICT 3231 A2.
+                            </p>
+
+                            <p class="resolution-text mt-4">
+                                WITH THIS RESOLUTION, WE EXPRESS OUR GRATITUDE AND REAFFIRM OUR COMMITMENT TO MAKING
+                                THIS LEOISTIC YEAR A SUCCESSFUL AND MEMORABLE ONE.
                             </p>
 
                             <!-- Signature Block -->
                             <div class="signature-block mt-5">
                                 <h4 class="signature-name">Leo Yeman Adep</h4>
                                 <p class="signature-title">Club President</p>
-                                <p class="signature-year">Leoistic Year 2024–25</p>
+                                <p class="signature-year">Leoistic Year 2025–26</p>
                             </div>
                         </div>
                     </div>
@@ -984,8 +1131,9 @@
             <div class="footer-scanline"></div>
             <div class="footer-content">
                 <p class="footer-glitch-text">
-                    Built with <span class="passion-text">passion</span> by 
-                    <a href="https://www.linkedin.com/in/veman-chippa" target="_blank" class="creator-link" data-text="iVeman">iVeman</a>
+                    Built with <span class="passion-text">passion</span> by
+                    <a href="https://www.linkedin.com/in/veman-chippa" target="_blank" class="creator-link"
+                        data-text="iVeman">iVeman</a>
                 </p>
             </div>
         </footer>
