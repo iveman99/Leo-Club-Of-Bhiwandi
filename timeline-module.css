@@ -140,10 +140,17 @@
     background: #02060e;
     border: 2px solid #ffb800;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 184, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.8), 0 0 20px rgba(255, 184, 0, 0.4);
     position: absolute;
     z-index: 3;
     transition: all 0.3s ease;
+    animation: orbPulse 2s infinite;
+}
+
+@keyframes orbPulse {
+    0% { box-shadow: 0 0 5px rgba(255,184,0,0.5); }
+    50% { box-shadow: 0 0 15px rgba(255,184,0,1), 0 0 25px rgba(255,184,0,0.4); }
+    100% { box-shadow: 0 0 5px rgba(255,184,0,0.5); }
 }
 /* Connect dot to the central line vertically */
 .tm-node-up .tm-dot { bottom: -60px; }
@@ -152,17 +159,18 @@
 /* The Glassmorphism Card Design */
 .tm-card {
     width: 100%;
-    background: rgba(10, 16, 30, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(10, 16, 30, 0.9) 0%, rgba(20, 30, 50, 0.7) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(42, 195, 255, 0.4);
+    border-left: 4px solid #2ac3ff;
     border-radius: 8px;
     padding: 20px 15px;
     box-sizing: border-box;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(42,195,255,0.1);
     position: relative;
     z-index: 4;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .tm-item:hover .tm-card {
     border-color: #2ac3ff;
@@ -192,14 +200,18 @@
 /* Text inside cards */
 .tm-card-year {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.4rem;
-    color: #ffb800;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(42, 195, 255, 0.3);
     padding-bottom: 10px;
     margin-bottom: 15px;
+    background: -webkit-linear-gradient(45deg, #ffb800, #ff8c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(255, 184, 0, 0.4));
 }
 .tm-card-list {
     list-style: none;
@@ -258,8 +270,8 @@
 .tm-btn:hover {
     background: #2ac3ff;
     color: #000;
-    box-shadow: 0 0 20px rgba(42, 195, 255, 0.6);
-    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(42, 195, 255, 0.8), 0 0 10px #fff;
+    transform: scale(1.15);
 }
 
 /* Responsive UI */

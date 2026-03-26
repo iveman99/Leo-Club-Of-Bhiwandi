@@ -15,7 +15,7 @@ const LEADERSHIP_DATA = {
         { name: "Veman Chippa", role: "Secretary", photo: "./Photos/veman.jpg" },
         { name: "Varsha Siricilla", role: "Treasurer", photo: "./Photos/varsha.jpg" },
         { name: "Namra Gada", role: "VP I", photo: "./Photos/namra.jpg" },
-        { name: "Manasa Samala", role: "VP II", photo: "./Photos/Manasa.jpeg" }
+        { name: "Manasa Samala", role: "VP II", photo: "./Photos/Manasa.jpg" }
     ],
 
     // Row 2: Team Leads & Directors
@@ -24,18 +24,18 @@ const LEADERSHIP_DATA = {
         { name: "Omshankar Nakka", role: "Joint Secretary", photo: "./Photos/om.jpg" },
         { name: "Shrikant Mergud", role: "Joint Treasurer", photo: "./Photos/shrikant.jpg" },
         { name: "Nilesh Jaywant", role: "Club Mentor", photo: "./Photos/dada.jpg" },
-        { name: "Saloni Jarol", role: "GST Head", photo: "" },
+        { name: "Saloni Jarol", role: "GST Head", photo: "./Photos/saloni.jpg" },
         { name: "Roshni Patel", role: "GMT Head", photo: "" },
         { name: "Sonia Andavrapu", role: "GLT Head", photo: "" },
         { name: "Srikant Yelle", role: "PRO", photo: "./Photos/shrikant.jpg" },
         { name: "Yuvraj Rai", role: "Social Media Head", photo: "./Photos/Yuvraj.jpg" },
-        { name: "Gopi Darji", role: "Creative Head", photo: "" },
+        { name: "Gopi Darji", role: "Creative Head", photo: "./Photos/gopi.jpg" },
         { name: "Abhilash Jejela", role: "Twinning Dir", photo: "./Photos/abhilash.jpg" },
         { name: "Rushikesh Kamurthi", role: "Fellowship Dir", photo: "./Photos/rushi.jpg" },
         { name: "Rakesh Kundan", role: "Sports Head", photo: "./Photos/rakesh.jpg" },
-        { name: "Sneha Adep", role: "Director", photo: "" },
+        { name: "Sneha Adep", role: "Director", photo: "./Photos/sneha.jpg" },
         { name: "Vivek Butla", role: "Director", photo: "./Photos/vivek.jpg" },
-        { name: "Jaya Adep", role: "Tail Twister", photo: "" },
+        { name: "Jaya Adep", role: "Tail Twister", photo: "./Photos/jaya.jpg" },
         { name: "Akshaya Vadigoppula", role: "Tamer", photo: "./Photos/Akshaya.jpg" },
     ]
 };
