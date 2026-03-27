@@ -417,6 +417,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (glowOverlay) glowOverlay.classList.add('active'); // dim globe slightly
                 if (finalState) finalState.classList.add('visible');
 
+                // Fade out the theme HUD to leave a clean home page
+                const themeHud = document.querySelector('.theme-hud-frame');
+                if (themeHud) {
+                    themeHud.style.opacity = '0';
+                    setTimeout(() => { themeHud.style.display = 'none'; }, 1000);
+                }
+
+
                 // Reveal logos sequentially
                 logoSlices.forEach((logo, index) => {
                     setTimeout(() => {
@@ -429,6 +437,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Keep the globe spinning continuously as a background!
                 world.controls().autoRotate = true;
                 world.controls().autoRotateSpeed = 0.5; // Slow down for gentle background spinning
+                
+                // Clear the cinematic red and yellow propagating rings to make the globe clean
+                world.ringsData([]);
+                world.arcsData([]); 
+                world.labelsData([]);
             }, 28500);
         } // End startCinematicSequence()
 
