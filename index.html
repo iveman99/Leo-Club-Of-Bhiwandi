@@ -276,10 +276,10 @@
         <div id="init-particles" style="position: absolute; inset: 0; z-index: 1; pointer-events: none;"></div>
 
         <div class="entry-content-wrapper"
-            style="position: relative; z-index: 10; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; height: 100%; justify-content: center;">
+            style="position: relative; z-index: 10; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; height: 100%; justify-content: center; overflow: hidden; padding: 1rem;">
             <!-- 5 Logos -->
             <div class="hero-logos"
-                style="margin-bottom: 2rem; gap: 15px; display: flex; justify-content: center; width: 100%;">
+                style="margin-bottom: 1rem; gap: 15px; display: flex; justify-content: center; width: 100%; flex-shrink: 0; transform: scale(0.9);">
                 <div class="hero-logo-slice sl-1 visible" title="Lions International"
                     style="filter: drop-shadow(0 0 15px rgba(255,215,0,0.8));"></div>
                 <div class="hero-logo-slice sl-2 visible" title="LEO"
@@ -293,28 +293,44 @@
             </div>
 
             <h2 class="neon-cyan"
-                style="font-family: var(--font-heading); font-weight: 700; letter-spacing: 5px; font-size: clamp(0.8rem, 2.5vw, 1.1rem); margin-bottom: 0.8rem; text-transform: uppercase; text-shadow: 0 0 15px rgba(42,195,255,0.8), 0 0 20px rgba(42,195,255,0.4);">
+                style="font-family: var(--font-heading); font-weight: 700; letter-spacing: 5px; font-size: clamp(0.8rem, 2.2vw, 1rem); margin-bottom: 0.5rem; text-transform: uppercase; text-shadow: 0 0 15px rgba(42,195,255,0.8);">
                 LEO CLUB OF BHIWANDI
             </h2>
 
+            <div class="dp-compact-frame" style="position: relative; width: clamp(90px, 15vw, 130px); height: clamp(90px, 15vw, 130px); margin: 0.5rem auto 1rem; animation: dpPulse 4s infinite alternate; z-index: 10; flex-shrink: 0;">
+                <div style="width: 100%; height: 100%; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, #2ac3ff, #ffaa00); box-shadow: 0 0 20px rgba(42, 195, 255, 0.6), inset 0 0 15px rgba(212, 160, 23, 0.6);">
+                    <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 3px solid #03060c; position: relative; z-index: 2;">
+                        <img src="Photos/Shivani.jpg" alt="Leo Lion Shivani Shah" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.1);">
+                    </div>
+                </div>
+                <!-- Rotating cyber ring -->
+                <div style="position: absolute; inset: -8px; border: 2px dashed #2ac3ff; border-radius: 50%; opacity: 0.8; animation: spinRing 15s linear infinite; z-index: 1; pointer-events: none;"></div>
+                <div style="position: absolute; inset: -14px; border: 1px dotted #ffaa00; border-radius: 50%; opacity: 0.5; animation: spinRingReverse 20s linear infinite; z-index: 1; pointer-events: none;"></div>
+                <style>
+                    @keyframes dpPulse { 0% { filter: hue-rotate(0deg); transform: scale(1); } 100% { filter: hue-rotate(45deg); transform: scale(1.05); } }
+                    @keyframes spinRing { 100% { transform: rotate(360deg); } }
+                    @keyframes spinRingReverse { 100% { transform: rotate(-360deg); } }
+                </style>
+            </div>
+
             <h1 class="text-gold cyber-h1"
-                style="font-family: var(--font-heading); font-weight: 900; margin-bottom: 0.8rem; font-size: clamp(2rem, 5vw, 3.8rem); text-align: center; letter-spacing: 2px; line-height: 1.1; color: #ffd700;">
+                style="font-family: var(--font-heading); font-weight: 900; margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4.5vw, 3.2rem); text-align: center; letter-spacing: 2px; line-height: 1.1; color: #ffd700;">
                 <span class="pulse-text-gold">WELCOME</span><br>
                 <span class="pulse-text-gold">DISTRICT PRESIDENT</span>
             </h1>
 
             <h3
-                style="font-family: var(--font-mono); font-weight: 700; color: #ffffff; letter-spacing: 4px; font-size: clamp(0.8rem, 2vw, 1rem); margin-bottom: 2rem; text-transform: uppercase;">
+                style="font-family: var(--font-mono); font-weight: 700; color: #ffffff; letter-spacing: 4px; font-size: clamp(0.7rem, 2vw, 0.9rem); margin-bottom: 1rem; text-transform: uppercase;">
                 <span class="pulse-text-white">LEO LION SHIVANI SHAH</span>
             </h3>
 
             <p class="text-dim"
-                style="margin-bottom: 2.5rem; text-align: center; font-size: clamp(0.75rem, 1.8vw, 0.9rem); max-width: 600px; font-family: var(--font-mono); color: #cbd5e1; line-height: 1.5; letter-spacing: 1px;">
+                style="margin-bottom: 1.5rem; text-align: center; font-size: clamp(0.7rem, 1.6vw, 0.85rem); max-width: 600px; font-family: var(--font-mono); color: #cbd5e1; line-height: 1.4; letter-spacing: 1px; flex-shrink: 0;">
                 Please proceed to experience the Digital Docket for Leoistic Year<br>2025–26.
             </p>
 
             <button id="init-btn" class="entry-btn-crazy"
-                style="position: relative; overflow: hidden; padding: 16px 45px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: bold; color: #fff; background: rgba(30, 20, 5, 0.8); border: 2px solid #d4a017; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(212, 160, 23, 0.5), inset 0 0 10px rgba(212, 160, 23, 0.2); text-transform: uppercase; border-radius: 8px; letter-spacing: 3px; z-index: 5;">
+                style="position: relative; overflow: hidden; padding: 12px 35px; font-family: var(--font-heading); font-size: 1rem; font-weight: bold; color: #fff; background: rgba(30, 20, 5, 0.8); border: 2px solid #d4a017; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(212, 160, 23, 0.5), inset 0 0 10px rgba(212, 160, 23, 0.2); text-transform: uppercase; border-radius: 8px; letter-spacing: 2px; z-index: 5; flex-shrink: 0;">
                 <span style="position: relative; z-index: 2;">ENTER DOCKET</span>
                 <div class="hover-glare"
                     style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); transition: 0.5s; z-index: 1;">
@@ -410,10 +426,45 @@
                     </div>
 
                     <!-- Welcome Panel -->
-                    <div class="elegant-panel mt-3 hero-welcome-panel border-gold-animated">
+                    <div class="elegant-panel mt-3 hero-welcome-panel border-gold-animated" style="position: relative; z-index: 15;">
                         <h3 class="text-gold tracking-widest text-sm elegant-heading">District President Official Visit
                             2025–26</h3>
                         <p class="mt-2 text-sm text-dim">We warmly welcome</p>
+
+                        <!-- Futuristic Hexagon Badge for inner panel -->
+                        <div class="dp-hex-badge" style="position: relative; width: 130px; height: 145px; margin: 1.5rem auto 1rem; animation: hexFloat 4s ease-in-out infinite; z-index: 20;">
+                            <style>
+                                .hex-shape {
+                                    width: 100%;
+                                    height: 100%;
+                                    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                                }
+                                @keyframes hexFloat {
+                                    0% { transform: translateY(0); filter: drop-shadow(0 0 15px var(--neon-cyan)); }
+                                    50% { transform: translateY(-10px); filter: drop-shadow(0 0 30px var(--neon-gold)); }
+                                    100% { transform: translateY(0); filter: drop-shadow(0 0 15px var(--neon-cyan)); }
+                                }
+                                @keyframes hexSpin {
+                                    100% { transform: rotate(360deg); }
+                                }
+                                @keyframes hexPulse {
+                                    0% { transform: scale(1); opacity: 0.8; }
+                                    100% { transform: scale(1.2); opacity: 0; }
+                                }
+                            </style>
+                            <!-- Glowing outline rings behind -->
+                            <div class="hex-shape" style="position: absolute; inset: -5px; background: var(--neon-cyan); opacity: 0.5; animation: hexPulse 2s infinite;"></div>
+                            <div class="hex-shape" style="position: absolute; inset: -10px; background: var(--neon-gold); opacity: 0.2; animation: hexPulse 2s infinite 1s;"></div>
+                            
+                            <!-- Rotating background layer (Border) -->
+                            <div style="position: absolute; inset: -3px; background: conic-gradient(from 0deg, var(--neon-cyan), var(--neon-gold), var(--neon-cyan)); animation: hexSpin 4s linear infinite; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div>
+                            
+                            <!-- The actual image contained in hex -->
+                            <div class="hex-shape" style="position: absolute; inset: 4px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                <img src="Photos/Shivani.jpg" alt="Leo Lion Shivani Shah" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.1);">
+                            </div>
+                        </div>
+
                         <h2 class="text-blue my-2 elegant-name"
                             style="font-family: var(--font-heading); color: #fff; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);">
                             Leo Lion Shivani Shah</h2>
