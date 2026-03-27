@@ -1812,7 +1812,9 @@
                     #module-gallery video {
                         width: 100% !important;
                         height: auto !important;
-                        max-height: none !important;
+                        aspect-ratio: 9 / 16 !important; /* Force a cinematic vertical size even if browser errors out */
+                        object-fit: cover !important;
+                        max-height: 70vh !important; /* Ensure it stays massive but mostly on screen */
                     }
                     #module-gallery .video-cyber-frame {
                         width: 95vw !important;
