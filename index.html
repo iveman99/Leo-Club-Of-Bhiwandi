@@ -1804,6 +1804,22 @@
                     border-color: var(--neon-gold) !important;
                     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
                 }
+
+                @media (max-width: 768px) {
+                    #module-gallery .frame-scanline {
+                        display: none !important;
+                    }
+                    #module-gallery video {
+                        width: 100% !important;
+                        height: auto !important;
+                        max-height: none !important;
+                    }
+                    #module-gallery .video-cyber-frame {
+                        width: 95vw !important;
+                        max-width: 95vw !important;
+                        padding: 2px !important;
+                    }
+                }
             </style>
             <div class="cyber-section-bg"></div>
 
