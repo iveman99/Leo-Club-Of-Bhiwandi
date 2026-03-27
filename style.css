@@ -1414,7 +1414,6 @@ h3,
   pointer-events: auto;
 }
 
-/* Logos Sequence */
 .hero-logos {
   display: flex;
   gap: 15px;
@@ -1422,6 +1421,14 @@ h3,
   align-items: center;
   margin-bottom: 0.5rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  #init-overlay .hero-logos {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    transform: scale(0.8) !important;
+  }
 }
 
 .hero-logo-slice {
