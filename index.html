@@ -435,55 +435,293 @@
                         <div class="elegant-subtitle mt-2" style="line-height: 1.5;">LIONS INTERNATIONAL<br>LEO MULTIPLE
                             3231 | LEO DISTRICT 3231 A2</div>
                         <p class="elegant-tagline mt-2">"A Year of Service, Leadership and Impact"</p>
-                    </div>
+                    </                    <!-- CSS for Hologram Roster Boxes & Energy Beams -->
+                    <style>
+                        .welcome-layout-grid {
+                            display: flex;
+                            gap: 1.5rem;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            flex-wrap: nowrap;
+                            margin-top: 3.5rem;
+                            padding: 0 1rem;
+                            position: relative;
+                        }
+                        /* Energy Beams Flowing Outward */
+                        .energy-beam {
+                            position: absolute;
+                            top: 60%;
+                            height: 3px;
+                            background: linear-gradient(90deg, transparent, rgba(42, 195, 255, 0.2), var(--neon-cyan), #fff, var(--neon-cyan), rgba(42, 195, 255, 0.2), transparent);
+                            background-size: 200% 100%;
+                            box-shadow: 0 0 15px var(--neon-cyan), 0 0 5px #fff;
+                            z-index: 0;
+                        }
+                        .left-beam {
+                            left: 15%; right: 50%;
+                            animation: flowLeft 1.5s linear infinite;
+                        }
+                        .right-beam {
+                            left: 50%; right: 15%;
+                            animation: flowRight 1.5s linear infinite;
+                        }
+                        @keyframes flowLeft {
+                            0% { background-position: 100% 0; }
+                            100% { background-position: -100% 0; }
+                        }
+                        @keyframes flowRight {
+                            0% { background-position: -100% 0; }
+                            100% { background-position: 100% 0; }
+                        }
+                        @keyframes flatSpin { 
+                            0% { transform: translate(-50%, -50%) rotateZ(0deg); } 
+                            100% { transform: translate(-50%, -50%) rotateZ(360deg); } 
+                        }
+                        
+                        /* Upgraded Central Terminal */
+                        .center-terminal-box {
+                            position: relative; 
+                            z-index: 15; 
+                            flex: 1; 
+                            min-width: 250px; 
+                            max-width: 380px; 
+                            background: radial-gradient(circle at center, rgba(16, 26, 48, 0.95) 0%, rgba(6, 11, 24, 0.98) 100%);
+                            border: 1px solid rgba(212, 160, 23, 0.3);
+                            border-radius: 12px;
+                            padding: 25px 20px;
+                            box-shadow: 0 0 40px rgba(0,0,0,0.8), inset 0 0 30px rgba(42, 195, 255, 0.05);
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            text-align: center;
+                        }
+                        .center-terminal-box::before {
+                            content: '';
+                            position: absolute;
+                            top: -1px; left: 15%; right: 15%;
+                            height: 2px;
+                            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+                        }
+                        .center-terminal-box::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -1px; left: 15%; right: 15%;
+                            height: 2px;
+                            background: linear-gradient(90deg, transparent, var(--neon-gold), transparent);
+                        }
 
-                    <!-- Welcome Panel -->
-                    <div class="elegant-panel mt-3 hero-welcome-panel border-gold-animated" style="position: relative; z-index: 15;">
-                        <h3 class="text-gold tracking-widest text-sm elegant-heading">District President Official Visit
-                            2025–26</h3>
-                        <p class="mt-2 text-sm text-dim">We warmly welcome</p>
+                        /* Advanced Distinct Roster Boxes */
+                        .hologram-roster-box {
+                            flex: 1;
+                            min-width: 200px;
+                            max-width: 320px;
+                            height: 280px; 
+                            background: linear-gradient(135deg, rgba(6, 11, 24, 0.4) 0%, rgba(42, 195, 255, 0.05) 100%);
+                            border: none;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                            backdrop-filter: blur(4px);
+                            -webkit-backdrop-filter: blur(4px);
+                            overflow: hidden;
+                            position: relative;
+                            padding: 15px;
+                            display: flex;
+                            flex-direction: column;
+                            animation: floatRoster 6s ease-in-out infinite alternate;
+                            z-index: 2;
+                        }
+                        /* Tech Brackets for Hologram */
+                        .hologram-roster-box::after {
+                            content: '';
+                            position: absolute;
+                            top: 0; left: 0; right: 0; bottom: 0;
+                            border-top: 2px solid rgba(42, 195, 255, 0.8);
+                            border-bottom: 2px solid rgba(42, 195, 255, 0.8);
+                            clip-path: polygon(0 0, 20px 0, 20px 100%, 0 100%, 0 0, 100% 0, 100% 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0);
+                            pointer-events: none;
+                            z-index: 4;
+                        }
+                        .hologram-roster-box.delay {
+                            animation-delay: -3s;
+                        }
+                        @keyframes floatRoster {
+                            0% { transform: translateY(5px); box-shadow: inset 0 0 20px rgba(42, 195, 255, 0.1), 0 0 15px rgba(42,195,255,0.2); }
+                            100% { transform: translateY(-5px); box-shadow: inset 0 0 30px rgba(42, 195, 255, 0.2), 0 0 25px rgba(42,195,255,0.4); }
+                        }
+                        .hologram-roster-box::before {
+                            content: '';
+                            position: absolute;
+                            top: 0; left: 0; right: 0; bottom: 0;
+                            background: linear-gradient(rgba(42, 195, 255, 0.05) 1px, transparent 1px);
+                            background-size: 100% 4px;
+                            z-index: 0;
+                            pointer-events: none;
+                        }
+                        .roster-scroll-container {
+                            flex: 1;
+                            overflow: hidden;
+                            position: relative;
+                            z-index: 1;
+                            mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent);
+                            -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent);
+                        }
+                        .roster-track {
+                            display: flex;
+                            flex-direction: column;
+                            animation: autoScroll 25s linear infinite;
+                        }
+                        .roster-track:hover {
+                            animation-play-state: paused;
+                        }
+                        @keyframes autoScroll {
+                            0% { transform: translateY(0); }
+                            100% { transform: translateY(-50%); }
+                        }
+                        .roster-item {
+                            margin-bottom: 15px;
+                            border-bottom: 1px dashed rgba(42, 195, 255, 0.2);
+                            padding-bottom: 8px;
+                            transition: all 0.3s ease;
+                        }
+                        .roster-item:hover {
+                            background: rgba(42, 195, 255, 0.15);
+                            transform: translateX(5px);
+                            border-left: 3px solid var(--neon-gold);
+                            padding-left: 8px;
+                        }
+                        .leo-name {
+                            display: block;
+                            color: var(--neon-cyan);
+                            font-family: var(--font-heading);
+                            font-size: 0.75rem;
+                            font-weight: bold;
+                            letter-spacing: 1px;
+                        }
+                        .leo-role {
+                            display: block;
+                            color: var(--neon-gold);
+                            font-family: var(--font-mono);
+                            font-size: 0.6rem;
+                            margin-top: 3px;
+                        }
+                        .roster-header {
+                            text-align: center;
+                            color: #fff;
+                            font-family: var(--font-heading);
+                            font-size: 0.85rem;
+                            text-shadow: 0 0 10px var(--neon-cyan);
+                            margin-bottom: 15px;
+                            padding-bottom: 5px;
+                            letter-spacing: 2px;
+                            z-index: 3;
+                            position: relative;
+                            border-bottom: 1px solid rgba(42, 195, 255, 0.3);
+                        }
+                        .roster-header::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -1px; left: 50%; transform: translateX(-50%);
+                            width: 50px; height: 2px;
+                            background: var(--neon-cyan);
+                            box-shadow: 0 0 10px var(--neon-cyan);
+                        }
+                    </style>
 
-                        <!-- Futuristic Hexagon Badge for inner panel -->
-                        <div class="dp-hex-badge" style="position: relative; width: 130px; height: 145px; margin: 1.5rem auto 1rem; animation: hexFloat 4s ease-in-out infinite; z-index: 20;">
-                            <style>
-                                .hex-shape {
-                                    width: 100%;
-                                    height: 100%;
-                                    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                                }
-                                @keyframes hexFloat {
-                                    0% { transform: translateY(0); filter: drop-shadow(0 0 15px var(--neon-cyan)); }
-                                    50% { transform: translateY(-10px); filter: drop-shadow(0 0 30px var(--neon-gold)); }
-                                    100% { transform: translateY(0); filter: drop-shadow(0 0 15px var(--neon-cyan)); }
-                                }
-                                @keyframes hexSpin {
-                                    100% { transform: rotate(360deg); }
-                                }
-                                @keyframes hexPulse {
-                                    0% { transform: scale(1); opacity: 0.8; }
-                                    100% { transform: scale(1.2); opacity: 0; }
-                                }
-                            </style>
-                            <!-- Glowing outline rings behind -->
-                            <div class="hex-shape" style="position: absolute; inset: -5px; background: var(--neon-cyan); opacity: 0.5; animation: hexPulse 2s infinite;"></div>
-                            <div class="hex-shape" style="position: absolute; inset: -10px; background: var(--neon-gold); opacity: 0.2; animation: hexPulse 2s infinite 1s;"></div>
-                            
-                            <!-- Rotating background layer (Border) -->
-                            <div style="position: absolute; inset: -3px; background: conic-gradient(from 0deg, var(--neon-cyan), var(--neon-gold), var(--neon-cyan)); animation: hexSpin 4s linear infinite; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div>
-                            
-                            <!-- The actual image contained in hex -->
-                            <div class="hex-shape" style="position: absolute; inset: 4px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="Photos/Shivani.jpg" alt="Leo Lion Shivani Shah" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.1);">
+                    <div class="welcome-layout-grid">
+                        <div class="energy-beam left-beam"></div>
+                        <div class="energy-beam right-beam"></div>
+                        
+                        <!-- Left Roster Box -->
+                        <div class="hologram-roster-box">
+                            <div class="roster-header">DISTRICT CABINET</div>
+                            <div class="roster-scroll-container">
+                                <div class="roster-track">
+                                    <div class="roster-item"><span class="leo-name">LEO ISHIKA SHAH</span><span class="leo-role">VICE DISTRICT PRESIDENT</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION SHEJAL CHAVAN</span><span class="leo-role">DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION HARSHIL HARIA</span><span class="leo-role">DISTRICT TREASURER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO MANAV MEHTA</span><span class="leo-role">CHIEF DISTRICT OFFICER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION KRISH AHUJA</span><span class="leo-role">CHIEF MARKETING OFFICER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LION RITU AGRAWAL</span><span class="leo-role">LEO DISTRICT ADVISOR</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO VATSAL MANEK</span><span class="leo-role">IMMEDIATE PAST DISTRICT PRESIDENT</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION ABHISHEK GOYAL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION DR. MAITRI GADA</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION RUCHI PASAD</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO SHALVII PATIL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO MANASA SAMALA</span><span class="leo-role">JT. DISTRICT TREASURER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO SUNNISH DAWDA</span><span class="leo-role">ZONE CHAIRPERSON-1</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO DHRUV YADAV</span><span class="leo-role">ZONE CHAIRPERSON-2</span></div>
+                                    
+                                    <!-- DUPLICATED FOR SEAMLESS SCROLL -->
+                                    <div class="roster-item"><span class="leo-name">LEO ISHIKA SHAH</span><span class="leo-role">VICE DISTRICT PRESIDENT</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION SHEJAL CHAVAN</span><span class="leo-role">DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION HARSHIL HARIA</span><span class="leo-role">DISTRICT TREASURER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO MANAV MEHTA</span><span class="leo-role">CHIEF DISTRICT OFFICER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION KRISH AHUJA</span><span class="leo-role">CHIEF MARKETING OFFICER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LION RITU AGRAWAL</span><span class="leo-role">LEO DISTRICT ADVISOR</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO VATSAL MANEK</span><span class="leo-role">IMMEDIATE PAST DISTRICT PRESIDENT</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION ABHISHEK GOYAL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION DR. MAITRI GADA</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO LION RUCHI PASAD</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO SHALVII PATIL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO MANASA SAMALA</span><span class="leo-role">JT. DISTRICT TREASURER</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO SUNNISH DAWDA</span><span class="leo-role">ZONE CHAIRPERSON-1</span></div>
+                                    <div class="roster-item"><span class="leo-name">LEO DHRUV YADAV</span><span class="leo-role">ZONE CHAIRPERSON-2</span></div>
+                                </div>
                             </div>
                         </div>
 
-                        <h2 class="text-blue my-2 elegant-name"
-                            style="font-family: var(--font-heading); color: #fff; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);">
-                            Leo Lion Shivani Shah</h2>
-                        <p class="text-sm text-gold">District President</p>
-                        <p class="mt-2 text-xs text-dim" style="line-height: 1.5;">along with the District Executive
-                            Council<br>for the Official District President Visit</p>
+                        <!-- Welcome Panel (Center Design Upgrade) -->
+                        <div class="center-terminal-box" style="padding: 15px 20px; flex: 0 1 auto; margin-top: 20px;">
+                            <h3 class="text-gold tracking-widest text-sm elegant-heading" style="text-transform: uppercase;">District President<br>Official Visit <span style="color:var(--neon-cyan)">25-26</span></h3>
+                            
+                            <p class="text-xs text-dim mb-1 mt-3" style="letter-spacing: 2px; text-transform: uppercase;">We Warmly Welcome</p>
+                            <h2 class="my-1 elegant-name"
+                                style="font-family: var(--font-heading); color: #fff; text-transform: uppercase; text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4); font-size: 1.6rem; letter-spacing: 3px;">
+                                Leo Lion Shivani Shah</h2>
+                            <p class="text-sm text-gold mt-1" style="letter-spacing: 3px; text-transform: uppercase;">District President</p>
+                            
+                            <div style="margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem;">
+                                <p class="text-xs text-dim" style="line-height: 1.6; letter-spacing: 1px; text-transform: uppercase;">Along with the District Executive<br>Council for the Official District<br>President Visit</p>
+                            </div>
+                        </div>
+
+                    <!-- Right Roster Box -->
+                    <div class="hologram-roster-box delay">
+                        <div class="roster-header">DISTRICT CABINET</div>
+                        <div class="roster-scroll-container">
+                            <div class="roster-track">
+                                <div class="roster-item"><span class="leo-name">LEO LION AASHNA SHAMNI</span><span class="leo-role">ZONE CHAIRPERSON-3</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO RAHUL DUDAM</span><span class="leo-role">ZONE CHAIRPERSON-4</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO SMEET GALA</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO VARUN DESHPANDE</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO JENIL SHAH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO NISHANT PAREKH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO DHRUV PARAB</span><span class="leo-role">GST CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO NIDHI AGRAWAL</span><span class="leo-role">GST CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO AADITE SAWANT</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO LION JAHNAVI ZUTSHI</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO TANEYA AGARWAL</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO KRISHA LAKHANI</span><span class="leo-role">ZONE SECRETARY-1</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO ANSH MEHTA</span><span class="leo-role">ZONE SECRETARY-2</span></div>
+                                
+                                <!-- DUPLICATED FOR SEAMLESS SCROLL -->
+                                <div class="roster-item"><span class="leo-name">LEO LION AASHNA SHAMNI</span><span class="leo-role">ZONE CHAIRPERSON-3</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO RAHUL DUDAM</span><span class="leo-role">ZONE CHAIRPERSON-4</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO SMEET GALA</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO VARUN DESHPANDE</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO JENIL SHAH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO NISHANT PAREKH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO DHRUV PARAB</span><span class="leo-role">GST CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO NIDHI AGRAWAL</span><span class="leo-role">GST CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO AADITE SAWANT</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO LION JAHNAVI ZUTSHI</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO TANEYA AGARWAL</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO KRISHA LAKHANI</span><span class="leo-role">ZONE SECRETARY-1</span></div>
+                                <div class="roster-item"><span class="leo-name">LEO ANSH MEHTA</span><span class="leo-role">ZONE SECRETARY-2</span></div>
+                            </div>
+                        </div>
                     </div>
+                </div>    </div>
 
                     <!-- Explore Button -->
                     <a href="#module-2" class="explore-btn mt-3">Explore Our Journey</a>

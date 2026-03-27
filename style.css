@@ -695,7 +695,7 @@ h3,
   transition: opacity 2s ease, visibility 2s;
   z-index: 20;
   flex-grow: 1;
-  padding-top: 100px;
+  padding-top: 90px;
   pointer-events: auto;
 }
 
