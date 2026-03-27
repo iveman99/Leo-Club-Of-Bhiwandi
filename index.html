@@ -743,23 +743,150 @@
                     </p>
                 </div>
 
-                <!-- Club Info Cards -->
-                <div class="info-card-container mt-5">
-                    <div class="info-card reveal delay-1">
-                        <div class="info-label">Charter Year</div>
-                        <div class="info-value">2012</div>
+                <!-- New Upgraded Club Info & Sponsor Section -->
+                <style>
+                    .cyber-card-container { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+                    .cyber-card {
+                        background: linear-gradient(135deg, rgba(6, 11, 24, 0.7) 0%, rgba(42, 195, 255, 0.05) 100%);
+                        border: 1px solid rgba(42, 195, 255, 0.3);
+                        border-radius: 8px; padding: 1.5rem 2rem;
+                        position: relative; overflow: hidden;
+                        transition: all 0.4s ease; min-width: 200px; flex: 1; max-width: 250px;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-align: center;
+                    }
+                    .cyber-card::before {
+                        content: ''; position: absolute; top: 0; left: -100%;
+                        width: 50%; height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(42, 195, 255, 0.2), transparent);
+                        transform: skewX(-25deg); transition: all 0.5s ease;
+                    }
+                    .cyber-card:hover {
+                        transform: translateY(-5px); border-color: var(--neon-cyan);
+                        box-shadow: 0 10px 25px rgba(42, 195, 255, 0.2), inset 0 0 15px rgba(42, 195, 255, 0.1);
+                    }
+                    .cyber-card:hover::before { animation: shineCard 1.5s infinite; }
+                    @keyframes shineCard { 0% { left: -100%; } 100% { left: 200%; } }
+                    .cyber-label { font-family: var(--font-mono); color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+                    .cyber-value { font-family: var(--font-heading); color: var(--neon-gold); font-size: 1.8rem; font-weight: bold; text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); }
+
+                    .sponsor-databank-panel {
+                        background: radial-gradient(circle at top right, rgba(212, 160, 23, 0.15) 0%, rgba(6, 11, 24, 0.8) 70%);
+                        border: 1px solid rgba(212, 160, 23, 0.4);
+                        border-left: 4px solid var(--neon-gold); border-radius: 10px;
+                        padding: 2.5rem; max-width: 1000px; margin: 3rem auto 0 auto;
+                        position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+                        text-align: left;
+                    }
+                    .sponsor-databank-panel::after {
+                        content: ''; position: absolute; right: 20px; top: -1px; width: 100px; height: 3px;
+                        background: var(--neon-gold); box-shadow: 0 0 15px var(--neon-gold);
+                    }
+                    .sponsor-header { font-family: var(--font-mono); color: var(--neon-cyan); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; }
+                    .sponsor-title { font-family: var(--font-heading); color: #fff; font-size: 2.2rem; text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); letter-spacing: 2px; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+                    .sponsor-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+                    .sponsor-stat { display: flex; flex-direction: column; }
+                    .sponsor-stat .stat-label { font-family: var(--font-mono); color: var(--neon-gold); font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+                    .sponsor-stat .stat-value { font-family: var(--font-heading); color: #fff; font-size: 1.1rem; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255,255,255,0.3); }
+
+                    /* Layout for Image + Metrics */
+                    .about-metrics-layout {
+                        display: flex; gap: 4rem; align-items: center; max-width: 1100px; margin: 3rem auto 0 auto;
+                    }
+                    .about-image-col { flex: 1; max-width: 450px; position: relative; z-index: 10; perspective: 1000px; }
+                    .cert-wrapper {
+                        position: relative; border-radius: 12px; padding: 10px;
+                        background: linear-gradient(135deg, rgba(212, 160, 23, 0.4), rgba(42, 195, 255, 0.1));
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px rgba(212, 160, 23, 0.2);
+                        transform: rotateY(10deg); transition: transform 0.5s ease;
+                    }
+                    .cert-wrapper:hover {
+                        transform: rotateY(0deg) scale(1.05);
+                    }
+                    .charter-cert-img {
+                        width: 100%; height: auto; border-radius: 8px; display: block;
+                        position: relative; z-index: 2; border: 2px solid rgba(212, 160, 23, 0.5);
+                    }
+                    .cert-glow {
+                        position: absolute; top: 50%; left: 50%; width: 80%; height: 80%;
+                        transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(212, 160, 23, 0.4) 0%, transparent 70%);
+                        z-index: 1; filter: blur(20px); animation: pulseCertGlow 3s infinite alternate;
+                    }
+                    @keyframes pulseCertGlow { 0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); } 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); } }
+                    .about-stats-col { flex: 1.2; }
+                    
+                    /* Animated Metrics Headers */
+                    .header-wrapper { text-align: center; width: 100%; margin-bottom: 2rem; position: relative; }
+                    .animated-neon-header {
+                        font-family: var(--font-heading); font-size: 1.4rem; letter-spacing: 5px; text-transform: uppercase;
+                        color: #fff; position: relative; display: inline-block; padding-bottom: 8px; margin: 0;
+                    }
+                    .animated-neon-header.cyan { text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
+                    .animated-neon-header.gold { text-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold); }
+                    .animated-neon-header::after {
+                        content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+                        background: linear-gradient(90deg, transparent, #fff, transparent); animation: lineScan 2.5s infinite ease-in-out;
+                    }
+                    @keyframes lineScan { 0% { transform: scaleX(0); opacity: 0; } 50% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(0); opacity: 0; } }
+                    @media (max-width: 900px) {
+                        .about-metrics-layout { flex-direction: column; gap: 2rem; }
+                        .about-image-col { max-width: 80%; margin: 0 auto; }
+                    }
+                </style>
+
+                <div class="about-metrics-layout mt-5">
+                    <!-- Left: Charter Certificate Image -->
+                    <div class="about-image-col reveal delay-1">
+                        <div class="cert-wrapper">
+                            <div class="cert-glow"></div>
+                            <img src="Photos/chartercertificate.jpg" alt="Charter Certificate" class="charter-cert-img" />
+                        </div>
                     </div>
-                    <div class="info-card reveal delay-2">
-                        <div class="info-label">Sponsor Club</div>
-                        <div class="info-value">Lions Club of Bhiwandi</div>
-                    </div>
-                    <div class="info-card reveal delay-3">
-                        <div class="info-label">Club ID</div>
-                        <div class="info-value">118104</div>
-                    </div>
-                    <div class="info-card reveal delay-4">
-                        <div class="info-label">Charter Members</div>
-                        <div class="info-value">24</div>
+
+                    <!-- Right: Metrics (Cyber Cards) -->
+                    <div class="about-stats-col">
+                        
+                        <!-- Leo Club Metrics -->
+                        <div class="header-wrapper"><h3 class="animated-neon-header cyan reveal">Leo Club Metrics</h3></div>
+                        <div class="cyber-card-container">
+                            <div class="cyber-card reveal delay-2">
+                                <div class="cyber-label">Charter Year</div>
+                                <div class="cyber-value">2012</div>
+                            </div>
+                            <div class="cyber-card reveal delay-3">
+                                <div class="cyber-label">Sponsor Club</div>
+                                <div class="cyber-value" style="font-size: 1.2rem; margin-top: 10px;">Lions Club of Bhiwandi</div>
+                            </div>
+                            <div class="cyber-card reveal delay-4">
+                                <div class="cyber-label">Club ID</div>
+                                <div class="cyber-value">118104</div>
+                            </div>
+                            <div class="cyber-card reveal delay-5">
+                                <div class="cyber-label">Charter Members</div>
+                                <div class="cyber-value">24</div>
+                            </div>
+                        </div>
+
+                        <!-- Parent Club Metrics -->
+                        <div class="header-wrapper" style="margin-top: 3.5rem;"><h3 class="animated-neon-header gold reveal delay-6">Parent Club Details</h3></div>
+                        <div class="cyber-card-container">
+                            <div class="cyber-card reveal delay-6">
+                                <div class="cyber-label">Club ID</div>
+                                <div class="cyber-value">26122</div>
+                            </div>
+                            <div class="cyber-card reveal delay-7">
+                                <div class="cyber-label">Inauguration</div>
+                                <div class="cyber-value" style="font-size: 1.2rem; margin-top: 10px;">13-04-1963</div>
+                            </div>
+                            <div class="cyber-card reveal delay-8">
+                                <div class="cyber-label">Charter Date</div>
+                                <div class="cyber-value" style="font-size: 1.2rem; margin-top: 10px;">08-11-1963</div>
+                            </div>
+                            <div class="cyber-card reveal delay-9">
+                                <div class="cyber-label" style="font-size: 0.65rem;">Charter Presidents</div>
+                                <div class="cyber-value" style="font-size: 0.85rem; margin-top: 10px; line-height: 1.6;">LION MOHAMMED FAKIH<br>LATE LION M.R. VAZE</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
