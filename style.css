@@ -1429,7 +1429,63 @@ h3,
     gap: 8px !important;
     transform: scale(0.8) !important;
   }
+
+  /* Fix Home Page text overflow on mobile */
+  .elegant-title {
+    font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+  .elegant-subtitle {
+    font-size: 0.70rem !important;
+    line-height: 1.4 !important;
+  }
+  .elegant-tagline {
+    font-size: 0.8rem !important;
+  }
+
+  /* Convert Welcome Grid into a horizontally scrollable mobile gallery */
+  .welcome-layout-grid {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 5px !important;
+    transform: scale(1) !important; /* reset scale to fit swipeable natively */
+    margin-top: 1rem !important;
+    gap: 15px !important;
+    -ms-overflow-style: none; /* Hide scrollbar IE */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+  }
+  .welcome-layout-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+  }
+
+  /* Reorder so the Center Box (Official Visit) is visually FIRST */
+  .center-terminal-box {
+    order: 1 !important;
+    flex: 0 0 85vw !important;
+    scroll-snap-align: center !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Left/Right Rosters follow naturally via swipe */
+  .hologram-roster-box {
+    order: 2 !important;
+    flex: 0 0 80vw !important;
+    scroll-snap-align: center !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  /* Hide decorative beams for clean swiping */
+  .left-beam, .right-beam {
+    display: none !important;
+  }
 }
+
 
 .hero-logo-slice {
   height: clamp(60px, 9vh, 90px);
