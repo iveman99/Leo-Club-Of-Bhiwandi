@@ -22,16 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <!-- Dynamic Content Goes Here -->
                 <div class="tm-track" id="tmTrack"></div>
             </div>
-
-            <div class="tm-controls reveal delay-2">
-                <button class="tm-btn" id="tmPrevBtn">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <div class="tm-indicator">Swipe to explore</div>
-                <button class="tm-btn" id="tmNextBtn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
         </div>
     `;
 
@@ -68,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Attach Scroll Logic & Auto-Scroll
-    const prevBtn = document.getElementById('tmPrevBtn');
-    const nextBtn = document.getElementById('tmNextBtn');
     const scrollAmount = 300; // Width of a card + gap
 
     // Auto-scroll mechanics
@@ -96,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pause auto-scroll on hover or interaction
     track.addEventListener('mouseenter', () => { isAutoScrolling = false; stopAutoScroll(); });
     track.addEventListener('mouseleave', () => { isAutoScrolling = true; startAutoScroll(); });
-    track.addEventListener('touchstart', document.passive ? { passive: true } : false);
     track.addEventListener('touchstart', () => { isAutoScrolling = false; stopAutoScroll(); }, { passive: true });
     track.addEventListener('touchend', () => { 
         setTimeout(() => { isAutoScrolling = true; startAutoScroll(); }, 1000); 
@@ -105,20 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start auto-scroll initially
     startAutoScroll();
 
-    if (prevBtn && nextBtn && track) {
-        prevBtn.addEventListener('click', () => {
-            isAutoScrolling = false;
-            stopAutoScroll();
-            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            setTimeout(() => { isAutoScrolling = true; startAutoScroll(); }, 2000);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            isAutoScrolling = false;
-            stopAutoScroll();
-            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            setTimeout(() => { isAutoScrolling = true; startAutoScroll(); }, 2000);
-        });
+    if (track) {
 
         // Basic Drag-to-Scroll implementation
         let isDown = false;
