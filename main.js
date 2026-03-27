@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = {
         root: document.getElementById('docket'),
-        threshold: 0.15 // Lowered to 15% so very tall slides (like the Org Chart) will still trigger on small screens
+        rootMargin: '0px 0px -50px 0px', // Trigger slightly before the bottom
+        threshold: 0.02 // Extremely low threshold so enormously tall slides will consistently trigger
     };
 
     const slideObserver = new IntersectionObserver((entries) => {

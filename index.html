@@ -276,15 +276,52 @@
         <div id="init-particles" style="position: absolute; inset: 0; z-index: 1; pointer-events: none;"></div>
 
         <!-- Crazy Background Visuals -->
-        <div style="position: absolute; top: 50%; left: 50%; width: 150vw; height: 150vw; background: radial-gradient(circle, rgba(42, 195, 255, 0.15) 0%, transparent 50%); transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: pulseCore 4s infinite alternate;"></div>
-        <div style="position: absolute; top: 50%; left: 50%; width: 80vh; height: 80vh; border: 1px dashed rgba(42, 195, 255, 0.3); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: spinOrb 20s linear infinite;"></div>
-        <div style="position: absolute; top: 50%; left: 50%; width: 60vh; height: 60vh; border: 2px dotted rgba(212, 160, 23, 0.3); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: spinOrbReverse 15s linear infinite;"></div>
-        <div style="position: absolute; top: 50%; left: 50%; width: 120vh; height: 40vh; background: linear-gradient(90deg, transparent, rgba(42,195,255,0.08), transparent); transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: sweepRadar 6s linear infinite;"></div>
+        <div
+            style="position: absolute; top: 50%; left: 50%; width: 150vw; height: 150vw; background: radial-gradient(circle, rgba(42, 195, 255, 0.15) 0%, transparent 50%); transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: pulseCore 4s infinite alternate;">
+        </div>
+        <div
+            style="position: absolute; top: 50%; left: 50%; width: 80vh; height: 80vh; border: 1px dashed rgba(42, 195, 255, 0.3); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: spinOrb 20s linear infinite;">
+        </div>
+        <div
+            style="position: absolute; top: 50%; left: 50%; width: 60vh; height: 60vh; border: 2px dotted rgba(212, 160, 23, 0.3); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: spinOrbReverse 15s linear infinite;">
+        </div>
+        <div
+            style="position: absolute; top: 50%; left: 50%; width: 120vh; height: 40vh; background: linear-gradient(90deg, transparent, rgba(42,195,255,0.08), transparent); transform: translate(-50%, -50%); z-index: 0; pointer-events: none; animation: sweepRadar 6s linear infinite;">
+        </div>
         <style>
-            @keyframes pulseCore { 0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; } 100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; } }
-            @keyframes spinOrb { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
-            @keyframes spinOrbReverse { 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
-            @keyframes sweepRadar { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+            @keyframes pulseCore {
+                0% {
+                    transform: translate(-50%, -50%) scale(0.8);
+                    opacity: 0.5;
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) scale(1.2);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes spinOrb {
+                100% {
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
+
+            @keyframes spinOrbReverse {
+                100% {
+                    transform: translate(-50%, -50%) rotate(-360deg);
+                }
+            }
+
+            @keyframes sweepRadar {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
         </style>
 
         <div class="entry-content-wrapper"
@@ -309,19 +346,47 @@
                 LEO CLUB OF BHIWANDI
             </h2>
 
-            <div class="dp-compact-frame" style="position: relative; width: clamp(140px, 22vw, 210px); height: clamp(140px, 22vw, 210px); margin: 1rem auto 1.5rem; animation: dpPulse 4s infinite alternate; z-index: 10; flex-shrink: 0;">
-                <div style="width: 100%; height: 100%; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, #2ac3ff, #ffaa00); box-shadow: 0 0 20px rgba(42, 195, 255, 0.6), inset 0 0 15px rgba(212, 160, 23, 0.6);">
-                    <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 3px solid #03060c; position: relative; z-index: 2;">
-                        <img src="Photos/Shivani.jpg" alt="Leo Lion Shivani Shah" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.1);">
+            <div class="dp-compact-frame"
+                style="position: relative; width: clamp(140px, 22vw, 210px); height: clamp(140px, 22vw, 210px); margin: 1rem auto 1.5rem; animation: dpPulse 4s infinite alternate; z-index: 10; flex-shrink: 0;">
+                <div
+                    style="width: 100%; height: 100%; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, #2ac3ff, #ffaa00); box-shadow: 0 0 20px rgba(42, 195, 255, 0.6), inset 0 0 15px rgba(212, 160, 23, 0.6);">
+                    <div
+                        style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 3px solid #03060c; position: relative; z-index: 2;">
+                        <img src="Photos/Shivani.jpg" alt="Leo Lion Shivani Shah"
+                            style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.1);">
                     </div>
                 </div>
                 <!-- Rotating cyber ring -->
-                <div style="position: absolute; inset: -8px; border: 2px dashed #2ac3ff; border-radius: 50%; opacity: 0.8; animation: spinRing 15s linear infinite; z-index: 1; pointer-events: none;"></div>
-                <div style="position: absolute; inset: -14px; border: 1px dotted #ffaa00; border-radius: 50%; opacity: 0.5; animation: spinRingReverse 20s linear infinite; z-index: 1; pointer-events: none;"></div>
+                <div
+                    style="position: absolute; inset: -8px; border: 2px dashed #2ac3ff; border-radius: 50%; opacity: 0.8; animation: spinRing 15s linear infinite; z-index: 1; pointer-events: none;">
+                </div>
+                <div
+                    style="position: absolute; inset: -14px; border: 1px dotted #ffaa00; border-radius: 50%; opacity: 0.5; animation: spinRingReverse 20s linear infinite; z-index: 1; pointer-events: none;">
+                </div>
                 <style>
-                    @keyframes dpPulse { 0% { filter: hue-rotate(0deg); transform: scale(1); } 100% { filter: hue-rotate(45deg); transform: scale(1.05); } }
-                    @keyframes spinRing { 100% { transform: rotate(360deg); } }
-                    @keyframes spinRingReverse { 100% { transform: rotate(-360deg); } }
+                    @keyframes dpPulse {
+                        0% {
+                            filter: hue-rotate(0deg);
+                            transform: scale(1);
+                        }
+
+                        100% {
+                            filter: hue-rotate(45deg);
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    @keyframes spinRing {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    @keyframes spinRingReverse {
+                        100% {
+                            transform: rotate(-360deg);
+                        }
+                    }
                 </style>
             </div>
 
@@ -435,293 +500,424 @@
                         <div class="elegant-subtitle mt-2" style="line-height: 1.5;">LIONS INTERNATIONAL<br>LEO MULTIPLE
                             3231 | LEO DISTRICT 3231 A2</div>
                         <p class="elegant-tagline mt-2">"A Year of Service, Leadership and Impact"</p>
-                    </                    <!-- CSS for Hologram Roster Boxes & Energy Beams -->
-                    <style>
-                        .welcome-layout-grid {
-                            display: flex;
-                            gap: 1.5rem;
-                            align-items: center;
-                            justify-content: center;
-                            width: 100%;
-                            flex-wrap: nowrap;
-                            margin-top: 3.5rem;
-                            padding: 0 1rem;
-                            position: relative;
-                        }
-                        /* Energy Beams Flowing Outward */
-                        .energy-beam {
-                            position: absolute;
-                            top: 60%;
-                            height: 3px;
-                            background: linear-gradient(90deg, transparent, rgba(42, 195, 255, 0.2), var(--neon-cyan), #fff, var(--neon-cyan), rgba(42, 195, 255, 0.2), transparent);
-                            background-size: 200% 100%;
-                            box-shadow: 0 0 15px var(--neon-cyan), 0 0 5px #fff;
-                            z-index: 0;
-                        }
-                        .left-beam {
-                            left: 15%; right: 50%;
-                            animation: flowLeft 1.5s linear infinite;
-                        }
-                        .right-beam {
-                            left: 50%; right: 15%;
-                            animation: flowRight 1.5s linear infinite;
-                        }
-                        @keyframes flowLeft {
-                            0% { background-position: 100% 0; }
-                            100% { background-position: -100% 0; }
-                        }
-                        @keyframes flowRight {
-                            0% { background-position: -100% 0; }
-                            100% { background-position: 100% 0; }
-                        }
-                        @keyframes flatSpin { 
-                            0% { transform: translate(-50%, -50%) rotateZ(0deg); } 
-                            100% { transform: translate(-50%, -50%) rotateZ(360deg); } 
-                        }
-                        
-                        /* Upgraded Central Terminal */
-                        .center-terminal-box {
-                            position: relative; 
-                            z-index: 15; 
-                            flex: 1; 
-                            min-width: 250px; 
-                            max-width: 380px; 
-                            background: radial-gradient(circle at center, rgba(16, 26, 48, 0.95) 0%, rgba(6, 11, 24, 0.98) 100%);
-                            border: 1px solid rgba(212, 160, 23, 0.3);
-                            border-radius: 12px;
-                            padding: 25px 20px;
-                            box-shadow: 0 0 40px rgba(0,0,0,0.8), inset 0 0 30px rgba(42, 195, 255, 0.05);
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            text-align: center;
-                        }
-                        .center-terminal-box::before {
-                            content: '';
-                            position: absolute;
-                            top: -1px; left: 15%; right: 15%;
-                            height: 2px;
-                            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-                        }
-                        .center-terminal-box::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -1px; left: 15%; right: 15%;
-                            height: 2px;
-                            background: linear-gradient(90deg, transparent, var(--neon-gold), transparent);
-                        }
+                        <!-- CSS for Hologram Roster Boxes & Energy Beams -->
+                        <style>
+                            .welcome-layout-grid {
+                                display: flex;
+                                gap: 1.5rem;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                flex-wrap: nowrap;
+                                margin-top: 1rem;
+                                padding: 0 1rem;
+                                position: relative;
+                                transform: scale(0.85);
+                                transform-origin: top center;
+                                z-index: 5;
+                            }
 
-                        /* Advanced Distinct Roster Boxes */
-                        .hologram-roster-box {
-                            flex: 1;
-                            min-width: 200px;
-                            max-width: 320px;
-                            height: 280px; 
-                            background: linear-gradient(135deg, rgba(6, 11, 24, 0.4) 0%, rgba(42, 195, 255, 0.05) 100%);
-                            border: none;
-                            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                            backdrop-filter: blur(4px);
-                            -webkit-backdrop-filter: blur(4px);
-                            overflow: hidden;
-                            position: relative;
-                            padding: 15px;
-                            display: flex;
-                            flex-direction: column;
-                            animation: floatRoster 6s ease-in-out infinite alternate;
-                            z-index: 2;
-                        }
-                        /* Tech Brackets for Hologram */
-                        .hologram-roster-box::after {
-                            content: '';
-                            position: absolute;
-                            top: 0; left: 0; right: 0; bottom: 0;
-                            border-top: 2px solid rgba(42, 195, 255, 0.8);
-                            border-bottom: 2px solid rgba(42, 195, 255, 0.8);
-                            clip-path: polygon(0 0, 20px 0, 20px 100%, 0 100%, 0 0, 100% 0, 100% 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0);
-                            pointer-events: none;
-                            z-index: 4;
-                        }
-                        .hologram-roster-box.delay {
-                            animation-delay: -3s;
-                        }
-                        @keyframes floatRoster {
-                            0% { transform: translateY(5px); box-shadow: inset 0 0 20px rgba(42, 195, 255, 0.1), 0 0 15px rgba(42,195,255,0.2); }
-                            100% { transform: translateY(-5px); box-shadow: inset 0 0 30px rgba(42, 195, 255, 0.2), 0 0 25px rgba(42,195,255,0.4); }
-                        }
-                        .hologram-roster-box::before {
-                            content: '';
-                            position: absolute;
-                            top: 0; left: 0; right: 0; bottom: 0;
-                            background: linear-gradient(rgba(42, 195, 255, 0.05) 1px, transparent 1px);
-                            background-size: 100% 4px;
-                            z-index: 0;
-                            pointer-events: none;
-                        }
-                        .roster-scroll-container {
-                            flex: 1;
-                            overflow: hidden;
-                            position: relative;
-                            z-index: 1;
-                            mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent);
-                            -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent);
-                        }
-                        .roster-track {
-                            display: flex;
-                            flex-direction: column;
-                            animation: autoScroll 25s linear infinite;
-                        }
-                        .roster-track:hover {
-                            animation-play-state: paused;
-                        }
-                        @keyframes autoScroll {
-                            0% { transform: translateY(0); }
-                            100% { transform: translateY(-50%); }
-                        }
-                        .roster-item {
-                            margin-bottom: 15px;
-                            border-bottom: 1px dashed rgba(42, 195, 255, 0.2);
-                            padding-bottom: 8px;
-                            transition: all 0.3s ease;
-                        }
-                        .roster-item:hover {
-                            background: rgba(42, 195, 255, 0.15);
-                            transform: translateX(5px);
-                            border-left: 3px solid var(--neon-gold);
-                            padding-left: 8px;
-                        }
-                        .leo-name {
-                            display: block;
-                            color: var(--neon-cyan);
-                            font-family: var(--font-heading);
-                            font-size: 0.75rem;
-                            font-weight: bold;
-                            letter-spacing: 1px;
-                        }
-                        .leo-role {
-                            display: block;
-                            color: var(--neon-gold);
-                            font-family: var(--font-mono);
-                            font-size: 0.6rem;
-                            margin-top: 3px;
-                        }
-                        .roster-header {
-                            text-align: center;
-                            color: #fff;
-                            font-family: var(--font-heading);
-                            font-size: 0.85rem;
-                            text-shadow: 0 0 10px var(--neon-cyan);
-                            margin-bottom: 15px;
-                            padding-bottom: 5px;
-                            letter-spacing: 2px;
-                            z-index: 3;
-                            position: relative;
-                            border-bottom: 1px solid rgba(42, 195, 255, 0.3);
-                        }
-                        .roster-header::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -1px; left: 50%; transform: translateX(-50%);
-                            width: 50px; height: 2px;
-                            background: var(--neon-cyan);
-                            box-shadow: 0 0 10px var(--neon-cyan);
-                        }
-                    </style>
+                            /* Energy Beams Flowing Outward */
+                            .energy-beam {
+                                position: absolute;
+                                top: 60%;
+                                height: 3px;
+                                background: linear-gradient(90deg, transparent, rgba(42, 195, 255, 0.2), var(--neon-cyan), #fff, var(--neon-cyan), rgba(42, 195, 255, 0.2), transparent);
+                                background-size: 200% 100%;
+                                box-shadow: 0 0 15px var(--neon-cyan), 0 0 5px #fff;
+                                z-index: 0;
+                            }
 
-                    <div class="welcome-layout-grid">
-                        <div class="energy-beam left-beam"></div>
-                        <div class="energy-beam right-beam"></div>
-                        
-                        <!-- Left Roster Box -->
-                        <div class="hologram-roster-box">
-                            <div class="roster-header">DISTRICT CABINET</div>
-                            <div class="roster-scroll-container">
-                                <div class="roster-track">
-                                    <div class="roster-item"><span class="leo-name">LEO ISHIKA SHAH</span><span class="leo-role">VICE DISTRICT PRESIDENT</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION SHEJAL CHAVAN</span><span class="leo-role">DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION HARSHIL HARIA</span><span class="leo-role">DISTRICT TREASURER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO MANAV MEHTA</span><span class="leo-role">CHIEF DISTRICT OFFICER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION KRISH AHUJA</span><span class="leo-role">CHIEF MARKETING OFFICER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LION RITU AGRAWAL</span><span class="leo-role">LEO DISTRICT ADVISOR</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO VATSAL MANEK</span><span class="leo-role">IMMEDIATE PAST DISTRICT PRESIDENT</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION ABHISHEK GOYAL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION DR. MAITRI GADA</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION RUCHI PASAD</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO SHALVII PATIL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO MANASA SAMALA</span><span class="leo-role">JT. DISTRICT TREASURER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO SUNNISH DAWDA</span><span class="leo-role">ZONE CHAIRPERSON-1</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO DHRUV YADAV</span><span class="leo-role">ZONE CHAIRPERSON-2</span></div>
-                                    
-                                    <!-- DUPLICATED FOR SEAMLESS SCROLL -->
-                                    <div class="roster-item"><span class="leo-name">LEO ISHIKA SHAH</span><span class="leo-role">VICE DISTRICT PRESIDENT</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION SHEJAL CHAVAN</span><span class="leo-role">DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION HARSHIL HARIA</span><span class="leo-role">DISTRICT TREASURER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO MANAV MEHTA</span><span class="leo-role">CHIEF DISTRICT OFFICER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION KRISH AHUJA</span><span class="leo-role">CHIEF MARKETING OFFICER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LION RITU AGRAWAL</span><span class="leo-role">LEO DISTRICT ADVISOR</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO VATSAL MANEK</span><span class="leo-role">IMMEDIATE PAST DISTRICT PRESIDENT</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION ABHISHEK GOYAL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION DR. MAITRI GADA</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO LION RUCHI PASAD</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO SHALVII PATIL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO MANASA SAMALA</span><span class="leo-role">JT. DISTRICT TREASURER</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO SUNNISH DAWDA</span><span class="leo-role">ZONE CHAIRPERSON-1</span></div>
-                                    <div class="roster-item"><span class="leo-name">LEO DHRUV YADAV</span><span class="leo-role">ZONE CHAIRPERSON-2</span></div>
+                            .left-beam {
+                                left: 15%;
+                                right: 50%;
+                                animation: flowLeft 1.5s linear infinite;
+                            }
+
+                            .right-beam {
+                                left: 50%;
+                                right: 15%;
+                                animation: flowRight 1.5s linear infinite;
+                            }
+
+                            @keyframes flowLeft {
+                                0% {
+                                    background-position: 100% 0;
+                                }
+
+                                100% {
+                                    background-position: -100% 0;
+                                }
+                            }
+
+                            @keyframes flowRight {
+                                0% {
+                                    background-position: -100% 0;
+                                }
+
+                                100% {
+                                    background-position: 100% 0;
+                                }
+                            }
+
+                            @keyframes flatSpin {
+                                0% {
+                                    transform: translate(-50%, -50%) rotateZ(0deg);
+                                }
+
+                                100% {
+                                    transform: translate(-50%, -50%) rotateZ(360deg);
+                                }
+                            }
+
+                            /* Upgraded Central Terminal */
+                            .center-terminal-box {
+                                position: relative;
+                                z-index: 15;
+                                flex: 1;
+                                min-width: 250px;
+                                max-width: 380px;
+                                background: radial-gradient(circle at center, rgba(16, 26, 48, 0.95) 0%, rgba(6, 11, 24, 0.98) 100%);
+                                border: 1px solid rgba(212, 160, 23, 0.3);
+                                border-radius: 12px;
+                                padding: 25px 20px;
+                                box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(42, 195, 255, 0.05);
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                text-align: center;
+                            }
+
+                            .center-terminal-box::before {
+                                content: '';
+                                position: absolute;
+                                top: -1px;
+                                left: 15%;
+                                right: 15%;
+                                height: 2px;
+                                background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+                            }
+
+                            .center-terminal-box::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -1px;
+                                left: 15%;
+                                right: 15%;
+                                height: 2px;
+                                background: linear-gradient(90deg, transparent, var(--neon-gold), transparent);
+                            }
+
+                            /* Advanced Distinct Roster Boxes */
+                            .hologram-roster-box {
+                                flex: 1;
+                                min-width: 200px;
+                                max-width: 320px;
+                                height: 280px;
+                                background: linear-gradient(135deg, rgba(6, 11, 24, 0.4) 0%, rgba(42, 195, 255, 0.05) 100%);
+                                border: none;
+                                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                                backdrop-filter: blur(4px);
+                                -webkit-backdrop-filter: blur(4px);
+                                overflow: hidden;
+                                position: relative;
+                                padding: 15px;
+                                display: flex;
+                                flex-direction: column;
+                                animation: floatRoster 6s ease-in-out infinite alternate;
+                                z-index: 2;
+                            }
+
+                            /* Tech Brackets for Hologram */
+                            .hologram-roster-box::after {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                border-top: 2px solid rgba(42, 195, 255, 0.8);
+                                border-bottom: 2px solid rgba(42, 195, 255, 0.8);
+                                clip-path: polygon(0 0, 20px 0, 20px 100%, 0 100%, 0 0, 100% 0, 100% 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0);
+                                pointer-events: none;
+                                z-index: 4;
+                            }
+
+                            .hologram-roster-box.delay {
+                                animation-delay: -3s;
+                            }
+
+                            @keyframes floatRoster {
+                                0% {
+                                    transform: translateY(5px);
+                                    box-shadow: inset 0 0 20px rgba(42, 195, 255, 0.1), 0 0 15px rgba(42, 195, 255, 0.2);
+                                }
+
+                                100% {
+                                    transform: translateY(-5px);
+                                    box-shadow: inset 0 0 30px rgba(42, 195, 255, 0.2), 0 0 25px rgba(42, 195, 255, 0.4);
+                                }
+                            }
+
+                            .hologram-roster-box::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: linear-gradient(rgba(42, 195, 255, 0.05) 1px, transparent 1px);
+                                background-size: 100% 4px;
+                                z-index: 0;
+                                pointer-events: none;
+                            }
+
+                            .roster-scroll-container {
+                                flex: 1;
+                                overflow: hidden;
+                                position: relative;
+                                z-index: 1;
+                                mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
+                                -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
+                            }
+
+                            .roster-track {
+                                display: flex;
+                                flex-direction: column;
+                                animation: autoScroll 25s linear infinite;
+                            }
+
+                            .roster-track:hover {
+                                animation-play-state: paused;
+                            }
+
+                            @keyframes autoScroll {
+                                0% {
+                                    transform: translateY(0);
+                                }
+
+                                100% {
+                                    transform: translateY(-50%);
+                                }
+                            }
+
+                            .roster-item {
+                                margin-bottom: 15px;
+                                border-bottom: 1px dashed rgba(42, 195, 255, 0.2);
+                                padding-bottom: 8px;
+                                transition: all 0.3s ease;
+                            }
+
+                            .roster-item:hover {
+                                background: rgba(42, 195, 255, 0.15);
+                                transform: translateX(5px);
+                                border-left: 3px solid var(--neon-gold);
+                                padding-left: 8px;
+                            }
+
+                            .leo-name {
+                                display: block;
+                                color: var(--neon-cyan);
+                                font-family: var(--font-heading);
+                                font-size: 0.75rem;
+                                font-weight: bold;
+                                letter-spacing: 1px;
+                            }
+
+                            .leo-role {
+                                display: block;
+                                color: var(--neon-gold);
+                                font-family: var(--font-mono);
+                                font-size: 0.6rem;
+                                margin-top: 3px;
+                            }
+
+                            .roster-header {
+                                text-align: center;
+                                color: #fff;
+                                font-family: var(--font-heading);
+                                font-size: 0.85rem;
+                                text-shadow: 0 0 10px var(--neon-cyan);
+                                margin-bottom: 15px;
+                                padding-bottom: 5px;
+                                letter-spacing: 2px;
+                                z-index: 3;
+                                position: relative;
+                                border-bottom: 1px solid rgba(42, 195, 255, 0.3);
+                            }
+
+                            .roster-header::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -1px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 50px;
+                                height: 2px;
+                                background: var(--neon-cyan);
+                                box-shadow: 0 0 10px var(--neon-cyan);
+                            }
+                        </style>
+
+                        <div class="welcome-layout-grid">
+                            <div class="energy-beam left-beam"></div>
+                            <div class="energy-beam right-beam"></div>
+
+                            <!-- Left Roster Box -->
+                            <div class="hologram-roster-box">
+                                <div class="roster-header">DISTRICT CABINET</div>
+                                <div class="roster-scroll-container">
+                                    <div class="roster-track">
+                                        <div class="roster-item"><span class="leo-name">LEO ISHIKA SHAH</span><span
+                                                class="leo-role">VICE DISTRICT PRESIDENT</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION SHEJAL
+                                                CHAVAN</span><span class="leo-role">DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION HARSHIL
+                                                HARIA</span><span class="leo-role">DISTRICT TREASURER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO MANAV MEHTA</span><span
+                                                class="leo-role">CHIEF DISTRICT OFFICER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION KRISH AHUJA</span><span
+                                                class="leo-role">CHIEF MARKETING OFFICER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LION RITU AGRAWAL</span><span
+                                                class="leo-role">LEO DISTRICT ADVISOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO VATSAL MANEK</span><span
+                                                class="leo-role">IMMEDIATE PAST DISTRICT PRESIDENT</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION ABHISHEK
+                                                GOYAL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION DR. MAITRI
+                                                GADA</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION RUCHI PASAD</span><span
+                                                class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO SHALVII PATIL</span><span
+                                                class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO MANASA SAMALA</span><span
+                                                class="leo-role">JT. DISTRICT TREASURER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO SUNNISH DAWDA</span><span
+                                                class="leo-role">ZONE CHAIRPERSON-1</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO DHRUV YADAV</span><span
+                                                class="leo-role">ZONE CHAIRPERSON-2</span></div>
+
+                                        <!-- DUPLICATED FOR SEAMLESS SCROLL -->
+                                        <div class="roster-item"><span class="leo-name">LEO ISHIKA SHAH</span><span
+                                                class="leo-role">VICE DISTRICT PRESIDENT</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION SHEJAL
+                                                CHAVAN</span><span class="leo-role">DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION HARSHIL
+                                                HARIA</span><span class="leo-role">DISTRICT TREASURER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO MANAV MEHTA</span><span
+                                                class="leo-role">CHIEF DISTRICT OFFICER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION KRISH AHUJA</span><span
+                                                class="leo-role">CHIEF MARKETING OFFICER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LION RITU AGRAWAL</span><span
+                                                class="leo-role">LEO DISTRICT ADVISOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO VATSAL MANEK</span><span
+                                                class="leo-role">IMMEDIATE PAST DISTRICT PRESIDENT</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION ABHISHEK
+                                                GOYAL</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION DR. MAITRI
+                                                GADA</span><span class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION RUCHI PASAD</span><span
+                                                class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO SHALVII PATIL</span><span
+                                                class="leo-role">JT. DISTRICT SECRETARY</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO MANASA SAMALA</span><span
+                                                class="leo-role">JT. DISTRICT TREASURER</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO SUNNISH DAWDA</span><span
+                                                class="leo-role">ZONE CHAIRPERSON-1</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO DHRUV YADAV</span><span
+                                                class="leo-role">ZONE CHAIRPERSON-2</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Welcome Panel (Center Design Upgrade) -->
+                            <div class="center-terminal-box"
+                                style="padding: 15px 20px; flex: 0 1 auto; margin-top: 20px;">
+                                <h3 class="text-gold tracking-widest text-sm elegant-heading"
+                                    style="text-transform: uppercase;">District President<br>Official Visit <span
+                                        style="color:var(--neon-cyan)">25-26</span></h3>
+
+                                <p class="text-xs text-dim mb-1 mt-3"
+                                    style="letter-spacing: 2px; text-transform: uppercase;">We Warmly Welcome</p>
+                                <h2 class="my-1 elegant-name"
+                                    style="font-family: var(--font-heading); color: #fff; text-transform: uppercase; text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4); font-size: 1.6rem; letter-spacing: 3px;">
+                                    Leo Lion Shivani Shah</h2>
+                                <p class="text-sm text-gold mt-1"
+                                    style="letter-spacing: 3px; text-transform: uppercase;">District President</p>
+
+                                <div
+                                    style="margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem;">
+                                    <p class="text-xs text-dim"
+                                        style="line-height: 1.6; letter-spacing: 1px; text-transform: uppercase;">Along
+                                        with the District Executive<br>Council for the Official District<br>President
+                                        Visit</p>
+                                </div>
+                            </div>
+
+                            <!-- Right Roster Box -->
+                            <div class="hologram-roster-box delay">
+                                <div class="roster-header">DISTRICT CABINET</div>
+                                <div class="roster-scroll-container">
+                                    <div class="roster-track">
+                                        <div class="roster-item"><span class="leo-name">LEO LION AASHNA
+                                                SHAMNI</span><span class="leo-role">ZONE CHAIRPERSON-3</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO RAHUL DUDAM</span><span
+                                                class="leo-role">ZONE CHAIRPERSON-4</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO SMEET GALA</span><span
+                                                class="leo-role">GLT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO VARUN DESHPANDE</span><span
+                                                class="leo-role">GLT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO JENIL SHAH</span><span
+                                                class="leo-role">GMT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO NISHANT PAREKH</span><span
+                                                class="leo-role">GMT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO DHRUV PARAB</span><span
+                                                class="leo-role">GST CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO NIDHI AGRAWAL</span><span
+                                                class="leo-role">GST CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO AADITE SAWANT</span><span
+                                                class="leo-role">CMO CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION JAHNAVI
+                                                ZUTSHI</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO TANEYA AGARWAL</span><span
+                                                class="leo-role">CMO CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO KRISHA LAKHANI</span><span
+                                                class="leo-role">ZONE SECRETARY-1</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO ANSH MEHTA</span><span
+                                                class="leo-role">ZONE SECRETARY-2</span></div>
+
+                                        <!-- DUPLICATED FOR SEAMLESS SCROLL -->
+                                        <div class="roster-item"><span class="leo-name">LEO LION AASHNA
+                                                SHAMNI</span><span class="leo-role">ZONE CHAIRPERSON-3</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO RAHUL DUDAM</span><span
+                                                class="leo-role">ZONE CHAIRPERSON-4</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO SMEET GALA</span><span
+                                                class="leo-role">GLT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO VARUN DESHPANDE</span><span
+                                                class="leo-role">GLT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO JENIL SHAH</span><span
+                                                class="leo-role">GMT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO NISHANT PAREKH</span><span
+                                                class="leo-role">GMT CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO DHRUV PARAB</span><span
+                                                class="leo-role">GST CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO NIDHI AGRAWAL</span><span
+                                                class="leo-role">GST CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO AADITE SAWANT</span><span
+                                                class="leo-role">CMO CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO LION JAHNAVI
+                                                ZUTSHI</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO TANEYA AGARWAL</span><span
+                                                class="leo-role">CMO CO-ORDINATOR</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO KRISHA LAKHANI</span><span
+                                                class="leo-role">ZONE SECRETARY-1</span></div>
+                                        <div class="roster-item"><span class="leo-name">LEO ANSH MEHTA</span><span
+                                                class="leo-role">ZONE SECRETARY-2</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Welcome Panel (Center Design Upgrade) -->
-                        <div class="center-terminal-box" style="padding: 15px 20px; flex: 0 1 auto; margin-top: 20px;">
-                            <h3 class="text-gold tracking-widest text-sm elegant-heading" style="text-transform: uppercase;">District President<br>Official Visit <span style="color:var(--neon-cyan)">25-26</span></h3>
-                            
-                            <p class="text-xs text-dim mb-1 mt-3" style="letter-spacing: 2px; text-transform: uppercase;">We Warmly Welcome</p>
-                            <h2 class="my-1 elegant-name"
-                                style="font-family: var(--font-heading); color: #fff; text-transform: uppercase; text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4); font-size: 1.6rem; letter-spacing: 3px;">
-                                Leo Lion Shivani Shah</h2>
-                            <p class="text-sm text-gold mt-1" style="letter-spacing: 3px; text-transform: uppercase;">District President</p>
-                            
-                            <div style="margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem;">
-                                <p class="text-xs text-dim" style="line-height: 1.6; letter-spacing: 1px; text-transform: uppercase;">Along with the District Executive<br>Council for the Official District<br>President Visit</p>
-                            </div>
-                        </div>
-
-                    <!-- Right Roster Box -->
-                    <div class="hologram-roster-box delay">
-                        <div class="roster-header">DISTRICT CABINET</div>
-                        <div class="roster-scroll-container">
-                            <div class="roster-track">
-                                <div class="roster-item"><span class="leo-name">LEO LION AASHNA SHAMNI</span><span class="leo-role">ZONE CHAIRPERSON-3</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO RAHUL DUDAM</span><span class="leo-role">ZONE CHAIRPERSON-4</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO SMEET GALA</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO VARUN DESHPANDE</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO JENIL SHAH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO NISHANT PAREKH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO DHRUV PARAB</span><span class="leo-role">GST CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO NIDHI AGRAWAL</span><span class="leo-role">GST CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO AADITE SAWANT</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO LION JAHNAVI ZUTSHI</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO TANEYA AGARWAL</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO KRISHA LAKHANI</span><span class="leo-role">ZONE SECRETARY-1</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO ANSH MEHTA</span><span class="leo-role">ZONE SECRETARY-2</span></div>
-                                
-                                <!-- DUPLICATED FOR SEAMLESS SCROLL -->
-                                <div class="roster-item"><span class="leo-name">LEO LION AASHNA SHAMNI</span><span class="leo-role">ZONE CHAIRPERSON-3</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO RAHUL DUDAM</span><span class="leo-role">ZONE CHAIRPERSON-4</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO SMEET GALA</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO VARUN DESHPANDE</span><span class="leo-role">GLT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO JENIL SHAH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO NISHANT PAREKH</span><span class="leo-role">GMT CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO DHRUV PARAB</span><span class="leo-role">GST CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO NIDHI AGRAWAL</span><span class="leo-role">GST CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO AADITE SAWANT</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO LION JAHNAVI ZUTSHI</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO TANEYA AGARWAL</span><span class="leo-role">CMO CO-ORDINATOR</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO KRISHA LAKHANI</span><span class="leo-role">ZONE SECRETARY-1</span></div>
-                                <div class="roster-item"><span class="leo-name">LEO ANSH MEHTA</span><span class="leo-role">ZONE SECRETARY-2</span></div>
-                            </div>
-                        </div>
                     </div>
-                </div>    </div>
 
                     <!-- Explore Button -->
                     <a href="#module-2" class="explore-btn mt-3">Explore Our Journey</a>
@@ -745,91 +941,285 @@
 
                 <!-- New Upgraded Club Info & Sponsor Section -->
                 <style>
-                    .cyber-card-container { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+                    .cyber-card-container {
+                        display: flex;
+                        gap: 1.5rem;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+
                     .cyber-card {
                         background: linear-gradient(135deg, rgba(6, 11, 24, 0.7) 0%, rgba(42, 195, 255, 0.05) 100%);
                         border: 1px solid rgba(42, 195, 255, 0.3);
-                        border-radius: 8px; padding: 1.5rem 2rem;
-                        position: relative; overflow: hidden;
-                        transition: all 0.4s ease; min-width: 200px; flex: 1; max-width: 250px;
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-align: center;
+                        border-radius: 8px;
+                        padding: 1.5rem 2rem;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.4s ease;
+                        min-width: 200px;
+                        flex: 1;
+                        max-width: 250px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+                        text-align: center;
                     }
+
                     .cyber-card::before {
-                        content: ''; position: absolute; top: 0; left: -100%;
-                        width: 50%; height: 100%;
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 50%;
+                        height: 100%;
                         background: linear-gradient(90deg, transparent, rgba(42, 195, 255, 0.2), transparent);
-                        transform: skewX(-25deg); transition: all 0.5s ease;
+                        transform: skewX(-25deg);
+                        transition: all 0.5s ease;
                     }
+
                     .cyber-card:hover {
-                        transform: translateY(-5px); border-color: var(--neon-cyan);
+                        transform: translateY(-5px);
+                        border-color: var(--neon-cyan);
                         box-shadow: 0 10px 25px rgba(42, 195, 255, 0.2), inset 0 0 15px rgba(42, 195, 255, 0.1);
                     }
-                    .cyber-card:hover::before { animation: shineCard 1.5s infinite; }
-                    @keyframes shineCard { 0% { left: -100%; } 100% { left: 200%; } }
-                    .cyber-label { font-family: var(--font-mono); color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
-                    .cyber-value { font-family: var(--font-heading); color: var(--neon-gold); font-size: 1.8rem; font-weight: bold; text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); }
+
+                    .cyber-card:hover::before {
+                        animation: shineCard 1.5s infinite;
+                    }
+
+                    @keyframes shineCard {
+                        0% {
+                            left: -100%;
+                        }
+
+                        100% {
+                            left: 200%;
+                        }
+                    }
+
+                    .cyber-label {
+                        font-family: var(--font-mono);
+                        color: var(--neon-cyan);
+                        font-size: 0.75rem;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .cyber-value {
+                        font-family: var(--font-heading);
+                        color: var(--neon-gold);
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                        text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+                    }
 
                     .sponsor-databank-panel {
                         background: radial-gradient(circle at top right, rgba(212, 160, 23, 0.15) 0%, rgba(6, 11, 24, 0.8) 70%);
                         border: 1px solid rgba(212, 160, 23, 0.4);
-                        border-left: 4px solid var(--neon-gold); border-radius: 10px;
-                        padding: 2.5rem; max-width: 1000px; margin: 3rem auto 0 auto;
-                        position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+                        border-left: 4px solid var(--neon-gold);
+                        border-radius: 10px;
+                        padding: 2.5rem;
+                        max-width: 1000px;
+                        margin: 3rem auto 0 auto;
+                        position: relative;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+                        backdrop-filter: blur(5px);
                         text-align: left;
                     }
+
                     .sponsor-databank-panel::after {
-                        content: ''; position: absolute; right: 20px; top: -1px; width: 100px; height: 3px;
-                        background: var(--neon-gold); box-shadow: 0 0 15px var(--neon-gold);
+                        content: '';
+                        position: absolute;
+                        right: 20px;
+                        top: -1px;
+                        width: 100px;
+                        height: 3px;
+                        background: var(--neon-gold);
+                        box-shadow: 0 0 15px var(--neon-gold);
                     }
-                    .sponsor-header { font-family: var(--font-mono); color: var(--neon-cyan); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; }
-                    .sponsor-title { font-family: var(--font-heading); color: #fff; font-size: 2.2rem; text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); letter-spacing: 2px; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
-                    .sponsor-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
-                    .sponsor-stat { display: flex; flex-direction: column; }
-                    .sponsor-stat .stat-label { font-family: var(--font-mono); color: var(--neon-gold); font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
-                    .sponsor-stat .stat-value { font-family: var(--font-heading); color: #fff; font-size: 1.1rem; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255,255,255,0.3); }
+
+                    .sponsor-header {
+                        font-family: var(--font-mono);
+                        color: var(--neon-cyan);
+                        font-size: 0.85rem;
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .sponsor-title {
+                        font-family: var(--font-heading);
+                        color: #fff;
+                        font-size: 2.2rem;
+                        text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+                        letter-spacing: 2px;
+                        margin-bottom: 1.5rem;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        padding-bottom: 1rem;
+                    }
+
+                    .sponsor-stats-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 2rem;
+                    }
+
+                    .sponsor-stat {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .sponsor-stat .stat-label {
+                        font-family: var(--font-mono);
+                        color: var(--neon-gold);
+                        font-size: 0.75rem;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.4rem;
+                    }
+
+                    .sponsor-stat .stat-value {
+                        font-family: var(--font-heading);
+                        color: #fff;
+                        font-size: 1.1rem;
+                        letter-spacing: 1px;
+                        text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+                    }
 
                     /* Layout for Image + Metrics */
                     .about-metrics-layout {
-                        display: flex; gap: 4rem; align-items: center; max-width: 1100px; margin: 3rem auto 0 auto;
+                        display: flex;
+                        gap: 4rem;
+                        align-items: center;
+                        max-width: 1100px;
+                        margin: 3rem auto 0 auto;
                     }
-                    .about-image-col { flex: 1; max-width: 450px; position: relative; z-index: 10; perspective: 1000px; }
+
+                    .about-image-col {
+                        flex: 1;
+                        max-width: 450px;
+                        position: relative;
+                        z-index: 10;
+                        perspective: 1000px;
+                    }
+
                     .cert-wrapper {
-                        position: relative; border-radius: 12px; padding: 10px;
+                        position: relative;
+                        border-radius: 12px;
+                        padding: 10px;
                         background: linear-gradient(135deg, rgba(212, 160, 23, 0.4), rgba(42, 195, 255, 0.1));
-                        box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px rgba(212, 160, 23, 0.2);
-                        transform: rotateY(10deg); transition: transform 0.5s ease;
+                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(212, 160, 23, 0.2);
+                        transform: rotateY(10deg);
+                        transition: transform 0.5s ease;
                     }
+
                     .cert-wrapper:hover {
                         transform: rotateY(0deg) scale(1.05);
                     }
+
                     .charter-cert-img {
-                        width: 100%; height: auto; border-radius: 8px; display: block;
-                        position: relative; z-index: 2; border: 2px solid rgba(212, 160, 23, 0.5);
+                        width: 100%;
+                        height: auto;
+                        border-radius: 8px;
+                        display: block;
+                        position: relative;
+                        z-index: 2;
+                        border: 2px solid rgba(212, 160, 23, 0.5);
                     }
+
                     .cert-glow {
-                        position: absolute; top: 50%; left: 50%; width: 80%; height: 80%;
-                        transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(212, 160, 23, 0.4) 0%, transparent 70%);
-                        z-index: 1; filter: blur(20px); animation: pulseCertGlow 3s infinite alternate;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 80%;
+                        height: 80%;
+                        transform: translate(-50%, -50%);
+                        background: radial-gradient(circle, rgba(212, 160, 23, 0.4) 0%, transparent 70%);
+                        z-index: 1;
+                        filter: blur(20px);
+                        animation: pulseCertGlow 3s infinite alternate;
                     }
-                    @keyframes pulseCertGlow { 0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); } 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); } }
-                    .about-stats-col { flex: 1.2; }
-                    
+
+                    @keyframes pulseCertGlow {
+                        0% {
+                            opacity: 0.5;
+                            transform: translate(-50%, -50%) scale(0.9);
+                        }
+
+                        100% {
+                            opacity: 0.8;
+                            transform: translate(-50%, -50%) scale(1.1);
+                        }
+                    }
+
+                    .about-stats-col {
+                        flex: 1.2;
+                    }
+
                     /* Animated Metrics Headers */
-                    .header-wrapper { text-align: center; width: 100%; margin-bottom: 2rem; position: relative; }
+                    .header-wrapper {
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom: 2rem;
+                        position: relative;
+                    }
+
                     .animated-neon-header {
-                        font-family: var(--font-heading); font-size: 1.4rem; letter-spacing: 5px; text-transform: uppercase;
-                        color: #fff; position: relative; display: inline-block; padding-bottom: 8px; margin: 0;
+                        font-family: var(--font-heading);
+                        font-size: 1.4rem;
+                        letter-spacing: 5px;
+                        text-transform: uppercase;
+                        color: #fff;
+                        position: relative;
+                        display: inline-block;
+                        padding-bottom: 8px;
+                        margin: 0;
                     }
-                    .animated-neon-header.cyan { text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
-                    .animated-neon-header.gold { text-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold); }
+
+                    .animated-neon-header.cyan {
+                        text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+                    }
+
+                    .animated-neon-header.gold {
+                        text-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold);
+                    }
+
                     .animated-neon-header::after {
-                        content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
-                        background: linear-gradient(90deg, transparent, #fff, transparent); animation: lineScan 2.5s infinite ease-in-out;
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(90deg, transparent, #fff, transparent);
+                        animation: lineScan 2.5s infinite ease-in-out;
                     }
-                    @keyframes lineScan { 0% { transform: scaleX(0); opacity: 0; } 50% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(0); opacity: 0; } }
+
+                    @keyframes lineScan {
+                        0% {
+                            transform: scaleX(0);
+                            opacity: 0;
+                        }
+
+                        50% {
+                            transform: scaleX(1);
+                            opacity: 1;
+                        }
+
+                        100% {
+                            transform: scaleX(0);
+                            opacity: 0;
+                        }
+                    }
+
                     @media (max-width: 900px) {
-                        .about-metrics-layout { flex-direction: column; gap: 2rem; }
-                        .about-image-col { max-width: 80%; margin: 0 auto; }
+                        .about-metrics-layout {
+                            flex-direction: column;
+                            gap: 2rem;
+                        }
+
+                        .about-image-col {
+                            max-width: 80%;
+                            margin: 0 auto;
+                        }
                     }
                 </style>
 
@@ -838,15 +1228,18 @@
                     <div class="about-image-col reveal delay-1">
                         <div class="cert-wrapper">
                             <div class="cert-glow"></div>
-                            <img src="Photos/chartercertificate.jpg" alt="Charter Certificate" class="charter-cert-img" />
+                            <img src="Photos/chartercertificate.jpg" alt="Charter Certificate"
+                                class="charter-cert-img" />
                         </div>
                     </div>
 
                     <!-- Right: Metrics (Cyber Cards) -->
                     <div class="about-stats-col">
-                        
+
                         <!-- Leo Club Metrics -->
-                        <div class="header-wrapper"><h3 class="animated-neon-header cyan reveal">Leo Club Metrics</h3></div>
+                        <div class="header-wrapper">
+                            <h3 class="animated-neon-header cyan reveal">Leo Club Metrics</h3>
+                        </div>
                         <div class="cyber-card-container">
                             <div class="cyber-card reveal delay-2">
                                 <div class="cyber-label">Charter Year</div>
@@ -854,7 +1247,8 @@
                             </div>
                             <div class="cyber-card reveal delay-3">
                                 <div class="cyber-label">Sponsor Club</div>
-                                <div class="cyber-value" style="font-size: 1.2rem; margin-top: 10px;">Lions Club of Bhiwandi</div>
+                                <div class="cyber-value" style="font-size: 1.2rem; margin-top: 10px;">Lions Club of
+                                    Bhiwandi</div>
                             </div>
                             <div class="cyber-card reveal delay-4">
                                 <div class="cyber-label">Club ID</div>
@@ -867,7 +1261,9 @@
                         </div>
 
                         <!-- Parent Club Metrics -->
-                        <div class="header-wrapper" style="margin-top: 3.5rem;"><h3 class="animated-neon-header gold reveal delay-6">Parent Club Details</h3></div>
+                        <div class="header-wrapper" style="margin-top: 3.5rem;">
+                            <h3 class="animated-neon-header gold reveal delay-6">Parent Club Details</h3>
+                        </div>
                         <div class="cyber-card-container">
                             <div class="cyber-card reveal delay-6">
                                 <div class="cyber-label">Club ID</div>
@@ -883,7 +1279,9 @@
                             </div>
                             <div class="cyber-card reveal delay-9">
                                 <div class="cyber-label" style="font-size: 0.65rem;">Charter Presidents</div>
-                                <div class="cyber-value" style="font-size: 0.85rem; margin-top: 10px; line-height: 1.6;">LION MOHAMMED FAKIH<br>LATE LION M.R. VAZE</div>
+                                <div class="cyber-value"
+                                    style="font-size: 0.85rem; margin-top: 10px; line-height: 1.6;">LION MOHAMMED
+                                    FAKIH<br>LATE LION M.R. VAZE</div>
                             </div>
                         </div>
 
