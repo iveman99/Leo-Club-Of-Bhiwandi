@@ -215,11 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const endLat = startLat + (Math.random() - 0.5) * 15;
             const endLng = startLng + (Math.random() - 0.5) * 15;
             conflictArcs.push({
-                startLat, startLng, endLat, endLng, 
+                startLat, startLng, endLat, endLng,
                 color: Math.random() > 0.5 ? '#ff0000' : '#ffaa00'
             });
         }
-        
+
         // Render extreme combat missiles
         world.arcsData(conflictArcs)
             .arcColor('color')
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .arcDashGap(0.1)
             .arcDashInitialGap(() => Math.random())
             .arcDashAnimateTime(400) // Much faster flight time!
-            .arcStroke(1.2); 
+            .arcStroke(1.2);
 
         // Sequence Elements
         const text1 = document.getElementById('hero-text-1');
@@ -259,29 +259,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (initBtn) {
             initBtn.addEventListener('mouseenter', () => {
-                if(audioHover) {
+                if (audioHover) {
                     audioHover.currentTime = 0;
                     audioHover.volume = 0.3;
-                    audioHover.play().catch(e => {});
+                    audioHover.play().catch(e => { });
                 }
             });
 
             initBtn.addEventListener('click', () => {
-                if(audioEntry) {
+                if (audioEntry) {
                     audioEntry.volume = 0.8;
                     audioEntry.play().catch(e => console.log('Audio blocked:', e));
                 }
-                
+
                 // Crazy Animation: Intense shake during glitch
                 document.body.style.animation = "textGlitch 0.3s 4";
-                
+
                 // Add creative visual transition classes
                 initOverlay.classList.add('entry-glitch-active');
                 initOverlay.classList.add('entry-zoom-out');
-                
+
                 setTimeout(() => {
                     initOverlay.style.display = 'none';
-                    if(audioWar) {
+                    if (audioWar) {
                         audioWar.volume = 0.5;
                         audioWar.play().catch(e => console.log('Audio blocked:', e));
                     }
@@ -293,142 +293,142 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function startCinematicSequence() {
-        // Step 1: Global View (0s - 7.5s)
-        showFadeText(text1, 500, 7000);
+            // Step 1: Global View (0s - 7.5s)
+            showFadeText(text1, 500, 7000);
 
-        // Step 2: India Focus (7.5s)
-        setTimeout(() => {
-            document.body.classList.remove('war-zone'); // RESTORE PEACE
-            
-            // Audio Transition
-            if (audioWar) {
-                let vol = audioWar.volume;
-                const fadeOut = setInterval(() => {
-                    vol -= 0.05;
-                    if (vol <= 0) { clearInterval(fadeOut); audioWar.pause(); } 
-                    else { audioWar.volume = vol; }
-                }, 100);
-            }
-            if (audioPeace) {
-                audioPeace.volume = 0;
-                audioPeace.play().catch(e => console.log('Audio blocked:', e));
-                let vol = 0;
-                const fadeIn = setInterval(() => {
-                    vol += 0.05;
-                    if (vol >= 0.5) clearInterval(fadeIn);
-                    else audioPeace.volume = vol;
-                }, 100);
-            }
+            // Step 2: India Focus (7.5s)
+            setTimeout(() => {
+                document.body.classList.remove('war-zone'); // RESTORE PEACE
 
-            world.pointOfView({ lat: 20.59, lng: 78.96, altitude: 1.2 }, 2500);
-            if (directionalLight) {
-                directionalLight.color.setHex(0xd4a017); // Leo gold
-                directionalLight.intensity = 2.5;
-            }
-            if (ambientLight) {
-                ambientLight.color.setHex(0x2ac3ff); // Neon blue
-                ambientLight.intensity = 1.0;
-            }
-            // Keep global conflict active, introduce festive Peace/Growth rings over India
-            const indiaFestiveZones = [
-                { lat: 28.70, lng: 77.10, maxR: 6, color: '#16a34a' }, // Delhi Green Growth
-                { lat: 19.07, lng: 72.87, maxR: 8, color: '#d4a017' }, // Mumbai Gold Peace
-                { lat: 12.97, lng: 77.59, maxR: 7, color: '#ffffff' }, // Bangalore Bright Core
-                { lat: 22.57, lng: 88.36, maxR: 6, color: '#2ac3ff' }  // Kolkata Vibrant Blue
-            ];
-            world.ringsData([...volatilityZones, ...indiaFestiveZones]); // Keep conflict active!
-            world.labelsData([]); // Keep conflict labels empty
-            // Deliberately letting conflict arcs (missiles) continue running in background
-            showFadeText(text2, 1000, 4500); // Relative to 7.5s: appears at 8.5s, hides at 13.0s
-        }, 7500);
+                // Audio Transition
+                if (audioWar) {
+                    let vol = audioWar.volume;
+                    const fadeOut = setInterval(() => {
+                        vol -= 0.05;
+                        if (vol <= 0) { clearInterval(fadeOut); audioWar.pause(); }
+                        else { audioWar.volume = vol; }
+                    }, 100);
+                }
+                if (audioPeace) {
+                    audioPeace.volume = 0;
+                    audioPeace.play().catch(e => console.log('Audio blocked:', e));
+                    let vol = 0;
+                    const fadeIn = setInterval(() => {
+                        vol += 0.05;
+                        if (vol >= 0.5) clearInterval(fadeIn);
+                        else audioPeace.volume = vol;
+                    }, 100);
+                }
 
-        // Step 3: Bhiwandi Location (13s)
-        setTimeout(() => {
-            if (pin) pin.classList.add('visible');
-        }, 13000);
+                world.pointOfView({ lat: 20.59, lng: 78.96, altitude: 1.2 }, 2500);
+                if (directionalLight) {
+                    directionalLight.color.setHex(0xd4a017); // Leo gold
+                    directionalLight.intensity = 2.5;
+                }
+                if (ambientLight) {
+                    ambientLight.color.setHex(0x2ac3ff); // Neon blue
+                    ambientLight.intensity = 1.0;
+                }
+                // Keep global conflict active, introduce festive Peace/Growth rings over India
+                const indiaFestiveZones = [
+                    { lat: 28.70, lng: 77.10, maxR: 6, color: '#16a34a' }, // Delhi Green Growth
+                    { lat: 19.07, lng: 72.87, maxR: 8, color: '#d4a017' }, // Mumbai Gold Peace
+                    { lat: 12.97, lng: 77.59, maxR: 7, color: '#ffffff' }, // Bangalore Bright Core
+                    { lat: 22.57, lng: 88.36, maxR: 6, color: '#2ac3ff' }  // Kolkata Vibrant Blue
+                ];
+                world.ringsData([...volatilityZones, ...indiaFestiveZones]); // Keep conflict active!
+                world.labelsData([]); // Keep conflict labels empty
+                // Deliberately letting conflict arcs (missiles) continue running in background
+                showFadeText(text2, 1000, 4500); // Relative to 7.5s: appears at 8.5s, hides at 13.0s
+            }, 7500);
 
-        // Step 4: Service Impact Waves (14.5s)
-        setTimeout(() => {
-            showFadeText(text3, 500, 6000); // appears 15s, hides 21s (stays through step 5)
+            // Step 3: Bhiwandi Location (13s)
+            setTimeout(() => {
+                if (pin) pin.classList.add('visible');
+            }, 13000);
 
-            // Add Service Waves (Keep global volatility, boost local impact)
-            const serviceWaves = [
-                { lat: 19.07, lng: 72.87, maxR: 15, color: '#d4a017' }, // Mumbai focus strong
-                { lat: 23.02, lng: 72.57, maxR: 10, color: '#16a34a' }  // Secondary growth node
-            ];
+            // Step 4: Service Impact Waves (14.5s)
+            setTimeout(() => {
+                showFadeText(text3, 500, 6000); // appears 15s, hides 21s (stays through step 5)
 
-            world.ringsData([...volatilityZones, ...serviceWaves])
-                .ringColor('color')
-                .ringMaxRadius('maxR')
-                .ringPropagationSpeed(2)
-                .ringRepeatPeriod(1000);
-        }, 14500);
+                // Add Service Waves (Keep global volatility, boost local impact)
+                const serviceWaves = [
+                    { lat: 19.07, lng: 72.87, maxR: 15, color: '#d4a017' }, // Mumbai focus strong
+                    { lat: 23.02, lng: 72.57, maxR: 10, color: '#16a34a' }  // Secondary growth node
+                ];
 
-        // Step 5: Growth Network Map (17s)
-        setTimeout(() => {
-            const networkArcs = [
-                { startLat: 19.07, startLng: 72.87, endLat: 28.70, endLng: 77.10, color: '#2ac3ff' }, // Mumbai -> Delhi (Tech Connect)
-                { startLat: 19.07, startLng: 72.87, endLat: 12.97, endLng: 77.59, color: '#16a34a' }, // Mumbai -> Bangalore (Growth)
-                { startLat: 19.07, startLng: 72.87, endLat: 23.02, endLng: 72.57, color: '#d4a017' }, // Mumbai -> Ahmedabad (Gold/Festive)
-                { startLat: 28.70, startLng: 77.10, endLat: 22.57, endLng: 88.36, color: '#d4a017' } // Delhi -> Kolkata
-            ];
+                world.ringsData([...volatilityZones, ...serviceWaves])
+                    .ringColor('color')
+                    .ringMaxRadius('maxR')
+                    .ringPropagationSpeed(2)
+                    .ringRepeatPeriod(1000);
+            }, 14500);
 
-            // Abstract nodes representing thriving hubs, no explicit labels needed because the text conveys it.
-            const abstractNodes = [
-                { lat: 28.70, lng: 77.10, size: 0.8, color: '#2ac3ff' }, // Delhi
-                { lat: 12.97, lng: 77.59, size: 1.0, color: '#16a34a' }, // Bangalore
-                { lat: 23.02, lng: 72.57, size: 1.2, color: '#d4a017' }, // Ahmedabad
-                { lat: 22.57, lng: 88.36, size: 0.9, color: '#facc15' }  // Kolkata
-            ];
+            // Step 5: Growth Network Map (17s)
+            setTimeout(() => {
+                const networkArcs = [
+                    { startLat: 19.07, startLng: 72.87, endLat: 28.70, endLng: 77.10, color: '#2ac3ff' }, // Mumbai -> Delhi (Tech Connect)
+                    { startLat: 19.07, startLng: 72.87, endLat: 12.97, endLng: 77.59, color: '#16a34a' }, // Mumbai -> Bangalore (Growth)
+                    { startLat: 19.07, startLng: 72.87, endLat: 23.02, endLng: 72.57, color: '#d4a017' }, // Mumbai -> Ahmedabad (Gold/Festive)
+                    { startLat: 28.70, startLng: 77.10, endLat: 22.57, endLng: 88.36, color: '#d4a017' } // Delhi -> Kolkata
+                ];
 
-            world.arcsData(networkArcs)
-                .arcColor('color')
-                .arcDashLength(0.6)
-                .arcDashGap(0.3)
-                .arcDashInitialGap(() => Math.random())
-                .arcDashAnimateTime(2000); // Slower, more elegant arcs
+                // Abstract nodes representing thriving hubs, no explicit labels needed because the text conveys it.
+                const abstractNodes = [
+                    { lat: 28.70, lng: 77.10, size: 0.8, color: '#2ac3ff' }, // Delhi
+                    { lat: 12.97, lng: 77.59, size: 1.0, color: '#16a34a' }, // Bangalore
+                    { lat: 23.02, lng: 72.57, size: 1.2, color: '#d4a017' }, // Ahmedabad
+                    { lat: 22.57, lng: 88.36, size: 0.9, color: '#facc15' }  // Kolkata
+                ];
 
-            // Repurpose labelsData point rendering for abstract glowing hubs
-            world.labelsData(abstractNodes)
-                .labelLat('lat')
-                .labelLng('lng')
-                .labelText(() => '') // Clear text, just the glowing dot
-                .labelDotRadius('size')
-                .labelColor('color')
-                .labelResolution(2);
-        }, 17000);
+                world.arcsData(networkArcs)
+                    .arcColor('color')
+                    .arcDashLength(0.6)
+                    .arcDashGap(0.3)
+                    .arcDashInitialGap(() => Math.random())
+                    .arcDashAnimateTime(2000); // Slower, more elegant arcs
 
-        // Step 6: Particle Leo Logo (21s)
-        setTimeout(() => {
-            if (pin) pin.classList.remove('visible'); // hide pin
-            if (particleLogo) particleLogo.classList.add('visible');
-        }, 21000);
+                // Repurpose labelsData point rendering for abstract glowing hubs
+                world.labelsData(abstractNodes)
+                    .labelLat('lat')
+                    .labelLng('lng')
+                    .labelText(() => '') // Clear text, just the glowing dot
+                    .labelDotRadius('size')
+                    .labelColor('color')
+                    .labelResolution(2);
+            }, 17000);
 
-        // Step 7: Final Message (23.5s)
-        setTimeout(() => {
-            if (particleLogo) particleLogo.classList.remove('visible');
-            // Deliberately NOT removing the rings/arcs so they persist globally
-            showFadeText(text4, 500, 4500); // appears 24s, hides 28.5s
-        }, 23500);
+            // Step 6: Particle Leo Logo (21s)
+            setTimeout(() => {
+                if (pin) pin.classList.remove('visible'); // hide pin
+                if (particleLogo) particleLogo.classList.add('visible');
+            }, 21000);
 
-        // Step 8 & 9: Landing Page Reveal (28.5s)
-        setTimeout(() => {
-            if (glowOverlay) glowOverlay.classList.add('active'); // dim globe slightly
-            if (finalState) finalState.classList.add('visible');
+            // Step 7: Final Message (23.5s)
+            setTimeout(() => {
+                if (particleLogo) particleLogo.classList.remove('visible');
+                // Deliberately NOT removing the rings/arcs so they persist globally
+                showFadeText(text4, 500, 4500); // appears 24s, hides 28.5s
+            }, 23500);
 
-            // Reveal logos sequentially
-            logoSlices.forEach((logo, index) => {
-                setTimeout(() => {
-                    logo.classList.add('visible');
-                }, index * 200);
-            });
+            // Step 8 & 9: Landing Page Reveal (28.5s)
+            setTimeout(() => {
+                if (glowOverlay) glowOverlay.classList.add('active'); // dim globe slightly
+                if (finalState) finalState.classList.add('visible');
 
-            // Do NOT re-enable zoom, let user scroll freely
-            world.controls().enableZoom = false;
-            // Keep the globe spinning continuously as a background!
-            world.controls().autoRotate = true;
-            world.controls().autoRotateSpeed = 0.5; // Slow down for gentle background spinning
-        }, 28500);
+                // Reveal logos sequentially
+                logoSlices.forEach((logo, index) => {
+                    setTimeout(() => {
+                        logo.classList.add('visible');
+                    }, index * 200);
+                });
+
+                // Do NOT re-enable zoom, let user scroll freely
+                world.controls().enableZoom = false;
+                // Keep the globe spinning continuously as a background!
+                world.controls().autoRotate = true;
+                world.controls().autoRotateSpeed = 0.5; // Slow down for gentle background spinning
+            }, 28500);
         } // End startCinematicSequence()
 
         // Window resize handling
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { category: "membership", question: "11. Is there a designated Membership Director?", answer: "No." },
         { category: "membership", question: "12. Are there any Leo-Lion members in the club?", answer: "Yes. 1. Leo Ln Sneha Adep 2. Leo Ln Srikanth Yelle 3. Leo Ln Rahul Dudam 4. Leo Ln Varsha Sircilla 5. Leo Ln Vivek Butla." },
         { category: "membership", question: "13. How many Alpha members are part of the club?", answer: "0." },
-        { category: "membership", question: "14. Membership Statistics (as of 7 days prior to the DP visit):", answer: "Opening as of 1st July 2025: ____ Additions during the period: ____ Retained members: ____ Droppage during the period: ____ Closing balance: ____." },
+        { category: "membership", question: "14. Membership Statistics (as of 7 days prior to the DP visit):", answer: "Opening as of 1st July 2025: 19 Additions during the period: 13 Retained members: 02 Droppage during the period:15 Closing balance:34." },
 
         // LEADERSHIP
         { category: "leadership", question: "1. Total Leadership activities conducted, mention 3 best.", answer: "1. Canva Workshop: A highly practical session where members learned design skills, content creation, and improved their digital creativity." },
@@ -663,7 +663,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === MODULE 4: SERVICE & PROJECTS (DYNAMIC DATA & FILTERING) ===
-            const projectsData = [
+    const projectsData = [
         {
             title: "CODE & SCHOOLING",
             date: "01-07-2025",
@@ -1152,10 +1152,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const createCard = (member) => {
             const card = document.createElement('div');
             card.className = `member-card ${member.elite ? 'elite' : ''}`;
-            
+
             // Check if photo exists and is not empty
             const hasPhoto = member.photo && member.photo.trim() !== "";
-            const photoContent = hasPhoto 
+            const photoContent = hasPhoto
                 ? `<img src="${member.photo}" alt="${member.name}" 
                     onerror="console.error('Failed to load image:', '${member.photo}'); this.style.display='none'; this.parentElement.querySelector('.photo-placeholder').style.display='flex';">
                    <div class="photo-placeholder" style="display:none;"><i class="fa-solid fa-user"></i></div>`
