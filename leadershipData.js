@@ -25,7 +25,7 @@ const LEADERSHIP_DATA = {
         // { name: "Leo Shrikant Mergud", role: "Joint Treasurer", photo: "./Photos/shrikant.jpg" },
         { name: "Lion Nilesh Jaywant", role: "Club Mentor", photo: "./Photos/dada.jpg" },
         { name: "Leo Saloni Jaroli", role: "GST Head", photo: "./Photos/saloni.jpg" },
-        { name: "Leo Roshni Adep", role: "GMT Head", photo: "./Photos/roshni.jpg" },
+        { name: "Leo Roshni Adep", role: "GMT Head", photo: "./Photos/roshini.jpg" },
         { name: "Leo Sonia Andavrapu", role: "GLT Head", photo: "./Photos/sonia.jpg" },
         { name: "Leo Srikant Yelle", role: "PRO", photo: "./Photos/shrikant.jpg" },
         { name: "Leo Yuvraj Rai", role: "Social Media Head", photo: "./Photos/Yuvraj.jpg" },
